@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta http-equiv="refresh" content="0; url=landing.html"/>
+  <link rel="canonical" href="landing.html"/>
+  <title>CyberWise — Loading…</title>
+  <script>
+    (function(){
+      try {
+        var theme = localStorage.getItem('cyberwise.theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+  <style>
+    :root { --bg:#F5F4FB; --ink:#1A1A2E; --ink-2:#4B4B6B; }
+    [data-theme="dark"] { --bg:#0F141B; --ink:#F3EBDD; --ink-2:#C6B9A7; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    }
+    .loader { display:flex; flex-direction:column; align-items:center; gap:18px; padding:32px; }
+    .mark {
+      width:52px;
+      height:52px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:15px;
+      background:linear-gradient(135deg,#8B5CF6,#60A5FA);
+      box-shadow:0 8px 24px rgba(139,92,246,.35);
+      animation:pulse 1.4s ease-in-out infinite;
+    }
+    .mark svg { width:26px; height:26px; color:#fff; }
+    .label { color:var(--ink-2); font-size:.88rem; font-weight:500; }
+    .label a { color:inherit; text-underline-offset:3px; }
+    @keyframes pulse {
+      0%,100% { transform:scale(1); }
+      50% { transform:scale(.94); }
+    }
+    @media (prefers-reduced-motion:reduce) { .mark { animation:none; } }
+  </style>
+</head>
+<body>
+  <main class="loader">
+    <div class="mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2 L20 6 V12 C20 17 16 21 12 22 C8 21 4 17 4 12 V6 Z"/>
+      </svg>
+    </div>
+    <p class="label">Loading CyberWise… <a href="landing.html">Continue manually</a></p>
+  </main>
+  <script>
+    window.location.replace('landing.html');
+  </script>
+</body>
+</html>

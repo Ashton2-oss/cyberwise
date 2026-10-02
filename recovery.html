@@ -1,0 +1,1444 @@
+<!-- FILE: recovery.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('cyberwise.theme');
+    if (!t) t = 'light';
+    document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+})();
+</script>
+<title>CyberWise — I clicked something</title>
+<meta name="description" content="The first ten minutes matter. A step-by-step recovery plan for whatever just happened."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="manifest" href="manifest.json"/>
+<meta name="theme-color" content="#0F141B"/>
+<link rel="apple-touch-icon" href="icon-192.png"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+svg{display:block;max-width:32px;max-height:32px;flex-shrink:0}
+:root{
+  --bg:#F5F4FB;--surface:#FFFFFF;--surface-2:#FAFAFE;
+  --border:rgba(20,20,43,.08);--border-strong:rgba(20,20,43,.14);
+  --ink:#1A1A2E;--ink-2:#4B4B6B;--ink-3:#8B8BA7;--ink-4:#B8B8CE;
+  --lime:#C7F548;--lime-hover:#B8E63A;--lime-glow:rgba(199,245,72,.4);
+  --lavender:#A78BFA;--lavender-2:#8B5CF6;--lavender-soft:rgba(167,139,250,.12);
+  --sky:#60A5FA;--sky-soft:rgba(96,165,250,.12);
+  --mint:#10B981;--mint-2:#34D399;--mint-soft:rgba(16,185,129,.12);
+  --amber:#F59E0B;--amber-2:#FBBF24;--amber-soft:rgba(245,158,11,.12);
+  --rose:#EF4444;--rose-2:#F87171;--rose-soft:rgba(239,68,68,.12);
+  --c-accent:#8B5CF6;--grid-color:rgba(20,20,43,.03);
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+[data-theme="dark"]{
+  --bg:#0F141B;
+  --surface:#171D29;
+  --surface-2:#1F2735;
+  --ink:#F3EBDD;
+  --ink-2:#C6B9A7;
+  --ink-3:#8A7F6D;
+  --ink-4:#5D534C;
+  --border:rgba(243,235,221,.08);
+  --border-strong:rgba(243,235,221,.12);
+  --lime:#C6D97A;
+  --lime-hover:#D2E28D;
+  --lime-glow:rgba(198,217,122,.12);
+  --lavender:#A6B5D8;
+  --lavender-2:#93A6D6;
+  --lavender-soft:rgba(166,181,216,.12);
+  --sky:#8BC7D8;
+  --sky-soft:rgba(139,199,216,.12);
+  --mint:#87C6A3;
+  --mint-2:#A5D6B4;
+  --mint-soft:rgba(135,198,163,.12);
+  --amber:#D4A060;
+  --amber-2:#E0AF6D;
+  --amber-soft:rgba(212,160,96,.12);
+  --rose:#D58989;
+  --rose-2:#E0A0A0;
+  --rose-soft:rgba(213,137,137,.12);
+  --c-accent:#D4A060;
+  --grid-color:rgba(243,235,221,.025);
+}
+html,body{
+  background:var(--bg);color:var(--ink);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  line-height:1.5;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  min-height:100%;transition:background .4s var(--ease),color .4s var(--ease);
+}
+.bg-scene{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.bg-scene::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 900px 600px at 15% -10%, rgba(239,68,68,.14), transparent 60%),
+    radial-gradient(ellipse 800px 500px at 90% 10%, rgba(245,158,11,.1), transparent 65%),
+    radial-gradient(ellipse 700px 500px at 50% 110%, rgba(139,92,246,.1), transparent 60%),
+    var(--bg);
+}
+[data-theme="dark"] .bg-scene::before{
+  background:
+    radial-gradient(ellipse 900px 600px at 15% -10%, rgba(239,68,68,.1), transparent 60%),
+    radial-gradient(ellipse 800px 500px at 90% 10%, rgba(245,158,11,.06), transparent 65%),
+    radial-gradient(ellipse 700px 500px at 50% 110%, rgba(139,92,246,.06), transparent 60%),
+    var(--bg);
+}
+.grid-overlay{
+  position:fixed;inset:0;z-index:1;pointer-events:none;
+  background-image:
+    linear-gradient(var(--grid-color) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid-color) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(circle 1100px at 50% 30%,#000,transparent 85%);
+  -webkit-mask-image:radial-gradient(circle 1100px at 50% 30%,#000,transparent 85%);
+}
+.cursor-dot,.cursor-ring{
+  position:fixed;top:0;left:0;pointer-events:none;z-index:10000;
+  will-change:transform;
+  transition:opacity .3s var(--ease),border-color .25s var(--ease),box-shadow .25s var(--ease);
+}
+.cursor-dot{
+  width:6px;height:6px;border-radius:50%;background:var(--c-accent);
+  box-shadow:0 0 0 1.5px rgba(255,255,255,.9),0 0 8px rgba(139,92,246,.5);
+}
+.cursor-ring{
+  width:26px;height:26px;border-radius:50%;
+  border:1.25px solid var(--c-accent);opacity:.5;
+  box-shadow:0 0 0 1.5px rgba(255,255,255,.4),0 0 10px rgba(139,92,246,.25);
+}
+[data-theme="dark"] .cursor-dot{
+  box-shadow:0 0 6px var(--c-accent),0 0 12px rgba(167,139,250,.4);
+  mix-blend-mode:screen;
+}
+[data-theme="dark"] .cursor-ring{
+  box-shadow:0 0 12px rgba(167,139,250,.3);mix-blend-mode:screen;
+}
+.cursor-ring.is-hover{opacity:.9;border-color:var(--lavender-2)}
+.cursor-ring.is-cta{opacity:1;border-color:var(--lavender-2)}
+@media (max-width:1024px){.cursor-dot,.cursor-ring{display:none!important}}
+@media (hover:none){.cursor-dot,.cursor-ring{display:none!important}}
+
+/* ───── TOPBAR ───── */
+.topbar{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  padding:16px 40px;
+  display:flex;align-items:center;justify-content:space-between;
+  font-family:'Inter',sans-serif;color:var(--ink-3);
+  transition:background .3s,backdrop-filter .3s,border-color .3s;
+  border-bottom:1px solid transparent;
+}
+.topbar.scrolled{
+  background:color-mix(in srgb,var(--bg) 82%,transparent);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom-color:var(--border);
+}
+.topbar .brand{
+  display:flex;align-items:center;gap:10px;color:var(--ink);
+  font-size:1rem;font-weight:700;letter-spacing:-.025em;text-decoration:none;
+}
+.brand-mark{
+  width:32px;height:32px;border-radius:10px;
+  background:linear-gradient(135deg,var(--lavender-2),var(--sky));
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 14px rgba(139,92,246,.35);
+}
+.brand-mark svg{width:17px;height:17px;color:#fff}
+.topbar .nav{display:flex;align-items:center;gap:4px}
+.topbar .nav a{
+  color:var(--ink-2);text-decoration:none;
+  font-size:.86rem;font-weight:500;
+  padding:8px 14px;border-radius:100px;
+  transition:all .2s var(--ease);
+}
+.topbar .nav a:hover{color:var(--ink);background:rgba(139,92,246,.06)}
+.topbar .nav a.active{color:var(--ink);background:var(--lavender-soft)}
+.topbar .actions{display:flex;align-items:center;gap:10px}
+.theme-toggle{
+  width:36px;height:36px;border-radius:10px;
+  background:var(--surface);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;color:var(--ink-2);
+  transition:all .25s var(--ease);position:relative;
+}
+.theme-toggle:hover{color:var(--ink);border-color:var(--border-strong);transform:translateY(-1px)}
+.theme-toggle svg{width:16px;height:16px;position:absolute;transition:all .35s var(--ease)}
+.theme-toggle .ti-sun{opacity:0;transform:rotate(-90deg) scale(.6)}
+.theme-toggle .ti-moon{opacity:1;transform:rotate(0) scale(1)}
+[data-theme="dark"] .theme-toggle .ti-sun{opacity:1;transform:rotate(0) scale(1)}
+[data-theme="dark"] .theme-toggle .ti-moon{opacity:0;transform:rotate(90deg) scale(.6)}
+@media(max-width:1024px){.topbar{padding:14px 20px}.topbar .nav a{padding:6px 9px;font-size:.78rem}}
+@media(max-width:820px){
+  .topbar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px 10px;padding:10px 14px}
+  .topbar .brand{grid-column:1;grid-row:1}
+  .topbar .nav{grid-column:1 / -1;grid-row:2;display:none;gap:2px;min-width:0;width:100%;overflow-x:auto;scrollbar-width:none}
+  .topbar .nav::-webkit-scrollbar{display:none}
+  .topbar .nav a{flex:0 0 auto;white-space:nowrap;padding:6px 9px;font-size:.76rem}
+  .topbar .actions{grid-column:2;grid-row:1}
+}
+
+/* ───── PAGE ───── */
+.page{
+  position:relative;z-index:10;
+  max-width:760px;margin:0 auto;
+  padding:120px 32px 100px;
+  animation:pageIn .6s var(--ease);
+}
+@keyframes pageIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:520px){.page{padding:100px 20px 80px}}
+
+/* ───── HEADER ───── */
+.header{margin-bottom:44px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.68rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--rose);background:var(--rose-soft);
+  padding:7px 14px;border-radius:100px;margin-bottom:22px;
+}
+.eyebrow .dot{
+  width:6px;height:6px;border-radius:50%;background:var(--rose);
+  animation:eyebrowPulse 2s ease-in-out infinite;
+}
+@keyframes eyebrowPulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(239,68,68,.4)}
+  50%{box-shadow:0 0 0 6px rgba(239,68,68,0)}
+}
+h1.title{
+  font-size:clamp(2rem,4.4vw,3rem);
+  font-weight:900;letter-spacing:-.04em;
+  line-height:1.05;margin-bottom:20px;color:var(--ink);
+}
+h1.title em{
+  font-style:normal;
+  background:linear-gradient(120deg,#EF4444 0%,#F59E0B 50%,#8B5CF6 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.lede{
+  font-size:1.08rem;color:var(--ink-2);
+  line-height:1.7;max-width:600px;margin-bottom:16px;
+}
+.lede strong{color:var(--ink);font-weight:600}
+.lede:last-child{margin-bottom:0}
+
+/* ───── SCENARIO BANNER ───── */
+.scenario-banner{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:18px 20px;border-radius:16px;
+  background:var(--lavender-soft);
+  border:1px solid rgba(139,92,246,.22);
+  margin-bottom:32px;
+  animation:pageIn .5s var(--ease);
+}
+.scenario-banner[hidden]{display:none}
+.scenario-banner-icon{
+  width:38px;height:38px;border-radius:11px;
+  background:rgba(139,92,246,.16);color:var(--lavender-2);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.scenario-banner-icon svg{width:19px;height:19px}
+.scenario-banner-text{flex:1;min-width:0;padding-top:2px}
+.scenario-banner-title{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.62rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--lavender-2);
+  margin-bottom:5px;
+}
+.scenario-banner-desc{
+  font-size:.94rem;line-height:1.55;color:var(--ink);
+}
+.scenario-banner-desc strong{font-weight:700}
+.scenario-banner-close{
+  background:none;border:none;color:var(--ink-3);
+  cursor:pointer;padding:6px;border-radius:8px;
+  transition:all .2s var(--ease);flex-shrink:0;
+}
+.scenario-banner-close:hover{background:rgba(139,92,246,.12);color:var(--ink)}
+.scenario-banner-close svg{width:14px;height:14px}
+
+/* ───── TRIAGE ───── */
+.triage-intro{
+  font-size:.94rem;color:var(--ink-2);
+  line-height:1.65;margin-bottom:18px;
+}
+.triage-intro strong{color:var(--ink);font-weight:600}
+.triage-grid{
+  display:flex;flex-direction:column;gap:10px;
+  margin-bottom:40px;
+}
+.triage-card{
+  display:flex;align-items:flex-start;gap:16px;
+  padding:20px 22px;border-radius:16px;
+  background:var(--surface);border:1px solid var(--border);
+  cursor:pointer;text-align:left;font-family:inherit;color:inherit;
+  transition:all .25s var(--ease);
+  animation:stepIn .45s var(--ease) both;
+  width:100%;
+}
+.triage-card:nth-child(1){animation-delay:.05s}
+.triage-card:nth-child(2){animation-delay:.1s}
+.triage-card:nth-child(3){animation-delay:.15s}
+.triage-card:nth-child(4){animation-delay:.2s}
+.triage-card:nth-child(5){animation-delay:.25s}
+@keyframes stepIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.triage-card:hover{
+  border-color:var(--border-strong);
+  transform:translateY(-2px);
+  box-shadow:0 10px 28px rgba(20,20,43,.07);
+}
+.triage-card:active{transform:translateY(0)}
+.triage-card.urgent{border-color:rgba(239,68,68,.22)}
+.triage-card.urgent:hover{border-color:rgba(239,68,68,.5);box-shadow:0 10px 28px rgba(239,68,68,.1)}
+.triage-icon{
+  width:44px;height:44px;border-radius:12px;
+  background:var(--lavender-soft);color:var(--lavender-2);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  transition:all .25s var(--ease);
+}
+.triage-icon svg{width:22px;height:22px}
+.triage-card.urgent .triage-icon{background:var(--rose-soft);color:var(--rose)}
+.triage-text{flex:1;min-width:0;padding-top:1px}
+.triage-label{
+  font-size:1rem;font-weight:700;color:var(--ink);
+  letter-spacing:-.012em;margin-bottom:4px;line-height:1.3;
+}
+.triage-desc{font-size:.88rem;color:var(--ink-3);line-height:1.5}
+.triage-arrow{
+  color:var(--ink-4);flex-shrink:0;align-self:center;
+  transition:all .25s var(--ease);
+}
+.triage-arrow svg{width:16px;height:16px}
+.triage-card:hover .triage-arrow{color:var(--lavender-2);transform:translateX(3px)}
+
+/* ───── CHECKLIST ───── */
+.checklist{margin-bottom:44px}
+.checklist-head{margin-bottom:20px}
+.checklist-head-top{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  gap:14px;margin-bottom:16px;
+}
+.checklist-label{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.66rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-3);margin-bottom:6px;
+}
+.checklist-sub{font-size:.98rem;color:var(--ink-2);line-height:1.45}
+.checklist-sub strong{color:var(--ink);font-weight:700}
+.checklist-change{
+  background:none;border:1px solid var(--border);
+  color:var(--ink-2);font-family:inherit;
+  font-size:.82rem;font-weight:600;
+  padding:7px 14px;border-radius:100px;
+  cursor:pointer;transition:all .2s var(--ease);
+  flex-shrink:0;white-space:nowrap;
+}
+.checklist-change:hover{
+  border-color:var(--lavender-2);color:var(--lavender-2);
+  background:var(--lavender-soft);
+}
+.checklist-progress{
+  display:flex;align-items:center;gap:14px;
+}
+.checklist-bar{
+  flex:1;height:6px;border-radius:100px;
+  background:color-mix(in srgb,var(--ink-3) 15%,transparent);
+  overflow:hidden;
+}
+.checklist-fill{
+  height:100%;border-radius:100px;
+  background:linear-gradient(90deg,var(--lavender-2),var(--mint));
+  transition:width .55s var(--ease);
+  box-shadow:0 0 10px rgba(139,92,246,.35);
+  width:0%;
+}
+.checklist-count{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.7rem;font-weight:700;color:var(--ink-3);
+  letter-spacing:.04em;white-space:nowrap;
+}
+.checklist-steps{display:flex;flex-direction:column;gap:12px}
+
+/* ───── STEP ───── */
+.step{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:16px;overflow:hidden;
+  transition:all .3s var(--ease);
+  animation:stepIn .45s var(--ease) both;
+}
+.step:hover{border-color:var(--border-strong);box-shadow:0 6px 20px rgba(20,20,43,.05)}
+.step.open{
+  border-color:rgba(139,92,246,.35);
+  box-shadow:0 10px 28px rgba(139,92,246,.09);
+}
+.step.done{border-color:rgba(16,185,129,.28)}
+.step.urgent.open{
+  border-color:rgba(239,68,68,.4);
+  box-shadow:0 10px 28px rgba(239,68,68,.1);
+}
+.step-head{
+  display:grid;
+  grid-template-columns:auto 1fr auto auto;
+  gap:16px;align-items:center;
+  padding:18px 22px;
+  cursor:pointer;user-select:none;
+  transition:background .2s var(--ease);
+}
+.step-head:hover{background:var(--surface-2)}
+.step-head:focus{outline:2px solid var(--lavender-2);outline-offset:-2px}
+.step-num{
+  width:40px;height:40px;border-radius:11px;
+  background:var(--lavender-soft);color:var(--lavender-2);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.94rem;font-weight:800;
+  flex-shrink:0;transition:all .3s var(--ease);
+}
+.step.open .step-num{
+  background:linear-gradient(135deg,var(--lavender-2),var(--sky));
+  color:#fff;box-shadow:0 6px 18px rgba(139,92,246,.28);
+}
+.step.urgent .step-num{background:var(--rose-soft);color:var(--rose)}
+.step.urgent.open .step-num{
+  background:linear-gradient(135deg,var(--rose),#F59E0B);
+  color:#fff;box-shadow:0 6px 18px rgba(239,68,68,.28);
+}
+.step.done .step-num{
+  background:linear-gradient(135deg,var(--mint),var(--mint-2));
+  color:#fff;box-shadow:0 6px 18px rgba(16,185,129,.28);
+}
+.step-title{
+  font-size:1rem;font-weight:700;
+  letter-spacing:-.014em;line-height:1.35;color:var(--ink);
+  transition:color .25s var(--ease);
+}
+.step.done .step-title{color:var(--ink-3)}
+.step-check{
+  width:26px;height:26px;border-radius:8px;
+  border:1.75px solid var(--border-strong);
+  background:var(--surface);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;padding:0;flex-shrink:0;
+  transition:all .22s var(--ease);
+}
+.step-check svg{width:14px;height:14px;color:#fff;opacity:0;transition:opacity .2s var(--ease)}
+.step-check:hover{border-color:var(--mint);background:var(--mint-soft)}
+.step.done .step-check{
+  background:var(--mint);border-color:var(--mint);
+  box-shadow:0 4px 12px rgba(16,185,129,.3);
+}
+.step.done .step-check svg{opacity:1}
+.step-chev{
+  width:20px;height:20px;color:var(--ink-3);
+  transition:transform .3s var(--ease),color .25s var(--ease);
+  flex-shrink:0;
+}
+.step.open .step-chev{transform:rotate(180deg);color:var(--lavender-2)}
+.step-panel{
+  max-height:0;overflow:hidden;
+  transition:max-height .5s var(--ease);
+}
+.step.open .step-panel{max-height:1400px}
+.step-body{
+  padding:0 22px 22px 78px;
+  font-size:.95rem;line-height:1.7;color:var(--ink-2);
+}
+.step-body strong{color:var(--ink);font-weight:600}
+.step-body em{font-style:normal;color:var(--lavender-2);font-weight:600}
+.step-body p + p{margin-top:12px}
+.step-body ul{
+  list-style:none;display:flex;flex-direction:column;
+  gap:9px;margin-top:14px;padding-top:14px;
+  border-top:1px solid var(--border);
+}
+.step-body ul li{
+  padding-left:24px;position:relative;
+  font-size:.9rem;line-height:1.6;
+}
+.step-body ul li::before{
+  content:'✓';position:absolute;left:0;top:0;
+  color:var(--mint);font-weight:700;font-size:.92rem;
+}
+.step-meta{
+  display:flex;align-items:center;gap:8px;
+  margin-top:18px;padding-top:14px;
+  border-top:1px solid var(--border);
+  font-family:'JetBrains Mono',monospace;
+  font-size:.68rem;font-weight:600;
+  letter-spacing:.06em;color:var(--ink-3);
+  text-transform:uppercase;
+}
+.step-meta svg{width:12px;height:12px}
+.step-body .crosslink{
+  display:flex;align-items:center;gap:12px;
+  padding:12px 14px;border-radius:11px;
+  background:var(--surface-2);
+  border:1px solid var(--border);
+  text-decoration:none;color:inherit;
+  margin-top:16px;
+  transition:all .22s var(--ease);
+}
+.step-body .crosslink:hover{
+  border-color:var(--lavender-2);
+  background:var(--lavender-soft);
+  transform:translateX(2px);
+}
+.step-body .crosslink-icon{
+  width:32px;height:32px;border-radius:9px;
+  background:var(--lavender-soft);color:var(--lavender-2);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.step-body .crosslink-icon svg{width:15px;height:15px}
+.step-body .crosslink-text{flex:1;min-width:0}
+.step-body .crosslink-label{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.58rem;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-3);
+  margin-bottom:2px;
+}
+.step-body .crosslink-title{
+  font-size:.86rem;font-weight:700;
+  color:var(--ink);letter-spacing:-.008em;
+  line-height:1.3;
+}
+.step-body .crosslink-arrow{
+  color:var(--ink-4);flex-shrink:0;
+  transition:all .22s var(--ease);
+}
+.step-body .crosslink-arrow svg{width:13px;height:13px}
+.step-body .crosslink:hover .crosslink-arrow{
+  color:var(--lavender-2);
+  transform:translateX(2px);
+}
+@media(max-width:640px){
+  .step-head{padding:16px 18px;gap:12px}
+  .step-num{width:36px;height:36px;font-size:.86rem;border-radius:10px}
+  .step-title{font-size:.94rem}
+  .step-check{width:24px;height:24px}
+  .step-body{padding:0 18px 20px 18px;font-size:.92rem}
+}
+
+/* ───── COMPLETE BANNER ───── */
+.checklist-complete{
+  margin-top:20px;padding:24px 26px;
+  border-radius:18px;
+  background:linear-gradient(135deg,rgba(16,185,129,.08),rgba(52,211,153,.05));
+  border:1px solid rgba(16,185,129,.3);
+  display:flex;align-items:flex-start;gap:16px;
+  animation:stepIn .5s var(--ease);
+}
+.checklist-complete[hidden]{display:none}
+.cc-icon{
+  width:44px;height:44px;border-radius:13px;
+  background:linear-gradient(135deg,var(--mint),var(--mint-2));
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;box-shadow:0 8px 22px rgba(16,185,129,.3);
+}
+.cc-icon svg{width:22px;height:22px}
+.cc-text{flex:1;min-width:0}
+.cc-title{
+  font-size:1.08rem;font-weight:800;
+  letter-spacing:-.02em;color:var(--ink);
+  margin-bottom:6px;
+}
+.cc-sub{
+  font-size:.9rem;color:var(--ink-2);
+  line-height:1.6;margin-bottom:16px;
+}
+.cc-actions{display:flex;gap:10px;flex-wrap:wrap}
+
+/* ───── BUTTONS ───── */
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:13px 22px;border-radius:100px;
+  font-family:inherit;font-size:.92rem;font-weight:600;
+  border:none;cursor:pointer;text-decoration:none;
+  transition:all .25s var(--ease);justify-content:center;
+}
+.btn svg{width:15px;height:15px;transition:transform .3s var(--ease)}
+.btn-primary{
+  background:var(--lime);color:var(--ink);
+  box-shadow:0 6px 20px var(--lime-glow);font-weight:700;
+}
+.btn-primary:hover{
+  background:var(--lime-hover);transform:translateY(-2px);
+  box-shadow:0 12px 30px var(--lime-glow);
+}
+.btn-primary:hover svg{transform:translateX(4px)}
+[data-theme="dark"] .btn-primary{
+  background:#87965F;color:#121217;
+  box-shadow:0 4px 12px rgba(135,150,95,.16);
+}
+[data-theme="dark"] .btn-primary:hover{
+  background:#96A66B;
+  box-shadow:0 8px 18px rgba(135,150,95,.2);
+}
+.btn-secondary{
+  background:var(--surface);color:var(--ink);
+  border:1px solid var(--border);
+}
+.btn-secondary:hover{
+  border-color:var(--border-strong);transform:translateY(-2px);
+}
+
+/* ───── CONTACTS ───── */
+.contact{
+  padding:28px 28px 24px;border-radius:20px;
+  background:linear-gradient(135deg,rgba(139,92,246,.06) 0%,rgba(96,165,250,.04) 100%);
+  border:1px solid rgba(139,92,246,.18);margin-bottom:36px;
+}
+.contact-label{
+  font-size:.7rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--lavender-2);margin-bottom:16px;
+}
+.contact-list{display:flex;flex-direction:column;gap:10px}
+.contact-item{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:16px 18px;border-radius:14px;
+  background:var(--surface);border:1px solid var(--border);
+  text-decoration:none;color:inherit;
+  transition:all .25s var(--ease);
+}
+a.contact-item:hover{
+  border-color:var(--border-strong);transform:translateX(3px);
+  box-shadow:0 8px 22px rgba(20,20,43,.06);
+}
+.contact-item.static{cursor:default}
+.contact-icon{
+  width:40px;height:40px;border-radius:12px;
+  background:var(--lavender-soft);color:var(--lavender-2);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.contact-icon svg{width:20px;height:20px}
+.contact-item.urgent .contact-icon{background:var(--rose-soft);color:var(--rose)}
+.contact-text{flex:1;min-width:0;padding-top:1px}
+.contact-title{
+  font-size:.95rem;font-weight:700;color:var(--ink);
+  margin-bottom:4px;letter-spacing:-.005em;line-height:1.3;
+}
+.contact-desc{font-size:.84rem;line-height:1.55;color:var(--ink-3)}
+.contact-arrow{
+  color:var(--ink-3);flex-shrink:0;
+  transition:all .25s var(--ease);align-self:center;
+}
+.contact-arrow svg{width:15px;height:15px}
+a.contact-item:hover .contact-arrow{color:var(--lavender-2);transform:translateX(3px)}
+
+/* ───── CLOSING ───── */
+.closing{
+  text-align:center;padding:32px 28px;border-radius:20px;
+  background:var(--surface);border:1px solid var(--border);
+  margin-bottom:36px;
+}
+.closing-text{
+  font-size:1.05rem;line-height:1.7;color:var(--ink);
+  font-weight:500;max-width:540px;margin:0 auto;
+  letter-spacing:-.005em;
+}
+.closing-text strong{color:var(--lavender-2);font-weight:700}
+
+/* ───── FOOTER ───── */
+.footer{
+  margin-top:56px;padding-top:28px;
+  border-top:1px solid var(--border);
+  text-align:center;font-size:.82rem;
+  color:var(--ink-3);line-height:1.7;
+}
+.footer-links{
+  display:flex;justify-content:center;gap:18px;
+  flex-wrap:wrap;margin-bottom:14px;
+}
+.footer a{color:var(--ink-3);text-decoration:none;transition:color .2s var(--ease)}
+.footer a:hover{color:var(--ink)}
+.footer-meta{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.7rem;letter-spacing:.02em;color:var(--ink-4);
+}
+.footer-reset{
+  background:none;border:none;font-family:inherit;
+  font-size:.82rem;color:var(--ink-3);cursor:pointer;
+  padding:4px 8px;border-radius:6px;
+  transition:all .2s var(--ease);
+}
+.footer-reset:hover{color:var(--rose);background:var(--rose-soft)}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+  }
+  .triage-card,.step{animation:none;opacity:1;transform:none}
+  .eyebrow .dot{animation:none}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<div class="bg-scene"></div>
+<div class="grid-overlay"></div>
+
+<div class="topbar" id="topbar">
+  <a href="landing.html" class="brand">
+    <div class="brand-mark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2 L20 6 V12 C20 17 16 21 12 22 C8 21 4 17 4 12 V6 Z"/>
+      </svg>
+    </div>
+    CyberWise
+  </a>
+    <nav class="nav" id="navMenu">
+    <a href="landing.html">Home</a>
+    <a href="guide.html">Guide</a>
+    <a href="hub.html">Hub</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="screen6.html">Practise</a>
+    <a href="daily.html">Daily</a>
+    <a href="data_breach.html">Breach Lab</a>
+    <a href="recovery.html">Recover</a>
+  </nav>
+  <div class="actions">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <svg class="ti-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4"/>
+        <line x1="12" y1="2" x2="12" y2="4"/>
+        <line x1="12" y1="20" x2="12" y2="22"/>
+        <line x1="4.93" y1="4.93" x2="6.34" y2="6.34"/>
+        <line x1="17.66" y1="17.66" x2="19.07" y2="19.07"/>
+        <line x1="2" y1="12" x2="4" y2="12"/>
+        <line x1="20" y1="12" x2="22" y2="12"/>
+        <line x1="4.93" y1="19.07" x2="6.34" y2="17.66"/>
+        <line x1="17.66" y1="6.34" x2="19.07" y2="4.93"/>
+      </svg>
+      <svg class="ti-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<main class="page">
+  <div id="app"></div>
+</main>
+
+<script>
+(() => {
+  'use strict';
+
+  // ═══════════════ ICONS ═══════════════
+  const ICONS = {
+    link:'<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>',
+    key:'<circle cx="9" cy="15" r="5"/><path d="m12.5 11.5 2 2"/><path d="M14.5 9.5 19 5l1.5 1.5L16 11"/><path d="M15.5 4.5l2 2"/>',
+    file:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>',
+    alert:'<path d="M12 2 22 20H2Z"/><line x1="12" y1="9" x2="12" y2="14"/><line x1="12" y1="17" x2="12" y2="17.1"/>',
+    question:'<circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2.5-3 4"/><line x1="12" y1="17" x2="12" y2="17.1"/>',
+    check:'<path d="m5 12.5 4.5 4.5L19 7"/>',
+    chev:'<polyline points="6 9 12 15 18 9"/>',
+    clock:'<circle cx="12" cy="12" r="9"/><path d="M12 6.5V12l3.5 2.2"/>',
+    shield:'<path d="M12 2 20 6v6c0 5-3.6 8.2-8 9.4C7.6 20.2 4 17 4 12V6Z"/>',
+    shieldAlert:'<path d="M12 3 20 6v6c0 5-3.6 8.2-8 9.4C7.6 20.2 4 17 4 12V6Z"/><line x1="12" y1="9" x2="12" y2="13.5"/><line x1="12" y1="16.5" x2="12" y2="16.6"/>',
+    card:'<rect x="2" y="6" width="20" height="13" rx="2"/><line x1="2" y1="11" x2="22" y2="11"/>',
+    mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7.5 8.5 6 8.5-6"/>',
+    arrow:'<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>',
+    x:'<line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/>',
+    bolt:'<path d="M13 2 4 14h6l-1 8 9-12h-6z"/>',
+    book:'<path d="M4 4h7a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H4Z"/><path d="M20 4h-3a4 4 0 0 0-4 4v12a2.5 2.5 0 0 1 2.5-2.5H20Z"/>',
+    scan:'<path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><line x1="3" y1="12" x2="21" y2="12"/>',
+    refresh:'<path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 4 21 10 15 10"/>',
+    logout:'<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>',
+    shieldCheck:'<path d="M12 3 20 6v6c0 5-3.6 8.2-8 9.4C7.6 20.2 4 17 4 12V6Z"/><polyline points="9 12 11 14 15 10"/>',
+    users:'<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'
+  };
+  function ic(name, w){
+    return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="' + (w || 2.2) +
+      '" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (ICONS[name] || '') + '</svg>';
+  }
+
+  // ═══════════════ STEP DEFINITIONS ═══════════════
+  const STEPS = {
+    bank: {
+      title: 'Call your bank. Freeze the card.',
+      time: '5 min',
+      urgent: true,
+      guideSection: '9',
+      body: '<p>Call the fraud line printed on the back of your card. <strong>Not a number from the message, not a number from a website, not a number from an email.</strong> The number on your card is the only one you can trust.</p>' +
+            '<p>Tell them: a payment or card detail was shared with a scammer. Ask them to freeze the card and reverse any pending transaction. Most banks can act within minutes if you call fast.</p>' +
+            '<p><strong>Do not use the number the message gave you.</strong> That number belongs to the attacker. Anyone who answers will sound helpful.</p>'
+    },
+    stop: {
+      title: "Stop. Don't click anything else.",
+      time: '30 sec',
+      guideSection: '3',
+      body: "<p>Don't enter more information. Don't reply to the message. Don't try to \u201ccheck\u201d whether the site was real by clicking around on it. Every additional interaction confirms to the attacker that someone on the other end is awake and responding.</p>" +
+            '<p><strong>If the page is still open, close it \u2014 from the browser tab, not from a button inside the page.</strong> Some fake pages add their own \u201cclose\u201d button that does something else.</p>'
+    },
+    scan: {
+      title: 'Disconnect the device. Run a full scan.',
+      time: '20 min',
+      guideSection: '3',
+      body: '<p>Disconnect the device from WiFi and mobile data first. A file that is still running can keep sending data out while you read this page.</p>' +
+            '<p>Then run a full scan with whatever antivirus you have \u2014 Windows Defender, Malwarebytes, or your system\'s built-in tool. If it finds something, quarantine it. If it finds nothing, don\'t assume you\'re clean: some malware hides. Change your passwords from a different device anyway.</p>' +
+            '<ul>' +
+              '<li>Disconnect from WiFi and mobile data</li>' +
+              '<li>Run a full antivirus scan</li>' +
+              "<li>Don't open the file again</li>" +
+              '<li>Delete the file after the scan</li>' +
+            '</ul>'
+    },
+    password: {
+      title: 'Change your password \u2014 from another device.',
+      time: '10 min',
+      guideSection: '3',
+      body: '<p>Use your phone, a friend\'s laptop, or a library computer. <strong>Not the device you were just using.</strong> If the device is compromised, changing the password there just hands the new password to the attacker too.</p>' +
+            '<ul>' +
+              "<li>Start with your email \u2014 it's the recovery key for everything else</li>" +
+              '<li>Then banking</li>' +
+              '<li>Then whatever account the phishing message pretended to be from</li>' +
+            '</ul>'
+    },
+    reuse: {
+      title: 'If you reused that password, change it everywhere.',
+      time: '20 min',
+      guideSection: '3',
+      body: '<p>Attackers test stolen credentials across services automatically. This is called <em>credential stuffing</em>. If you use the same password on Gmail and Instagram, one breach becomes two. Then three. Then every account you signed into with that password.</p>' +
+            '<p><strong>This is the moment to break the reuse habit.</strong> Whatever account shares the exposed password, change it now. Every single one.</p>' +
+            '<ul>' +
+              '<li>Open a password manager \u2014 Bitwarden is free and reputable</li>' +
+              '<li>Let it generate a unique password for every account</li>' +
+              '<li>You only need to remember one master passphrase</li>' +
+            '</ul>'
+    },
+    sessions: {
+      title: 'Sign out of all active sessions.',
+      time: '5 min',
+      guideSection: '9',
+      body: "<p>Changing the password doesn't always kick out sessions that were already logged in. Google, Microsoft, Instagram, and most major services let you see every device currently signed in and revoke them all at once.</p>" +
+            "<p><strong>Sign out of all of them. Even the ones you think are yours.</strong> Especially the ones that look recent or unfamiliar. If you've never seen the device before \u2014 that's the attacker.</p>" +
+            '<ul>' +
+              '<li>Google: myaccount.google.com \u2192 Security \u2192 Your devices</li>' +
+              '<li>Microsoft: account.microsoft.com \u2192 Security \u2192 Sign-in activity</li>' +
+              '<li>Instagram: Settings \u2192 Security \u2192 Login activity</li>' +
+              '<li>WhatsApp: Settings \u2192 Linked devices \u2192 log out all</li>' +
+            '</ul>'
+    },
+    forwarding: {
+      title: 'Check email forwarding and recovery settings.',
+      time: '5 min',
+      guideSection: '9',
+      body: '<p>Attackers often set up email forwarding so they keep receiving your mail after you change your password. They also sometimes change your recovery email or phone number, which lets them reset your password again later.</p>' +
+            '<p>Open your email settings and check:</p>' +
+            '<ul>' +
+              "<li><strong>Forwarding rules</strong> \u2014 delete anything you didn't create</li>" +
+              "<li><strong>Recovery email and phone</strong> \u2014 make sure they're yours</li>" +
+              '<li><strong>Connected apps and devices</strong> \u2014 revoke anything unfamiliar</li>' +
+              '<li><strong>Filters</strong> \u2014 attackers sometimes hide their own alert emails with a filter</li>' +
+            '</ul>' +
+            '<p>Do this for your main email, and for any other email account that shares the compromised password.</p>'
+    },
+    twofa: {
+      title: 'Turn on two-factor authentication \u2014 now.',
+      time: '10 min',
+      guideSection: '3',
+      body: '<p>Not tomorrow. Not next week. Now. <strong>You know the account is targeted. 2FA is the difference between one breach and many.</strong></p>' +
+            '<p>Use an authenticator app \u2014 Google Authenticator, Authy, or Microsoft Authenticator. SMS codes are better than nothing, but not by much: SIM-swap fraud can intercept them.</p>' +
+            '<ul>' +
+              "<li>Turn it on for email first \u2014 that's the account attackers want most</li>" +
+              '<li>Then banking</li>' +
+              '<li>Then anything connected to those two</li>' +
+              '<li>Save the backup codes somewhere you can find them offline</li>' +
+            '</ul>'
+    },
+    tell: {
+      title: 'Tell someone.',
+      time: '5 min',
+      guideSection: '9',
+      body: "<p>Your university IT team. Your bank, if money or card details were involved. A friend or family member, if you need help walking through the steps above.</p>" +
+            "<p><strong>Hiding it because you're embarrassed gives the attacker more time.</strong> Every hour without reporting is an hour they have to move further into your accounts and anyone connected to you. Reporting early limits the damage \u2014 that's the whole reason IT teams exist.</p>" +
+            '<p>See the contact list below for the right people to reach.</p>'
+    }
+  };
+
+  // ═══════════════ TRIAGE DEFINITIONS ═══════════════
+  const TRIAGE = {
+    money: {
+      label: 'I sent money or shared an OTP',
+      desc: 'Bank transfer, card details, or a verification code.',
+      icon: 'alert',
+      urgent: true,
+      steps: ['bank', 'stop', 'password', 'sessions', 'forwarding', 'twofa', 'tell'],
+      contacts: ['bank', 'sabric', 'saps']
+    },
+    password: {
+      label: 'I entered my password',
+      desc: 'I typed my login details on the page.',
+      icon: 'key',
+      steps: ['stop', 'password', 'reuse', 'sessions', 'forwarding', 'twofa', 'tell'],
+      contacts: ['it', 'saps']
+    },
+    file: {
+      label: 'I downloaded or opened a file',
+      desc: 'An attachment, installer, or document.',
+      icon: 'file',
+      steps: ['stop', 'scan', 'password', 'reuse', 'sessions', 'forwarding', 'twofa', 'tell'],
+      contacts: ['it', 'saps']
+    },
+    link: {
+      label: 'I only clicked the link',
+      desc: "The page loaded, but I didn't enter anything.",
+      icon: 'link',
+      steps: ['stop', 'scan', 'twofa', 'tell'],
+      contacts: ['saps']
+    },
+    unsure: {
+      label: "I'm not sure",
+      desc: "I don't know what happened.",
+      icon: 'question',
+      steps: ['stop', 'password', 'reuse', 'sessions', 'forwarding', 'twofa', 'tell'],
+      contacts: ['it', 'saps']
+    }
+  };
+
+  const TRIAGE_ORDER = ['money', 'password', 'file', 'link', 'unsure'];
+
+  // ═══════════════ CONTACTS ═══════════════
+  const CONTACTS = {
+    bank: {
+      title: "Your bank's fraud line",
+      desc: 'The number printed on the back of your card. Never one from a message.',
+      icon: 'card',
+      href: null,
+      urgent: true
+    },
+    sabric: {
+      title: 'SABRIC — banking fraud',
+      desc: 'If money, card details, or bank accounts were involved.',
+      icon: 'card',
+      href: 'https://www.sabric.co.za/report-a-cybercrime.html'
+    },
+    saps: {
+      title: 'SAPS Cybercrime',
+      desc: 'South African Police Service cybercrime reporting portal.',
+      icon: 'shield',
+      href: 'https://www.saps.gov.za/services/report_cybercrime.php'
+    },
+    it: {
+      title: 'Your university IT team',
+      desc: 'If your student account or university email was involved.',
+      icon: 'mail',
+      href: 'mailto:nyanganiashton@gmail.com'
+    }
+  };
+
+  // ═══════════════ SCENARIO LABELS ═══════════════
+  const SCENARIO_NAMES = {
+    'sars-refund': 'the SARS refund scam',
+    'vodacom-airtime': 'the fake Vodacom airtime reward',
+    'lab-usb': 'the USB drive left in the lab',
+    'lab-qr-code': 'the QR code on the notice board',
+    'ubereats-refund': 'the fake Uber Eats refund',
+    'microsoft-verify': 'the fake Microsoft security alert',
+    'standard-bank-blocked': 'the fake Standard Bank lock',
+    'sextortion': 'a sextortion email',
+    'crypto-dm': 'a crypto investment DM',
+    'parcel-customs': 'the fake customs fee',
+    'capitec-careers': 'the fake Capitec careers email',
+    'fnb-whatsapp': 'the fake FNB WhatsApp',
+    'friend-macbook': 'a compromised friend account',
+    'uj-registration': 'the fake UJ registration notice',
+    'marketplace-buyer': 'a fake marketplace buyer',
+    'lecturer-marks': 'the fake lecturer email',
+    'ict-migration': 'the fake ICT migration notice',
+    'otp-relay': 'the OTP interception call',
+    'docs-share': 'the fake Google Docs share',
+    'recruiter-linkedin': 'the fake recruiter email',
+    'supplier-invoice': 'an invoice redirection'
+  };
+
+  // ═══════════════ GUIDE TITLES ═══════════════
+  const GUIDE_TITLES = {
+    '3': 'Essential protection practices',
+    '4': 'Cybersecurity for students',
+    '9': 'If something goes wrong'
+  };
+
+  // ═══════════════ STATE ═══════════════
+  const STORE_KEY = 'cyberwise.recovery.v1';
+  let state = loadState();
+
+  function loadState(){
+    let raw = null;
+    try { raw = JSON.parse(localStorage.getItem(STORE_KEY) || 'null'); } catch (e) { raw = null; }
+    const s = Object.assign({
+      triage: null,
+      done: {},
+      open: null,
+      scenario: null,
+      startedAt: null
+    }, raw && typeof raw === 'object' ? raw : {});
+    if (!s.done || typeof s.done !== 'object') s.done = {};
+    if (s.triage && !TRIAGE[s.triage]) s.triage = null;
+    return s;
+  }
+
+  function save(){
+    try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch (e) {}
+  }
+
+  // ═══════════════ URL PARAM ═══════════════
+  (function readUrl(){
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const sc = params.get('scenario');
+      if (sc && SCENARIO_NAMES[sc]){
+        state.scenario = sc;
+        save();
+        const clean = window.location.pathname + window.location.hash;
+        window.history.replaceState({}, '', clean);
+      }
+    } catch (e) {}
+  })();
+
+  // ═══════════════ HELPERS ═══════════════
+  function getTriage(){
+    return state.triage ? TRIAGE[state.triage] : null;
+  }
+  function getStepIds(){
+    const t = getTriage();
+    return t ? t.steps.slice() : [];
+  }
+  function getDoneCount(){
+    return getStepIds().filter(id => state.done[id]).length;
+  }
+  function getTotalCount(){
+    return getStepIds().length;
+  }
+  function allDone(){
+    const total = getTotalCount();
+    return total > 0 && getDoneCount() === total;
+  }
+
+  // ═══════════════ RENDER — HEADER ═══════════════
+  function headerHTML(){
+    return '' +
+    '<header class="header">' +
+      '<div class="eyebrow"><span class="dot"></span>Recovery \u00b7 Do this now</div>' +
+      '<h1 class="title">I clicked something. <em>What now?</em></h1>' +
+      '<p class="lede">You clicked a link. You entered a password. You downloaded a file. Maybe all three. <strong>Whatever it was \u2014 you\'re not the first person this has happened to, and you won\'t be the last.</strong></p>' +
+      '<p class="lede">The first ten minutes matter. Not the first ten hours, not the next day. Pick what happened below and we\'ll walk you through it in order.</p>' +
+    '</header>';
+  }
+
+  // ═══════════════ RENDER — SCENARIO BANNER ═══════════════
+  function scenarioBannerHTML(){
+    if (!state.scenario) return '';
+    const name = SCENARIO_NAMES[state.scenario] || 'a phishing message';
+    return '' +
+    '<div class="scenario-banner" id="scenarioBanner">' +
+      '<div class="scenario-banner-icon">' + ic('bolt', 2.2) + '</div>' +
+      '<div class="scenario-banner-text">' +
+        '<div class="scenario-banner-title">You just got caught by</div>' +
+        '<div class="scenario-banner-desc">' + name.charAt(0).toUpperCase() + name.slice(1) + '. Here\'s what to do next.</div>' +
+      '</div>' +
+      '<button type="button" class="scenario-banner-close" data-action="dismiss-scenario" aria-label="Dismiss">' + ic('x', 2.4) + '</button>' +
+    '</div>';
+  }
+
+  // ═══════════════ RENDER — TRIAGE ═══════════════
+  function triageHTML(){
+    const cards = TRIAGE_ORDER.map(function(id){
+      const t = TRIAGE[id];
+      return '' +
+      '<button type="button" class="triage-card' + (t.urgent ? ' urgent' : '') + '" data-triage="' + id + '">' +
+        '<div class="triage-icon">' + ic(t.icon, 2.2) + '</div>' +
+        '<div class="triage-text">' +
+          '<div class="triage-label">' + t.label + '</div>' +
+          '<div class="triage-desc">' + t.desc + '</div>' +
+        '</div>' +
+        '<span class="triage-arrow">' + ic('arrow', 2.4) + '</span>' +
+      '</button>';
+    }).join('');
+
+    return '' +
+    '<section class="triage">' +
+      '<p class="triage-intro">If you <strong>sent money or shared an OTP</strong>, call your bank before anything else on this page. Otherwise, start with the closest match below.</p>' +
+      '<div class="triage-grid">' + cards + '</div>' +
+    '</section>';
+  }
+
+  // ═══════════════ RENDER — STEP ═══════════════
+  function stepHTML(id, index){
+    const s = STEPS[id];
+    if (!s) return '';
+    const done = !!state.done[id];
+    const open = state.open === id;
+    const num = String(index + 1).padStart(2, '0');
+
+    // Cross-link to guide
+    let crosslinkHTML = '';
+    if (s.guideSection){
+      crosslinkHTML =
+        '<a class="crosslink" href="guide.html#sec-' + s.guideSection + '">' +
+          '<div class="crosslink-icon">' + ic('book', 2.2) + '</div>' +
+          '<div class="crosslink-text">' +
+            '<div class="crosslink-label">Read more · Section ' + s.guideSection + '</div>' +
+            '<div class="crosslink-title">' + (GUIDE_TITLES[s.guideSection] || '') + '</div>' +
+          '</div>' +
+          '<span class="crosslink-arrow">' + ic('arrow', 2.4) + '</span>' +
+        '</a>';
+    }
+
+    return '' +
+    '<div class="step' + (open ? ' open' : '') + (done ? ' done' : '') + (s.urgent ? ' urgent' : '') + '" data-step="' + id + '">' +
+      '<div class="step-head" data-toggle="' + id + '" role="button" tabindex="0" aria-expanded="' + (open ? 'true' : 'false') + '">' +
+        '<div class="step-num">' + num + '</div>' +
+        '<div class="step-title">' + s.title + '</div>' +
+        '<button type="button" class="step-check" data-check="' + id + '" aria-label="Mark step complete" aria-pressed="' + (done ? 'true' : 'false') + '">' + ic('check', 3) + '</button>' +
+        '<svg class="step-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">' + ICONS.chev + '</svg>' +
+      '</div>' +
+      '<div class="step-panel">' +
+        '<div class="step-body">' +
+          s.body +
+          crosslinkHTML +
+          '<div class="step-meta">' + ic('clock', 2) + '<span>' + s.time + '</span></div>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+  }
+
+  // ═══════════════ RENDER — CHECKLIST ═══════════════
+  function checklistHTML(){
+    const t = getTriage();
+    if (!t) return '';
+
+    const ids = t.steps;
+    const total = ids.length;
+    const done = getDoneCount();
+    const pct = total ? Math.round(done / total * 100) : 0;
+    const complete = done === total;
+
+    const stepsHTML = ids.map(function(id, i){ return stepHTML(id, i); }).join('');
+
+    return '' +
+    '<section class="checklist">' +
+      '<div class="checklist-head">' +
+        '<div class="checklist-head-top">' +
+          '<div>' +
+            '<div class="checklist-label">Your recovery plan</div>' +
+            '<div class="checklist-sub">Based on: <strong>' + t.label + '</strong></div>' +
+          '</div>' +
+          '<button type="button" class="checklist-change" data-action="change">Change</button>' +
+        '</div>' +
+        '<div class="checklist-progress">' +
+          '<div class="checklist-bar"><div class="checklist-fill" id="checklistFill" style="width:' + pct + '%"></div></div>' +
+          '<div class="checklist-count" id="checklistCount">' + done + ' of ' + total + '</div>' +
+        '</div>' +
+      '</div>' +
+
+      '<div class="checklist-steps" id="checklistSteps">' + stepsHTML + '</div>' +
+
+      '<div class="checklist-complete" id="checklistComplete"' + (complete ? '' : ' hidden') + '>' +
+        '<div class="cc-icon">' + ic('check', 3) + '</div>' +
+        '<div class="cc-text">' +
+          '<div class="cc-title">All steps done.</div>' +
+          '<div class="cc-sub">You\'ve handled the first ten minutes. Keep an eye on your accounts over the next few weeks \u2014 if anything unfamiliar shows up, go straight back to step 2.</div>' +
+          '<div class="cc-actions">' +
+            '<a class="btn btn-primary" href="screen6.html">Practise in Spot the Phish ' + ic('arrow', 2) + '</a>' +
+            '<a class="btn btn-secondary" href="guide.html">Read the guide</a>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+    '</section>';
+  }
+
+  // ═══════════════ RENDER — CONTACTS ═══════════════
+  function contactsHTML(){
+    const t = getTriage();
+    if (!t) return '';
+    const ids = t.contacts || [];
+    if (!ids.length) return '';
+
+    const items = ids.map(function(id){
+      const c = CONTACTS[id];
+      if (!c) return '';
+      const inner =
+        '<div class="contact-icon">' + ic(c.icon, 2.2) + '</div>' +
+        '<div class="contact-text">' +
+          '<div class="contact-title">' + c.title + '</div>' +
+          '<div class="contact-desc">' + c.desc + '</div>' +
+        '</div>' +
+        (c.href ? '<span class="contact-arrow">' + ic('arrow', 2.4) + '</span>' : '');
+
+      if (c.href) {
+        return '<a class="contact-item' + (c.urgent ? ' urgent' : '') + '" href="' + c.href + '"' +
+          (c.href.charAt(0) === 'h' ? ' target="_blank" rel="noopener"' : '') + '>' + inner + '</a>';
+      }
+      return '<div class="contact-item static' + (c.urgent ? ' urgent' : '') + '">' + inner + '</div>';
+    }).join('');
+
+    return '' +
+    '<section class="contact">' +
+      '<div class="contact-label">Who to contact</div>' +
+      '<div class="contact-list">' + items + '</div>' +
+    '</section>';
+  }
+
+  // ═══════════════ RENDER — CLOSING + FOOTER ═══════════════
+  function closingHTML(){
+    return '' +
+    '<div class="closing">' +
+      '<div class="closing-text">You are not the first person this has happened to. You will not be the last. <strong>The only wrong response is silence.</strong></div>' +
+    '</div>';
+  }
+
+  function footerHTML(){
+    return '' +
+    '<footer class="footer">' +
+      '<div class="footer-links">' +
+        '<a href="landing.html">Home</a>' +
+        '<a href="guide.html">Guide</a>' +
+        '<a href="screen6.html">Practise</a>' +
+        '<a href="daily.html">Daily</a>' +
+        '<a href="data_breach.html">Breach Lab</a>' +
+      '</div>' +
+      '<div class="footer-meta">CyberWise · Recovery · No accounts · No tracking</div>' +
+      (state.triage || Object.keys(state.done).length
+        ? '<div style="margin-top:10px"><button type="button" class="footer-reset" data-action="reset">Reset recovery progress</button></div>'
+        : '') +
+    '</footer>';
+  }
+
+  // ═══════════════ MAIN RENDER ═══════════════
+  function render(){
+    const app = document.getElementById('app');
+    let body = headerHTML();
+    body += scenarioBannerHTML();
+    body += state.triage ? checklistHTML() : triageHTML();
+    body += contactsHTML();
+    body += closingHTML();
+    body += footerHTML();
+    app.innerHTML = body;
+  }
+
+  // ═══════════════ ACTIONS ═══════════════
+  function selectTriage(id){
+    if (!TRIAGE[id]) return;
+    state.triage = id;
+    state.startedAt = state.startedAt || Date.now();
+    const first = TRIAGE[id].steps[0];
+    state.open = first;
+    save();
+    render();
+    const el = document.querySelector('.checklist');
+    if (el){
+      const top = el.getBoundingClientRect().top + window.scrollY - 90;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    }
+  }
+
+  function toggleCheck(id){
+    if (!STEPS[id]) return;
+    state.done[id] = !state.done[id];
+    if (!state.done[id]) delete state.done[id];
+    save();
+
+    const el = document.querySelector('[data-step="' + id + '"]');
+    if (el){
+      el.classList.toggle('done', !!state.done[id]);
+      const btn = el.querySelector('[data-check]');
+      if (btn) btn.setAttribute('aria-pressed', state.done[id] ? 'true' : 'false');
+    }
+    updateProgress();
+  }
+
+  function toggleOpen(id){
+    if (!STEPS[id]) return;
+    state.open = state.open === id ? null : id;
+    save();
+
+    document.querySelectorAll('.step').forEach(function(el){
+      const isOpen = el.getAttribute('data-step') === state.open;
+      el.classList.toggle('open', isOpen);
+      const head = el.querySelector('[data-toggle]');
+      if (head) head.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
+
+  function updateProgress(){
+    const total = getTotalCount();
+    const done = getDoneCount();
+    const pct = total ? Math.round(done / total * 100) : 0;
+
+    const fill = document.getElementById('checklistFill');
+    const count = document.getElementById('checklistCount');
+    const complete = document.getElementById('checklistComplete');
+
+    if (fill) fill.style.width = pct + '%';
+    if (count) count.textContent = done + ' of ' + total;
+    if (complete) {
+      if (done === total && total > 0) complete.removeAttribute('hidden');
+      else complete.setAttribute('hidden', '');
+    }
+  }
+
+  function changeTriage(){
+    state.triage = null;
+    state.open = null;
+    save();
+    render();
+    const el = document.querySelector('.triage');
+    if (el){
+      const top = el.getBoundingClientRect().top + window.scrollY - 90;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    }
+  }
+
+  function dismissScenario(){
+    state.scenario = null;
+    save();
+    const el = document.getElementById('scenarioBanner');
+    if (el){
+      el.style.transition = 'opacity .3s, transform .3s';
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(-6px)';
+      setTimeout(function(){ el.remove(); }, 300);
+    }
+  }
+
+  function resetAll(){
+    if (!window.confirm('Reset recovery progress? Your checklist and triage selection will be cleared.')) return;
+    state = {
+      triage: null,
+      done: {},
+      open: null,
+      scenario: null,
+      startedAt: null
+    };
+    save();
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // ═══════════════ EVENT DELEGATION ═══════════════
+  document.addEventListener('click', function(e){
+    const check = e.target.closest('[data-check]');
+    if (check) {
+      e.stopPropagation();
+      toggleCheck(check.getAttribute('data-check'));
+      return;
+    }
+
+    const toggle = e.target.closest('[data-toggle]');
+    if (toggle) {
+      toggleOpen(toggle.getAttribute('data-toggle'));
+      return;
+    }
+
+    const triage = e.target.closest('[data-triage]');
+    if (triage) {
+      selectTriage(triage.getAttribute('data-triage'));
+      return;
+    }
+
+    const action = e.target.closest('[data-action]');
+    if (action) {
+      const a = action.getAttribute('data-action');
+      if (a === 'change')           { changeTriage();   return; }
+      if (a === 'reset')            { resetAll();       return; }
+      if (a === 'dismiss-scenario') { dismissScenario(); return; }
+    }
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    const toggle = e.target.closest('[data-toggle]');
+    if (toggle && e.target === toggle) {
+      e.preventDefault();
+      toggleOpen(toggle.getAttribute('data-toggle'));
+    }
+  });
+
+  // ═══════════════ THEME TOGGLE ═══════════════
+  (function theme(){
+    const btn = document.getElementById('themeToggle');
+    if (!btn) return;
+    btn.addEventListener('click', function(){
+      const root = document.documentElement;
+      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('cyberwise.theme', next); } catch (e) {}
+      const meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', next === 'dark' ? '#0B0A17' : '#F5F4FB');
+    });
+  })();
+
+  // ═══════════════ TOPBAR SCROLL ═══════════════
+  (function topbar(){
+    const el = document.getElementById('topbar');
+    if (!el) return;
+    function update(){ el.classList.toggle('scrolled', window.scrollY > 12); }
+    window.addEventListener('scroll', update, { passive:true });
+    update();
+  })();
+
+  // ═══════════════ CUSTOM CURSOR ═══════════════
+  (function cursor(){
+    const canRun = window.matchMedia('(hover: hover) and (pointer: fine)').matches && window.innerWidth > 1024;
+    if (!canRun) return;
+    const dot  = document.getElementById('cursorDot');
+    const ring = document.getElementById('cursorRing');
+    if (!dot || !ring) return;
+
+    let mx = window.innerWidth / 2, my = window.innerHeight / 2;
+    let rx = mx, ry = my;
+    let scale = 1, targetScale = 1;
+
+    window.addEventListener('mousemove', function(e){ mx = e.clientX; my = e.clientY; }, { passive:true });
+
+    document.addEventListener('mouseover', function(e){
+      const t = e.target.closest('a, button, [role="button"], .triage-card, .step-head, .contact-item, .crosslink');
+      if (t){
+        targetScale = 1.15;
+        ring.classList.add('is-hover');
+        if (t.classList.contains('btn-primary') || t.classList.contains('triage-card') || t.classList.contains('crosslink')) {
+          ring.classList.add('is-cta');
+        }
+      }
+    });
+
+    document.addEventListener('mouseout', function(e){
+      const t = e.target.closest('a, button, [role="button"], .triage-card, .step-head, .contact-item, .crosslink');
+      if (t){
+        targetScale = 1;
+        ring.classList.remove('is-hover', 'is-cta');
+      }
+    });
+
+    (function tick(){
+      rx += (mx - rx) * 0.18;
+      ry += (my - ry) * 0.18;
+      scale += (targetScale - scale) * 0.22;
+      dot.style.transform  = 'translate3d(' + (mx - 3) + 'px,' + (my - 3) + 'px,0)';
+      ring.style.transform = 'translate3d(' + (rx - 13) + 'px,' + (ry - 13) + 'px,0) scale(' + scale + ')';
+      requestAnimationFrame(tick);
+    })();
+  })();
+
+  // ═══════════════ BOOT ═══════════════
+  render();
+})();
+</script>
+<script src="register-sw.js"></script>
+<script src="navigation.js"></script>
+</body>
+</html>

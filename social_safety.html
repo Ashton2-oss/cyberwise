@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<script>
+(function(){
+  try {
+    var theme = localStorage.getItem('cyberwise.theme') || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+  } catch (e) {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+})();
+</script>
+<title>CyberWise — Social Media Safety</title>
+<meta name="description" content="Practise safer choices in common social media situations."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="manifest" href="manifest.json"/>
+<meta name="theme-color" content="#0F141B"/>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{--bg:#F5F4FB;--surface:#fff;--surface-2:#FAFAFE;--border:rgba(20,20,43,.1);--ink:#1A1A2E;--ink-2:#4B4B6B;--ink-3:#8B8BA7;--lavender-2:#8B5CF6;--lavender-soft:rgba(167,139,250,.12);--sky:#60A5FA;--mint:#10B981;--rose:#EF4444;--amber:#F59E0B;--lime:#C7F548;--lime-hover:#B8E63A;--ease:cubic-bezier(.22,1,.36,1)}
+[data-theme="dark"]{--bg:#0F141B;--surface:#171D29;--surface-2:#1F2735;--border:rgba(243,235,221,.12);--ink:#F3EBDD;--ink-2:#C6B9A7;--ink-3:#8A7F6D;--lavender-2:#93A6D6;--lavender-soft:rgba(166,181,216,.12);--sky:#8BC7D8;--mint:#87C6A3;--rose:#D58989;--amber:#D4A060;--lime:#C6D97A;--lime-hover:#D2E28D}
+html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}
+body{background:radial-gradient(ellipse 900px 600px at 12% -10%,var(--lavender-soft),transparent 60%),var(--bg)}
+.topbar{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 5vw;border-bottom:1px solid var(--border);background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(16px)}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);font-weight:800;text-decoration:none}
+.brand-mark{display:grid;place-items:center;width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,var(--lavender-2),var(--sky));color:#fff}
+.brand-mark svg{width:18px;height:18px}
+.nav{display:flex;align-items:center;gap:4px}
+.nav a{padding:8px 11px;border-radius:999px;color:var(--ink-2);font-size:.84rem;text-decoration:none}
+.nav a:hover,.nav a[aria-current="page"]{background:var(--lavender-soft);color:var(--ink)}
+.actions{display:flex;align-items:center;gap:8px}
+.theme-toggle,.menu-toggle{display:grid;place-items:center;width:40px;height:40px;border:1px solid var(--border);border-radius:11px;background:var(--surface);color:var(--ink);font:inherit;cursor:pointer}
+.menu-toggle{display:none}
+.page{width:min(760px,calc(100% - 36px));margin:0 auto;padding:64px 0 80px}
+.eyebrow{display:inline-block;margin-bottom:16px;padding:6px 12px;border-radius:999px;background:var(--lavender-soft);color:var(--lavender-2);font:700 .72rem "JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase}
+h1{margin:0 0 12px;font-size:clamp(2rem,6vw,3.3rem);line-height:1.08;letter-spacing:-.045em}
+.intro{margin:0 0 28px;color:var(--ink-2);font-size:1.04rem;line-height:1.7}
+.game-card{padding:clamp(20px,5vw,34px);border:1px solid var(--border);border-radius:22px;background:var(--surface);box-shadow:0 16px 44px rgba(20,20,43,.08)}
+.progress-row{display:flex;justify-content:space-between;gap:12px;margin-bottom:14px;color:var(--ink-3);font:600 .78rem "JetBrains Mono",monospace}
+.progress-track{height:7px;margin-bottom:24px;overflow:hidden;border-radius:99px;background:var(--surface-2)}
+.progress-fill{height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,var(--lavender-2),var(--sky));transition:width .25s var(--ease)}
+.scenario{margin:0 0 20px;padding:18px;border-left:4px solid var(--lavender-2);border-radius:0 14px 14px 0;background:var(--surface-2);font-size:1.05rem;line-height:1.65}
+.choices{display:grid;gap:10px}
+.choice{width:100%;padding:14px 16px;border:1px solid var(--border);border-radius:13px;background:var(--surface);color:var(--ink);font-family:inherit;font-size:.95rem;font-weight:600;line-height:1.5;text-align:left;cursor:pointer;transition:border-color .2s,background .2s,transform .2s}
+.choice:hover:not(:disabled){transform:translateY(-1px);border-color:var(--lavender-2);background:var(--lavender-soft)}
+.choice:focus-visible,.button:focus-visible,.theme-toggle:focus-visible{outline:3px solid var(--lavender-2);outline-offset:3px}
+.choice:disabled{cursor:default}
+.feedback{min-height:1.5em;margin:18px 0 0;color:var(--ink-2);line-height:1.65}
+.feedback[data-result="correct"]{color:var(--mint)}
+.feedback[data-result="incorrect"]{color:var(--rose)}
+.actions-row{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:22px}
+.score{color:var(--ink-3);font-size:.88rem}
+.button{min-height:44px;padding:11px 18px;border:0;border-radius:999px;background:var(--lime);color:#1A1A2E;font-family:inherit;font-size:.9rem;font-weight:700;cursor:pointer}
+.button:hover{background:var(--lime-hover)}
+.button[hidden]{display:none}
+.footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:24px;color:var(--ink-3);font-size:.78rem}
+.footer a{color:var(--lavender-2)}
+@media(max-width:850px){.topbar{padding:10px 14px}.menu-toggle{display:grid}.nav{display:none}.topbar.nav-open .nav{position:absolute;top:100%;left:0;right:0;display:flex;flex-wrap:wrap;padding:12px;background:var(--bg);border-bottom:1px solid var(--border)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a href="landing.html" class="brand">
+    <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 20 6v6c0 5-4 9-8 10-4-1-8-5-8-10V6z"/></svg></span>
+    CyberWise
+  </a>
+  <nav class="nav" aria-label="Main navigation"></nav>
+  <div class="actions">
+    <button class="menu-toggle" type="button" aria-label="Open navigation menu">☰</button>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">◐</button>
+  </div>
+</header>
+<main class="page">
+  <span class="eyebrow">Mini game · Social media safety</span>
+  <h1>Pause before you <span style="color:var(--lavender-2)">post, click, or share.</span></h1>
+  <p class="intro">Choose the safest response in each situation. These examples are fictional; the aim is to practise habits that protect your privacy and accounts.</p>
+  <section class="game-card" aria-labelledby="scenarioTitle">
+    <div class="progress-row"><span id="scenarioTitle">Scenario 1 of 5</span><span id="progressPercent">0% complete</span></div>
+    <div class="progress-track" role="progressbar" aria-label="Challenge progress" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0"><div class="progress-fill"></div></div>
+    <p class="scenario" id="scenarioText"></p>
+    <div class="choices" id="choices" aria-label="Choose the safest response"></div>
+    <p class="feedback" id="feedback" role="status" aria-live="polite"></p>
+    <div class="actions-row">
+      <span class="score" id="score"></span>
+      <button class="button" id="nextButton" type="button" hidden>Next scenario</button>
+      <button class="button" id="restartButton" type="button" hidden>Play again</button>
+    </div>
+  </section>
+  <footer class="footer"><span>CyberWise · Social Media Safety · No account or saved progress</span><a href="hub.html">Back to Hub</a></footer>
+</main>
+<script>
+(function(){
+  const scenarios = [
+    { text:'A new account messages you saying they are from your school and asks you to send a photo of your student card to “verify” your profile.', choices:['Send it; they know where I study.','Do not send it. Verify through the school using contact details from its official website.'], correct:1, explain:'A profile can claim to represent anyone. Student cards contain personal information, so verify requests through a trusted official channel.' },
+    { text:'Someone posts a screenshot of a private group chat and asks you to repost it so “everyone knows what happened.”', choices:['Repost it before the post disappears.','Do not amplify private messages. Check with the people involved and report harmful sharing if needed.'], correct:1, explain:'Sharing private conversations can expose people to harassment and spread information without consent.' },
+    { text:'A friend sends a social-media link asking you to log in to see a surprise video, but the address looks unusual.', choices:['Open the link and sign in quickly.','Ask your friend through another channel and visit the service by typing its address yourself.'], correct:1, explain:'Friends’ accounts can be compromised. Verify unusual messages separately and avoid signing in from unexpected links.' },
+    { text:'A viral post asks you to share your live location publicly so friends can find you at an event.', choices:['Post your live location for everyone to see.','Share location only with trusted people, for a limited time, using private settings.'], correct:1, explain:'Public location sharing can reveal where you are in real time. Limit both the audience and duration.' },
+    { text:'A stranger says they will send you a gift card if you send them a one-time login code that just arrived on your phone.', choices:['Send the code; it is only valid once.','Never share the code. Secure your account and report the request.'], correct:1, explain:'One-time codes protect your account. Someone asking for yours may be trying to log in as you.' }
+  ];
+  let index = 0;
+  let score = 0;
+  let answered = false;
+  const title = document.getElementById('scenarioTitle');
+  const text = document.getElementById('scenarioText');
+  const choices = document.getElementById('choices');
+  const feedback = document.getElementById('feedback');
+  const scoreLabel = document.getElementById('score');
+  const progress = document.querySelector('[role="progressbar"]');
+  const progressFill = document.querySelector('.progress-fill');
+  const percent = document.getElementById('progressPercent');
+  const next = document.getElementById('nextButton');
+  const restart = document.getElementById('restartButton');
+
+  function render(){
+    answered = false;
+    const scenario = scenarios[index];
+    title.textContent = 'Scenario ' + (index + 1) + ' of ' + scenarios.length;
+    text.textContent = scenario.text;
+    choices.replaceChildren();
+    scenario.choices.forEach(function(label, choiceIndex){
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'choice';
+      button.textContent = label;
+      button.addEventListener('click', function(){ answer(choiceIndex); });
+      choices.appendChild(button);
+    });
+    feedback.textContent = '';
+    feedback.removeAttribute('data-result');
+    scoreLabel.textContent = index === 0 ? 'Score: 0' : 'Score: ' + score + ' / ' + index;
+    next.hidden = true;
+    restart.hidden = true;
+    progress.setAttribute('aria-valuenow', String(index));
+    progressFill.style.width = Math.round(index / scenarios.length * 100) + '%';
+    percent.textContent = Math.round(index / scenarios.length * 100) + '% complete';
+  }
+
+  function answer(choiceIndex){
+    if (answered) return;
+    answered = true;
+    const scenario = scenarios[index];
+    const correct = choiceIndex === scenario.correct;
+    if (correct) score += 1;
+    Array.from(choices.children).forEach(function(button){ button.disabled = true; });
+    feedback.textContent = (correct ? 'Good choice. ' : 'Not the safest choice. ') + scenario.explain;
+    feedback.dataset.result = correct ? 'correct' : 'incorrect';
+    scoreLabel.textContent = 'Score: ' + score + ' / ' + (index + 1);
+    next.textContent = index === scenarios.length - 1 ? 'See your result' : 'Next scenario';
+    next.hidden = false;
+  }
+
+  next.addEventListener('click', function(){
+    index += 1;
+    if (index < scenarios.length) {
+      render();
+      return;
+    }
+    title.textContent = 'Challenge complete';
+    text.textContent = 'You scored ' + score + ' out of ' + scenarios.length + '. ' +
+      (score === scenarios.length ? 'Excellent work — keep using those privacy-first habits.' : 'Review the explanations, then play again to practise.');
+    choices.replaceChildren();
+    feedback.textContent = 'Remember: verify surprising requests, protect private information, and never share sign-in codes.';
+    feedback.removeAttribute('data-result');
+    scoreLabel.textContent = 'Final score: ' + score + ' / ' + scenarios.length;
+    progress.setAttribute('aria-valuenow', String(scenarios.length));
+    progressFill.style.width = '100%';
+    percent.textContent = '100% complete';
+    next.hidden = true;
+    restart.hidden = false;
+  });
+
+  restart.addEventListener('click', function(){ index = 0; score = 0; render(); });
+  render();
+
+  const themeButton = document.getElementById('themeToggle');
+  themeButton.addEventListener('click', function(){
+    const root = document.documentElement;
+    const theme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', theme);
+    try { localStorage.setItem('cyberwise.theme', theme); } catch (e) {}
+  });
+})();
+</script>
+<script src="register-sw.js"></script>
+<script src="navigation.js"></script>
+</body>
+</html>
