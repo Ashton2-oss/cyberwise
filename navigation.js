@@ -1,44 +1,65 @@
 (() => {
+  // ─── Nav config ──────────────────────────────
   const canonicalLinks = [
     { href: 'landing.html', label: 'Home' },
-    { href: 'guide.html', label: 'Guide' },
-    { href: 'hub.html', label: 'Hub' },
-    { href: 'dashboard.html', label: 'Dashboard' },
+    { href: 'guide.html',   label: 'Learn' },
     { href: 'screen6.html', label: 'Practise' },
-    { href: 'daily.html', label: 'Daily' },
-    { href: 'data_breach.html', label: 'Breach Lab' },
+    { href: 'hub.html',     label: 'Hub' },
     { href: 'recovery.html', label: 'Recover' }
   ];
 
+  // Sub-pages that should highlight a parent nav item
+  const parentMap = {
+    'landing.html':     'landing.html',
+    'index.html':       'landing.html',
+    'guide.html':       'guide.html',
+    'screen6.html':     'screen6.html',
+    'hub.html':         'hub.html',
+    'dashboard.html':   'hub.html',
+    'daily.html':       'hub.html',
+    'data_breach.html': 'hub.html',
+    'social_safety.html':'hub.html',
+    'word-hunt.html':   'hub.html',
+    'recovery.html':    'recovery.html',
+    'recover.html':     'recovery.html'
+  };
+
+  // ─── Inject CSS ──────────────────────────────
   const style = document.createElement('style');
   style.textContent = `
+    .topbar .nav a.active,
     .topbar .nav a[aria-current="page"] {
-      color: var(--ink, #1A1A2E);
-      background: var(--lavender-soft, rgba(139, 92, 246, .1));
-      font-weight: 700;
+      color: var(--ink);
+      background: var(--lavender-soft, rgba(139,92,246,.1));
+      font-weight: 600;
     }
     .topbar .menu-toggle {
       display: none;
       align-items: center;
       justify-content: center;
-      width: 40px;
-      height: 40px;
+      width: 38px;
+      height: 38px;
       padding: 0;
       border: 1px solid var(--border, rgba(20,20,43,.12));
       border-radius: 10px;
       background: var(--surface, #fff);
       color: var(--ink, #1A1A2E);
       font: inherit;
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       line-height: 1;
       cursor: pointer;
+      transition: all .2s ease;
+    }
+    .topbar .menu-toggle:hover {
+      border-color: var(--border-strong, rgba(20,20,43,.2));
+      transform: translateY(-1px);
     }
     .topbar .menu-toggle:focus-visible,
     .topbar .nav a:focus-visible {
       outline: 3px solid var(--lavender-2, #8B5CF6);
       outline-offset: 3px;
     }
-    @media (max-width: 1100px) {
+    @media (max-width: 820px) {
       .topbar { padding: 10px 14px !important; }
       .topbar .menu-toggle { display: inline-flex; }
       .topbar .actions { display: flex; align-items: center; gap: 8px; }
@@ -49,8 +70,7 @@
         right: 0;
         z-index: 60;
         display: none !important;
-        flex-wrap: wrap;
-        align-items: center;
+        flex-direction: column;
         gap: 4px;
         width: 100%;
         max-height: min(70vh, 28rem);
@@ -62,23 +82,21 @@
       }
       .topbar.nav-open nav.nav { display: flex !important; }
       .topbar nav.nav a {
-        flex: 0 0 auto;
-        min-height: 40px;
-        display: inline-flex;
+        min-height: 44px;
+        display: flex;
         align-items: center;
-        white-space: nowrap;
+        justify-content: center;
+        padding: 10px 14px;
+        font-size: .92rem;
       }
     }
-    @media (max-width: 480px) {
-      .topbar nav.nav { gap: 3px; padding: 10px 12px; }
-      .topbar nav.nav a { padding: 7px 10px; font-size: .8rem; }
-    }
     @media (prefers-reduced-motion: reduce) {
-      .topbar nav.nav { scroll-behavior: auto; }
+      .topbar .menu-toggle { transition: none; }
     }
   `;
   document.head.appendChild(style);
 
+  // ─── Build nav ──────────────────────────────
   const topbar = document.querySelector('.topbar');
   const nav = topbar && topbar.querySelector('nav.nav');
   if (!topbar || !nav) return;
@@ -93,14 +111,17 @@
   nav.setAttribute('aria-label', 'Main navigation');
   nav.id = nav.id || 'primary-navigation';
 
+  // ─── Highlight current page ─────────────────
   const currentPage = window.location.pathname.split('/').pop() || 'landing.html';
+  const highlight = parentMap[currentPage] || currentPage;
   nav.querySelectorAll('a').forEach(link => {
-    if (link.getAttribute('href') === currentPage) {
+    if (link.getAttribute('href') === highlight) {
       link.classList.add('active');
       link.setAttribute('aria-current', 'page');
     }
   });
 
+  // ─── Ensure actions container exists ────────
   let actions = topbar.querySelector('.actions');
   if (!actions) {
     actions = document.createElement('div');
@@ -108,6 +129,7 @@
     topbar.appendChild(actions);
   }
 
+  // ─── Ensure toggle button exists ────────────
   let toggle = topbar.querySelector('#menuToggle, .menu-toggle');
   if (!toggle) {
     toggle = document.createElement('button');
@@ -135,16 +157,20 @@
     toggle.setAttribute('aria-expanded', String(isOpen));
     toggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
   });
+
   nav.addEventListener('click', event => {
     if (event.target.closest('a')) closeMenu(false);
   });
+
   document.addEventListener('click', event => {
     if (!topbar.contains(event.target)) closeMenu(false);
   });
+
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && topbar.classList.contains('nav-open')) closeMenu(true);
   });
+
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 1100) closeMenu(false);
+    if (window.innerWidth > 820) closeMenu(false);
   });
 })();
