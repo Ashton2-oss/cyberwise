@@ -1,33 +1,7 @@
-<!-- FILE: screen6.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-
-<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false">
-  <defs>
-    <linearGradient id="ic-sms" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5B8DEF"/><stop offset="1" stop-color="#3B6BD8"/></linearGradient>
-    <linearGradient id="ic-mail" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E85D5D"/><stop offset="1" stop-color="#C13A3A"/></linearGradient>
-    <linearGradient id="ic-wa" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3ED57A"/><stop offset="1" stop-color="#1EAE5A"/></linearGradient>
-    <linearGradient id="ic-insta" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F5A623"/><stop offset=".5" stop-color="#E1306C"/><stop offset="1" stop-color="#8B3FBF"/></linearGradient>
-    <linearGradient id="ic-files" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7A7A88"/><stop offset="1" stop-color="#4E4E5A"/></linearGradient>
-    <linearGradient id="ic-phone" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4ED177"/><stop offset="1" stop-color="#1FAF55"/></linearGradient>
-    <linearGradient id="ic-browser" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5BA8E0"/><stop offset="1" stop-color="#2E6FB8"/></linearGradient>
-    <linearGradient id="ic-game" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9A7CE8"/><stop offset="1" stop-color="#6B4FBF"/></linearGradient>
-    <linearGradient id="ic-bank" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3B5C9C"/><stop offset="1" stop-color="#1F3A6E"/></linearGradient>
-  </defs>
-  <symbol id="app-messages" viewBox="0 0 40 40"><rect width="40" height="40" rx="11" fill="url(#ic-sms)"/><path d="M20 10c-6 0-11 4.2-11 9.4 0 2.9 1.6 5.5 4.1 7.2l-.9 3.9 4.5-2.1c1 .3 2.2.4 3.3.4 6 0 11-4.2 11-9.4S26 10 20 10Z" fill="#fff"/><circle cx="15" cy="19.4" r="1.2" fill="url(#ic-sms)"/><circle cx="20" cy="19.4" r="1.2" fill="url(#ic-sms)"/><circle cx="25" cy="19.4" r="1.2" fill="url(#ic-sms)"/></symbol>
-  <symbol id="app-mail" viewBox="0 0 40 40"><rect width="40" height="40" rx="11" fill="url(#ic-mail)"/><rect x="9" y="12" width="22" height="16" rx="2.5" fill="#fff"/><path d="M9.5 13.5 20 21.5 30.5 13.5" stroke="url(#ic-mail)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  <symbol id="app-whatsapp" viewBox="0 0 40 40"><rect width="40" height="40" rx="11" fill="url(#ic-wa)"/><circle cx="20" cy="19" r="10" fill="#fff"/><path d="M13.5 26l-2.5 4.5L16 28.5z" fill="#fff"/><path d="M16.4 15.2c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .5-.1.7l-.5.6c-.1.2-.2.3 0 .5.4.6.9 1.1 1.5 1.6.6.5 1.2.8 1.5.9.2.1.4 0 .5-.1l.7-.7c.2-.2.4-.2.6-.1l1.8.9c.3.1.4.2.4.5 0 .3-.2.9-.5 1.2-.3.2-.9.4-1.4.3-1.2-.3-2.7-1.1-3.9-2.2-1-.9-1.9-2.2-2.2-3.2-.2-.8 0-1.4.2-1.7Z" fill="url(#ic-wa)"/></symbol>
-  <symbol id="app-instagram" viewBox="0 0 40 40"><rect width="40" height="40" rx="11" fill="url(#ic-insta)"/><rect x="10" y="10" width="20" height="20" rx="6" fill="none" stroke="#fff" stroke-width="2.2"/><circle cx="20" cy="20" r="4.6" fill="none" stroke="#fff" stroke-width="2.2"/><circle cx="25.8" cy="14.2" r="1.3" fill="#fff"/></symbol>
-  <symbol id="app-files" viewBox="0 0 40 40"><rect width="40" height="40" rx="11" fill="url(#ic-files)"/><rect x="14" y="12" width="12" height="18" rx="2" fill="#fff"/><rect x="17" y="8" width="6" height="4" fill="#fff"/><rect x="17" y="18" width="6" height="1.6" rx=".5" fill="#B8B8C0"/><rect x="17" y="22" width="6" height="1.6" rx=".5" fill="#B8B8C0"/></symbol>
-  <symbol id="app-qr" viewBox="0 0 40 40"><rect width="40" height="40" rx="11" fill="#2A2A33"/><rect x="10" y="10" width="8" height="8" rx="1" fill="none" stroke="#fff" stroke-width="1.8"/><rect x="12.5" y="12.5" width="3" height="3" fill="#fff"/><rect x="22" y="10" width="8" height="8" rx="1" fill="none" stroke="#fff" stroke-width="1.8"/><rect x="24.5" y="12.5" width="3" height="3" fill="#fff"/><rect x="10" y="22" width="8" height="8" rx="1" fill="none" stroke="#fff" stroke-width="1.8"/><rect x="12.5" y="24.5" width="3" height="3" fill="#fff"/><rect x="22" y="22" width="3.4" height="3.4" fill="#fff"/><rect x="26.6" y="22" width="3.4" height="3.4" fill="#fff"/><rect x="22" y="26.6" width="3.4" height="3.4" fill="#fff"/><rect x="26.6" y="26.6" width="3.4" height="3.4" fill="#fff"/></symbol>
-  <symbol id="app-phone" viewBox="0 0 40 40"><rect width="40" height="40" rx="11" fill="url(#ic-phone)"/><path d="M13.5 10h3.2c.6 0 1.1.4 1.2 1l.7 3.6c.1.5-.1 1-.5 1.3l-2 1.5c1.4 3 3.8 5.4 6.8 6.8l1.5-2c.3-.4.8-.6 1.3-.5l3.6.7c.6.1 1 .6 1 1.2V27c0 1.7-1.3 3-3 3-9.4 0-17-7.6-17-17 0-1.7 1.3-3 3-3Z" fill="#fff"/></symbol>
-  <symbol id="app-browser" viewBox="0 0 40 40"><rect width="40" height="40" rx="11" fill="url(#ic-browser)"/><circle cx="20" cy="20" r="10" fill="none" stroke="#fff" stroke-width="2"/><ellipse cx="20" cy="20" rx="4.5" ry="10" fill="none" stroke="#fff" stroke-width="1.6"/><line x1="10" y1="20" x2="30" y2="20" stroke="#fff" stroke-width="1.8"/><path d="M12.4 15Q20 17.5 27.6 15M12.4 25Q20 22.5 27.6 25" fill="none" stroke="#fff" stroke-width="1.5"/></symbol>
-  <symbol id="app-game" viewBox="0 0 40 40"><rect width="40" height="40" rx="11" fill="url(#ic-game)"/><path d="M13.5 15h13c2.8 0 5 2.2 5 5 0 1.8-.6 3.8-1.6 5.3-.7 1-1.8 1.5-2.8 1-1.1-.5-2-1.8-3.2-2.8h-8.8c-1.2 1-2.1 2.3-3.2 2.8-1 .5-2.1 0-2.8-1-1-1.5-1.6-3.5-1.6-5.3 0-2.8 2.2-5 5-5Z" fill="#fff"/><circle cx="15.5" cy="20" r="1.6" fill="url(#ic-game)"/><circle cx="24.5" cy="20" r="1.6" fill="url(#ic-game)"/></symbol>
-  <symbol id="app-bank" viewBox="0 0 40 40"><rect width="40" height="40" rx="11" fill="url(#ic-bank)"/><path d="M20 9 9 14.5v1.6h22v-1.6L20 9Z" fill="#fff"/><rect x="11.5" y="17" width="2.4" height="10" fill="#fff"/><rect x="16.8" y="17" width="2.4" height="10" fill="#fff"/><rect x="22.1" y="17" width="2.4" height="10" fill="#fff"/><rect x="27.4" y="17" width="2.4" height="10" fill="#fff"/><rect x="9" y="28" width="22" height="2.8" rx=".6" fill="#fff"/></symbol>
-</svg>
-
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <script>
 (function(){
@@ -40,8 +14,8 @@
   }
 })();
 </script>
-<title>CyberWise — Spot the Phish</title>
-<meta name="description" content="21 phishing scenarios. Read each like it just landed on your phone, then decide."/>
+<title>CyberWise — The Guide</title>
+<meta name="description" content="Plain-language cybersecurity for South African students. Passwords, phishing, public Wi-Fi, AI tools, POPIA, and what to do when it goes wrong."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
@@ -65,135 +39,43 @@ svg{display:block;max-width:32px;max-height:32px;flex-shrink:0}
   --ease:cubic-bezier(.22,1,.36,1);
 }
 [data-theme="dark"]{
-  --bg:#0F141B;
-  --surface:#171D29;
-  --surface-2:#1F2735;
-  --ink:#F3EBDD;
-  --ink-2:#C6B9A7;
-  --ink-3:#8A7F6D;
-  --ink-4:#5D534C;
-  --border:rgba(243,235,221,.08);
-  --border-strong:rgba(243,235,221,.12);
-  --lime:#C6D97A;
-  --lime-hover:#D2E28D;
-  --lime-glow:rgba(198,217,122,.12);
-  --lavender:#A6B5D8;
-  --lavender-2:#93A6D6;
-  --lavender-soft:rgba(166,181,216,.12);
-  --sky:#8BC7D8;
-  --sky-soft:rgba(139,199,216,.12);
-  --mint:#87C6A3;
-  --mint-2:#A5D6B4;
-  --mint-soft:rgba(135,198,163,.12);
-  --amber:#D4A060;
-  --amber-2:#E0AF6D;
-  --amber-soft:rgba(212,160,96,.12);
-  --rose:#D58989;
-  --rose-2:#E0A0A0;
-  --rose-soft:rgba(213,137,137,.12);
-  --c-accent:#D4A060;
-  --grid-color:rgba(243,235,221,.025);
+  --bg:#0F141B;--surface:#171D29;--surface-2:#1F2735;
+  --ink:#F3EBDD;--ink-2:#C6B9A7;--ink-3:#8A7F6D;--ink-4:#5D534C;
+  --border:rgba(243,235,221,.08);--border-strong:rgba(243,235,221,.12);
+  --lime:#C6D97A;--lime-hover:#D2E28D;--lime-glow:rgba(198,217,122,.12);
+  --lavender:#A6B5D8;--lavender-2:#93A6D6;--lavender-soft:rgba(166,181,216,.12);
+  --sky:#8BC7D8;--sky-soft:rgba(139,199,216,.12);
+  --mint:#87C6A3;--mint-2:#A5D6B4;--mint-soft:rgba(135,198,163,.12);
+  --amber:#D4A060;--amber-2:#E0AF6D;--amber-soft:rgba(212,160,96,.12);
+  --rose:#D58989;--rose-2:#E0A0A0;--rose-soft:rgba(213,137,137,.12);
+  --c-accent:#D4A060;--grid-color:rgba(243,235,221,.025);
 }
-html,body{
-  background:var(--bg);color:var(--ink);
-  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
-  line-height:1.5;overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
-  min-height:100%;transition:background .4s var(--ease),color .4s var(--ease);
-}
+html,body{background:var(--bg);color:var(--ink);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.5;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;min-height:100%;transition:background .4s var(--ease),color .4s var(--ease);}
 .bg-scene{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-.bg-scene::before{
-  content:'';position:absolute;inset:0;
-  background:
-    radial-gradient(ellipse 900px 600px at 15% -10%, rgba(16,185,129,.16), transparent 60%),
-    radial-gradient(ellipse 800px 500px at 90% 10%, rgba(96,165,250,.13), transparent 65%),
-    radial-gradient(ellipse 700px 500px at 50% 110%, rgba(139,92,246,.1), transparent 60%),
-    var(--bg);
-}
-[data-theme="dark"] .bg-scene::before{
-  background:
-    radial-gradient(ellipse 900px 600px at 15% -10%, rgba(16,185,129,.1), transparent 60%),
-    radial-gradient(ellipse 800px 500px at 90% 10%, rgba(96,165,250,.08), transparent 65%),
-    radial-gradient(ellipse 700px 500px at 50% 110%, rgba(139,92,246,.06), transparent 60%),
-    var(--bg);
-}
-.grid-overlay{
-  position:fixed;inset:0;z-index:1;pointer-events:none;
-  background-image:
-    linear-gradient(var(--grid-color) 1px,transparent 1px),
-    linear-gradient(90deg,var(--grid-color) 1px,transparent 1px);
-  background-size:64px 64px;
-  mask-image:radial-gradient(circle 1100px at 50% 30%,#000,transparent 85%);
-  -webkit-mask-image:radial-gradient(circle 1100px at 50% 30%,#000,transparent 85%);
-}
-.cursor-dot,.cursor-ring{
-  position:fixed;top:0;left:0;pointer-events:none;z-index:10000;
-  will-change:transform;
-  transition:opacity .3s var(--ease),border-color .25s var(--ease),box-shadow .25s var(--ease);
-}
-.cursor-dot{
-  width:6px;height:6px;border-radius:50%;background:var(--c-accent);
-  box-shadow:0 0 0 1.5px rgba(255,255,255,.9),0 0 8px rgba(139,92,246,.5);
-}
-.cursor-ring{
-  width:26px;height:26px;border-radius:50%;
-  border:1.25px solid var(--c-accent);opacity:.5;
-  box-shadow:0 0 0 1.5px rgba(255,255,255,.4),0 0 10px rgba(139,92,246,.25);
-}
-[data-theme="dark"] .cursor-dot{
-  box-shadow:0 0 6px var(--c-accent),0 0 12px rgba(167,139,250,.4);
-  mix-blend-mode:screen;
-}
-[data-theme="dark"] .cursor-ring{
-  box-shadow:0 0 12px rgba(167,139,250,.3);mix-blend-mode:screen;
-}
+.bg-scene::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 900px 600px at 15% -10%, rgba(167,139,250,.22), transparent 60%),radial-gradient(ellipse 800px 500px at 90% 10%, rgba(96,165,250,.14), transparent 65%),radial-gradient(ellipse 700px 500px at 50% 110%, rgba(16,185,129,.1), transparent 60%),var(--bg);}
+[data-theme="dark"] .bg-scene::before{background:radial-gradient(ellipse 900px 600px at 15% -10%, rgba(139,92,246,.16), transparent 60%),radial-gradient(ellipse 800px 500px at 90% 10%, rgba(96,165,250,.1), transparent 65%),radial-gradient(ellipse 700px 500px at 50% 110%, rgba(52,211,153,.07), transparent 60%),var(--bg);}
+.grid-overlay{position:fixed;inset:0;z-index:1;pointer-events:none;background-image:linear-gradient(var(--grid-color) 1px,transparent 1px),linear-gradient(90deg,var(--grid-color) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(circle 1100px at 50% 30%,#000,transparent 85%);-webkit-mask-image:radial-gradient(circle 1100px at 50% 30%,#000,transparent 85%);}
+.cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:10000;will-change:transform;transition:opacity .3s var(--ease),border-color .25s var(--ease),box-shadow .25s var(--ease);}
+.cursor-dot{width:6px;height:6px;border-radius:50%;background:var(--c-accent);box-shadow:0 0 0 1.5px rgba(255,255,255,.9),0 0 8px rgba(139,92,246,.5);}
+.cursor-ring{width:26px;height:26px;border-radius:50%;border:1.25px solid var(--c-accent);opacity:.5;box-shadow:0 0 0 1.5px rgba(255,255,255,.4),0 0 10px rgba(139,92,246,.25);}
+[data-theme="dark"] .cursor-dot{box-shadow:0 0 6px var(--c-accent),0 0 12px rgba(167,139,250,.4);mix-blend-mode:screen;}
+[data-theme="dark"] .cursor-ring{box-shadow:0 0 12px rgba(167,139,250,.3);mix-blend-mode:screen;}
 .cursor-ring.is-hover{opacity:.9;border-color:var(--lavender-2)}
 .cursor-ring.is-cta{opacity:1;border-color:var(--lavender-2)}
 @media (max-width:1024px){.cursor-dot,.cursor-ring{display:none!important}}
 @media (hover:none){.cursor-dot,.cursor-ring{display:none!important}}
 
-/* ───── TOPBAR ───── */
-.topbar{
-  position:fixed;top:0;left:0;right:0;z-index:50;
-  padding:16px 40px;
-  display:flex;align-items:center;justify-content:space-between;
-  font-family:'Inter',sans-serif;color:var(--ink-3);
-  transition:background .3s,backdrop-filter .3s,border-color .3s;
-  border-bottom:1px solid transparent;
-}
-.topbar.scrolled{
-  background:color-mix(in srgb,var(--bg) 82%,transparent);
-  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-  border-bottom-color:var(--border);
-}
-.topbar .brand{
-  display:flex;align-items:center;gap:10px;color:var(--ink);
-  font-size:1rem;font-weight:700;letter-spacing:-.025em;text-decoration:none;
-}
-.brand-mark{
-  width:32px;height:32px;border-radius:10px;
-  background:linear-gradient(135deg,var(--lavender-2),var(--sky));
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 4px 14px rgba(139,92,246,.35);
-}
+.topbar{position:fixed;top:0;left:0;right:0;z-index:50;padding:16px 40px;display:flex;align-items:center;justify-content:space-between;font-family:'Inter',sans-serif;color:var(--ink-3);transition:background .3s,backdrop-filter .3s,border-color .3s;border-bottom:1px solid transparent;}
+.topbar.scrolled{background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom-color:var(--border);}
+.topbar .brand{display:flex;align-items:center;gap:10px;color:var(--ink);font-size:1rem;font-weight:700;letter-spacing:-.025em;text-decoration:none;}
+.brand-mark{width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,var(--lavender-2),var(--sky));display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(139,92,246,.35);}
 .brand-mark svg{width:17px;height:17px;color:#fff}
 .topbar .nav{display:flex;align-items:center;gap:4px}
-.topbar .nav a{
-  color:var(--ink-2);text-decoration:none;
-  font-size:.86rem;font-weight:500;
-  padding:8px 14px;border-radius:100px;
-  transition:all .2s var(--ease);
-}
+.topbar .nav a{color:var(--ink-2);text-decoration:none;font-size:.86rem;font-weight:500;padding:8px 14px;border-radius:100px;transition:all .2s var(--ease);}
 .topbar .nav a:hover{color:var(--ink);background:rgba(139,92,246,.06)}
 .topbar .nav a.active{color:var(--ink);background:var(--lavender-soft)}
 .topbar .actions{display:flex;align-items:center;gap:10px}
-.theme-toggle{
-  width:36px;height:36px;border-radius:10px;
-  background:var(--surface);border:1px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-  cursor:pointer;color:var(--ink-2);
-  transition:all .25s var(--ease);position:relative;
-}
+.theme-toggle{width:36px;height:36px;border-radius:10px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--ink-2);transition:all .25s var(--ease);position:relative;}
 .theme-toggle:hover{color:var(--ink);border-color:var(--border-strong);transform:translateY(-1px)}
 .theme-toggle svg{width:16px;height:16px;position:absolute;transition:all .35s var(--ease)}
 .theme-toggle .ti-sun{opacity:0;transform:rotate(-90deg) scale(.6)}
@@ -205,518 +87,247 @@ html,body{
   .topbar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px 10px;padding:10px 14px}
   .topbar .brand{grid-column:1;grid-row:1}
   .topbar .nav{grid-column:1 / -1;grid-row:2;display:none;gap:2px;min-width:0;width:100%;overflow-x:auto;scrollbar-width:none}
+  .topbar .nav.show{display:flex}
   .topbar .nav::-webkit-scrollbar{display:none}
   .topbar .nav a{flex:0 0 auto;white-space:nowrap;padding:6px 9px;font-size:.76rem}
   .topbar .actions{grid-column:2;grid-row:1}
+  .menu-toggle{display:flex!important}
+}
+.menu-toggle{display:none;width:36px;height:36px;border-radius:10px;background:var(--surface);border:1px solid var(--border);align-items:center;justify-content:center;cursor:pointer;color:var(--ink-2);}
+
+.layout{position:relative;z-index:10;max-width:1200px;margin:0 auto;padding:96px 32px 80px;display:grid;grid-template-columns:240px 1fr;gap:48px;align-items:flex-start;}
+@media(max-width:960px){.layout{grid-template-columns:1fr;gap:24px;padding:88px 20px 60px}}
+
+.toc{position:sticky;top:88px;max-height:calc(100vh - 110px);overflow-y:auto;padding:22px 20px;border-radius:18px;background:var(--surface);border:1px solid var(--border);scrollbar-width:thin;}
+@media(max-width:960px){.toc{position:static;max-height:none;padding:16px 18px}}
+.toc::-webkit-scrollbar{width:5px}
+.toc::-webkit-scrollbar-thumb{background:var(--border-strong);border-radius:10px}
+.toc-label{font-family:'JetBrains Mono',monospace;font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:14px;}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:2px}
+.toc-list a{display:flex;align-items:flex-start;gap:10px;padding:8px 10px;border-radius:9px;color:var(--ink-2);text-decoration:none;font-size:.84rem;font-weight:500;line-height:1.35;transition:all .2s var(--ease);position:relative;}
+.toc-list a:hover{color:var(--ink);background:var(--surface-2)}
+.toc-list a.active{color:var(--ink);background:var(--lavender-soft);font-weight:600;}
+.toc-list a.active::before{content:'';position:absolute;left:0;top:50%;width:3px;height:16px;margin-top:-8px;background:var(--lavender-2);border-radius:100px;}
+.toc-num{font-family:'JetBrains Mono',monospace;font-size:.66rem;font-weight:700;color:var(--ink-4);flex-shrink:0;min-width:20px;padding-top:2px;}
+.toc-list a.active .toc-num{color:var(--lavender-2)}
+.toc-progress{margin-top:18px;padding-top:16px;border-top:1px solid var(--border);}
+.toc-progress-top{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:9px;}
+.toc-progress-label{font-size:.78rem;font-weight:600;color:var(--ink-2);}
+.toc-progress-count{font-family:'JetBrains Mono',monospace;font-size:.68rem;font-weight:700;color:var(--lavender-2);}
+.toc-progress-bar{height:5px;border-radius:100px;background:color-mix(in srgb,var(--ink-3) 15%,transparent);overflow:hidden;}
+.toc-progress-fill{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--lavender-2),var(--mint));transition:width .6s var(--ease);width:0%;}
+.toc-reset{margin-top:14px;background:none;border:none;font-family:inherit;font-size:.72rem;color:var(--ink-3);cursor:pointer;padding:4px 0;transition:color .2s var(--ease);}
+.toc-reset:hover{color:var(--rose)}
+
+.main{min-width:0}
+.guide-head{margin-bottom:36px}
+.guide-eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono',monospace;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--lavender-2);background:var(--lavender-soft);padding:7px 14px;border-radius:100px;margin-bottom:22px;}
+.guide-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--lavender-2);box-shadow:0 0 0 3px rgba(139,92,246,.15);}
+.guide-title{font-size:clamp(1.9rem,4.4vw,2.75rem);font-weight:900;letter-spacing:-.04em;line-height:1.08;color:var(--ink);margin-bottom:18px;}
+.guide-title em{font-style:normal;background:linear-gradient(120deg,#60A5FA 0%,#34D399 50%,#A3E635 100%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.guide-lede{font-size:1.05rem;line-height:1.7;color:var(--ink-2);max-width:600px;margin-bottom:24px;}
+.guide-lede strong{color:var(--ink);font-weight:600}
+
+.search{position:relative;margin-top:6px;margin-bottom:28px;}
+.search-icon{position:absolute;left:18px;top:50%;transform:translateY(-50%);color:var(--ink-3);pointer-events:none;}
+.search-icon svg{width:17px;height:17px}
+.search input{width:100%;padding:15px 18px 15px 48px;font-family:inherit;font-size:.94rem;color:var(--ink);background:var(--surface);border:1px solid var(--border);border-radius:14px;outline:none;transition:all .2s var(--ease);}
+.search input::placeholder{color:var(--ink-4)}
+.search input:focus{border-color:var(--lavender-2);box-shadow:0 0 0 4px rgba(139,92,246,.12);}
+.search-clear{position:absolute;right:14px;top:50%;transform:translateY(-50%);background:var(--surface-2);border:none;cursor:pointer;width:26px;height:26px;border-radius:50%;display:none;align-items:center;justify-content:center;color:var(--ink-3);transition:all .2s var(--ease);}
+.search-clear:hover{color:var(--ink);background:var(--border-strong)}
+.search-clear svg{width:12px;height:12px}
+.search.has-value .search-clear{display:flex}
+
+.section{margin-bottom:22px;border-radius:18px;background:var(--surface);border:1px solid var(--border);overflow:hidden;transition:all .3s var(--ease);scroll-margin-top:96px;}
+.section:hover{border-color:var(--border-strong)}
+.section.open{border-color:var(--border-strong)}
+.section.hidden{display:none}
+.section-head{padding:22px 24px;display:grid;grid-template-columns:auto 1fr auto auto;gap:18px;align-items:center;cursor:pointer;user-select:none;transition:background .2s var(--ease);}
+.section-head:hover{background:var(--surface-2)}
+.section-num{width:42px;height:42px;border-radius:12px;background:var(--lavender-soft);color:var(--lavender-2);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:.94rem;font-weight:800;flex-shrink:0;transition:all .3s var(--ease);}
+.section.open .section-num{background:linear-gradient(135deg,var(--lavender-2),var(--sky));color:#fff;box-shadow:0 6px 16px rgba(139,92,246,.28);}
+.section.read .section-num{background:linear-gradient(135deg,var(--mint),var(--mint-2));color:#fff;box-shadow:0 6px 16px rgba(16,185,129,.28);}
+.section-info{min-width:0;padding-top:2px}
+.section-title{font-size:1.02rem;font-weight:700;letter-spacing:-.015em;line-height:1.3;color:var(--ink);margin-bottom:4px;}
+.section-meta{display:flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:.68rem;font-weight:600;color:var(--ink-3);letter-spacing:.02em;}
+.section-meta svg{width:12px;height:12px}
+.section-meta .sep{opacity:.5}
+.section-read{width:28px;height:28px;border-radius:9px;border:1.75px solid var(--border-strong);background:var(--surface);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;flex-shrink:0;transition:all .22s var(--ease);}
+.section-read svg{width:14px;height:14px;color:#fff;opacity:0;transition:opacity .2s var(--ease)}
+.section-read:hover{border-color:var(--mint);background:var(--mint-soft)}
+.section.read .section-read{background:var(--mint);border-color:var(--mint);box-shadow:0 4px 10px rgba(16,185,129,.28);}
+.section.read .section-read svg{opacity:1}
+.section-chev{width:20px;height:20px;color:var(--ink-3);transition:transform .3s var(--ease),color .25s var(--ease);flex-shrink:0;}
+.section.open .section-chev{transform:rotate(180deg);color:var(--lavender-2)}
+@media(max-width:640px){
+  .section-head{padding:18px 18px;gap:12px}
+  .section-num{width:36px;height:36px;font-size:.84rem;border-radius:10px}
+  .section-title{font-size:.94rem}
+  .section-meta{font-size:.62rem;gap:8px}
 }
 
-/* ───── PAGE ───── */
-.page{
-  position:relative;z-index:10;
-  max-width:680px;margin:0 auto;
-  padding:120px 24px 80px;min-height:100vh;
-  animation:pageIn .5s var(--ease);
-}
-@keyframes pageIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:520px){.page{padding:100px 18px 60px}}
+.section-panel{max-height:0;overflow:hidden;transition:max-height .55s var(--ease);}
+.section.open .section-panel{max-height:12000px}
+.section-body{padding:6px 26px 28px 84px;font-size:.95rem;line-height:1.72;color:var(--ink-2);}
+@media(max-width:640px){.section-body{padding:4px 18px 22px 18px;font-size:.92rem}}
+.section-body h3{font-size:1.02rem;font-weight:800;letter-spacing:-.018em;color:var(--ink);margin:26px 0 12px;}
+.section-body h3:first-child{margin-top:8px}
+.section-body h4{font-size:.92rem;font-weight:700;letter-spacing:-.008em;color:var(--ink);margin:20px 0 8px;}
+.section-body p{margin-bottom:14px}
+.section-body p:last-child{margin-bottom:0}
+.section-body strong{color:var(--ink);font-weight:600}
+.section-body em{font-style:normal;color:var(--lavender-2);font-weight:600}
+.section-body a{color:var(--lavender-2);text-decoration:none;border-bottom:1px solid rgba(139,92,246,.3);transition:all .2s var(--ease);}
+.section-body a:hover{color:var(--ink);border-bottom-color:var(--lavender-2);}
+.section-body ul,.section-body ol{margin:0 0 16px;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
+.section-body ul li{padding-left:26px;position:relative;line-height:1.65;}
+.section-body ul li::before{content:'';position:absolute;left:4px;top:11px;width:5px;height:5px;border-radius:50%;background:var(--lavender-2);}
+.section-body ol{counter-reset:olc}
+.section-body ol li{padding-left:30px;position:relative;line-height:1.65;counter-increment:olc;}
+.section-body ol li::before{content:counter(olc);position:absolute;left:0;top:1px;width:20px;height:20px;border-radius:6px;background:var(--lavender-soft);color:var(--lavender-2);font-family:'JetBrains Mono',monospace;font-size:.68rem;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.section-body code{font-family:'JetBrains Mono',monospace;font-size:.86em;padding:2px 6px;border-radius:5px;background:var(--surface-2);border:1px solid var(--border);color:var(--ink);}
 
-/* ───── HERO ───── */
-.hero{
-  padding-bottom:32px;
-  border-bottom:1px solid var(--border);
-  margin-bottom:32px;
-}
-.hero-eyebrow{
-  display:inline-flex;align-items:center;gap:9px;
-  font-family:'JetBrains Mono',monospace;
-  font-size:.68rem;font-weight:700;letter-spacing:.1em;
-  text-transform:uppercase;
-  color:var(--mint);
-  background:var(--mint-soft);
-  padding:7px 14px;border-radius:100px;
-  margin-bottom:22px;
-}
-.hero-eyebrow .dot{
-  width:6px;height:6px;border-radius:50%;background:var(--mint);
-  box-shadow:0 0 0 3px rgba(16,185,129,.15);
-}
-.hero-title{
-  font-size:clamp(1.9rem,4.4vw,2.6rem);
-  font-weight:900;letter-spacing:-.038em;
-  line-height:1.08;color:var(--ink);
-  margin-bottom:16px;
-}
-.hero-title em{
-  font-style:normal;
-  background:linear-gradient(120deg,#34D399 0%,#60A5FA 50%,#A78BFA 100%);
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-}
-.hero-lede{
-  font-size:1.02rem;line-height:1.7;
-  color:var(--ink-2);max-width:540px;
-  margin-bottom:20px;
-}
-.hero-lede strong{color:var(--ink);font-weight:600}
-.hero-progress{
-  display:flex;gap:8px;flex-wrap:wrap;
-  padding-top:20px;
-  border-top:1px solid var(--border);
-}
-.hero-progress[hidden]{display:none}
-.progress-chip{
-  display:inline-flex;align-items:center;gap:9px;
-  padding:9px 15px;border-radius:100px;
-  background:var(--surface);border:1px solid var(--border);
-  font-family:'JetBrains Mono',monospace;
-  font-size:.72rem;font-weight:600;color:var(--ink-2);
-  letter-spacing:-.005em;text-decoration:none;
-  transition:all .22s var(--ease);
-}
-a.progress-chip:hover{
-  border-color:var(--border-strong);
-  transform:translateY(-1px);
-  box-shadow:0 6px 16px rgba(20,20,43,.06);
-}
-.progress-chip svg{width:13px;height:13px;color:var(--ink-3)}
-.progress-chip strong{color:var(--ink);font-weight:700}
-.progress-chip[data-tone="daily"]{border-color:rgba(245,158,11,.28);background:var(--amber-soft)}
-.progress-chip[data-tone="daily"] svg{color:var(--amber)}
-.progress-chip[data-tone="guide"]{border-color:rgba(139,92,246,.28);background:var(--lavender-soft)}
-.progress-chip[data-tone="guide"] svg{color:var(--lavender-2)}
-.progress-chip[data-tone="spot"]{border-color:rgba(16,185,129,.28);background:var(--mint-soft)}
-.progress-chip[data-tone="spot"] svg{color:var(--mint)}
-.progress-chip[data-tone="score"]{border-color:rgba(96,165,250,.28);background:var(--sky-soft)}
-.progress-chip[data-tone="score"] svg{color:var(--sky)}
-.progress-chip[data-tone="recover"]{border-color:rgba(239,68,68,.24);background:var(--rose-soft)}
-.progress-chip[data-tone="recover"] svg{color:var(--rose)}
+.callout{display:flex;gap:14px;padding:16px 18px;border-radius:14px;margin:18px 0;border:1px solid;}
+.callout-icon{width:36px;height:36px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.callout-icon svg{width:17px;height:17px}
+.callout-body{flex:1;min-width:0;padding-top:2px}
+.callout-title{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;}
+.callout-body p{font-size:.92rem;line-height:1.65;margin-bottom:0;color:var(--ink-2);}
+.callout-body p strong{color:var(--ink);font-weight:600}
+.callout.tip{background:var(--mint-soft);border-color:rgba(16,185,129,.22)}
+.callout.tip .callout-icon{background:rgba(16,185,129,.14);color:var(--mint)}
+.callout.tip .callout-title{color:var(--mint)}
+.callout.warn{background:var(--amber-soft);border-color:rgba(245,158,11,.22)}
+.callout.warn .callout-icon{background:rgba(245,158,11,.14);color:var(--amber)}
+.callout.warn .callout-title{color:var(--amber)}
+.callout.danger{background:var(--rose-soft);border-color:rgba(239,68,68,.22)}
+.callout.danger .callout-icon{background:rgba(239,68,68,.14);color:var(--rose)}
+.callout.danger .callout-title{color:var(--rose)}
+.callout.note{background:var(--lavender-soft);border-color:rgba(139,92,246,.22)}
+.callout.note .callout-icon{background:rgba(139,92,246,.14);color:var(--lavender-2)}
+.callout.note .callout-title{color:var(--lavender-2)}
 
-/* ───── DIFFICULTY TILES ───── */
-.difficulty-bar{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:8px;
-  margin-bottom:24px;
-}
-.diff-tile{
-  padding:11px 13px;
-  border-radius:11px;
-  background:var(--surface-2);
-  border:1px solid var(--border);
-  position:relative;overflow:hidden;
-}
-.diff-tile-top{
-  display:flex;align-items:center;justify-content:space-between;
-  gap:6px;margin-bottom:6px;
-}
-.diff-tile-name{
-  font-family:'JetBrains Mono',monospace;
-  font-size:.58rem;font-weight:700;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--ink-3);
-}
-.diff-tile-count{
-  font-family:'JetBrains Mono',monospace;
-  font-size:.6rem;font-weight:700;color:var(--ink-3);
-}
-.diff-tile-bar{
-  height:3px;border-radius:100px;
-  background:color-mix(in srgb,var(--ink-3) 18%,transparent);
-  overflow:hidden;
-}
-.diff-tile-fill{
-  height:100%;border-radius:100px;transition:width .7s var(--ease);
-}
-.diff-tile[data-level="easy"] .diff-tile-fill{background:var(--mint)}
-.diff-tile[data-level="medium"] .diff-tile-fill{background:var(--amber)}
-.diff-tile[data-level="hard"] .diff-tile-fill{background:var(--rose)}
-.diff-tile.locked{opacity:.5}
-.diff-tile.locked::before{
-  content:'🔒';position:absolute;
-  top:8px;right:8px;font-size:.7rem;opacity:.7;
-}
+.table-wrap{margin:18px 0;border-radius:14px;overflow:hidden;border:1px solid var(--border);}
+.table-scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.88rem;min-width:520px;}
+thead{background:var(--surface-2)}
+th{text-align:left;padding:12px 16px;font-family:'JetBrains Mono',monospace;font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);border-bottom:1px solid var(--border);}
+td{padding:12px 16px;border-bottom:1px solid var(--border);line-height:1.55;color:var(--ink-2);vertical-align:top;}
+tr:last-child td{border-bottom:none}
+td strong{color:var(--ink);font-weight:600}
 
-/* ───── MESSAGE ───── */
-.msg-wrap{margin-top:24px;animation:msgIn .5s var(--ease)}
-@keyframes msgIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-.msg-meta{
-  display:flex;align-items:center;justify-content:space-between;
-  gap:14px;margin-bottom:14px;flex-wrap:wrap;
-}
-.msg-cat-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.msg-cat{
-  display:inline-flex;align-items:center;gap:7px;
-  font-family:'JetBrains Mono',monospace;
-  font-size:.62rem;font-weight:700;letter-spacing:.08em;
-  text-transform:uppercase;padding:6px 12px;border-radius:100px;
-}
-.msg-cat[data-cat="reward"]{color:var(--mint);background:var(--mint-soft)}
-.msg-cat[data-cat="fear"]{color:var(--rose);background:var(--rose-soft)}
-.msg-cat[data-cat="authority"]{color:var(--amber);background:var(--amber-soft)}
-.msg-cat[data-cat="trust"]{color:var(--sky);background:var(--sky-soft)}
-.msg-cat[data-cat="urgency"]{color:var(--lavender-2);background:var(--lavender-soft)}
-.msg-cat .dot{width:6px;height:6px;border-radius:50%;background:currentColor}
+.gl{position:relative;border-bottom:1px dashed var(--lavender-2);color:var(--ink);font-weight:500;cursor:help;}
+.gl::after{content:attr(data-def);position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(4px);width:260px;padding:12px 14px;border-radius:11px;background:var(--ink);color:#fff;font-size:.82rem;line-height:1.5;font-weight:400;opacity:0;pointer-events:none;transition:all .25s var(--ease);z-index:100;box-shadow:0 10px 30px rgba(20,20,43,.25);}
+[data-theme="dark"] .gl::after{background:#2A2847;box-shadow:0 10px 30px rgba(0,0,0,.5);}
+.gl::before{content:'';position:absolute;bottom:calc(100% + 5px);left:50%;transform:translateX(-50%);width:0;height:0;border:6px solid transparent;border-top-color:var(--ink);opacity:0;transition:all .25s var(--ease);z-index:100;}
+[data-theme="dark"] .gl::before{border-top-color:#2A2847}
+.gl:hover::after,.gl:hover::before{opacity:1;transform:translateX(-50%) translateY(0)}
+.gl:hover::before{transform:translateX(-50%) translateY(-5px)}
 
-.diff-badge{
-  display:inline-flex;align-items:center;gap:6px;
-  font-family:'JetBrains Mono',monospace;
-  font-size:.6rem;font-weight:700;letter-spacing:.1em;
-  text-transform:uppercase;padding:5px 10px;border-radius:100px;
-}
-.diff-badge[data-level="easy"]{color:var(--mint);background:var(--mint-soft);border:1px solid rgba(16,185,129,.3)}
-.diff-badge[data-level="medium"]{color:var(--amber);background:var(--amber-soft);border:1px solid rgba(245,158,11,.3)}
-.diff-badge[data-level="hard"]{color:var(--rose);background:var(--rose-soft);border:1px solid rgba(239,68,68,.3)}
-.diff-badge .dot{width:5px;height:5px;border-radius:50%;background:currentColor}
+.practise{margin-top:26px;padding:18px 20px;border-radius:14px;background:linear-gradient(135deg,rgba(16,185,129,.06),rgba(52,211,153,.04));border:1px solid rgba(16,185,129,.22);}
+.practise-label{font-family:'JetBrains Mono',monospace;font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mint);margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.practise-label svg{width:14px;height:14px}
+.practise-scenarios{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px;}
+.chip{display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border-radius:100px;background:var(--surface);border:1px solid var(--border);font-size:.82rem;font-weight:600;color:var(--ink-2);text-decoration:none;transition:all .22s var(--ease);}
+.chip:hover{border-color:var(--mint);color:var(--mint);transform:translateY(-1px);}
+.chip-num{font-family:'JetBrains Mono',monospace;font-size:.68rem;font-weight:700;color:var(--ink-4);}
+.chip:hover .chip-num{color:var(--mint)}
+.practise-cta{display:inline-flex;align-items:center;gap:8px;font-size:.86rem;font-weight:600;color:var(--mint);text-decoration:none;transition:gap .22s var(--ease);}
+.practise-cta svg{width:14px;height:14px}
+.practise-cta:hover{gap:12px}
 
-.msg-num{
-  font-family:'JetBrains Mono',monospace;
-  font-size:.66rem;font-weight:600;color:var(--ink-3);letter-spacing:.05em;
+.empty{padding:56px 28px;text-align:center;border-radius:18px;background:var(--surface);border:1px dashed var(--border-strong);}
+.empty-icon{width:56px;height:56px;margin:0 auto 18px;border-radius:16px;background:var(--lavender-soft);color:var(--lavender-2);display:flex;align-items:center;justify-content:center;}
+.empty-icon svg{width:26px;height:26px}
+.empty-title{font-size:1.08rem;font-weight:800;letter-spacing:-.02em;color:var(--ink);margin-bottom:8px;}
+.empty-sub{font-size:.9rem;color:var(--ink-2);line-height:1.6;max-width:380px;margin:0 auto;}
+
+.closing{margin-top:36px;padding:30px 28px;border-radius:20px;background:var(--surface);border:1px solid var(--border);text-align:center;}
+.closing-text{font-size:1rem;line-height:1.7;color:var(--ink-2);font-weight:500;max-width:520px;margin:0 auto 20px;}
+.closing-text strong{color:var(--lavender-2);font-weight:700}
+.closing-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+
+/* ───── FINAL EXAM ───── */
+.final-exam{margin:48px 0 0;scroll-margin-top:100px}
+.sec-label{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lavender-2);margin-bottom:12px;}
+.sec-label .dot{width:6px;height:6px;border-radius:50%;background:var(--lavender-2);}
+.sec-title{font-size:clamp(1.3rem,2.8vw,1.65rem);font-weight:800;letter-spacing:-.03em;line-height:1.2;color:var(--ink);margin-bottom:10px;}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.exam-card,.certificate-card{padding:26px;border:1px solid var(--border);border-radius:20px;background:var(--surface)}
+.exam-card{margin-bottom:22px}
+.exam-intro{max-width:680px;margin-bottom:20px}
+.exam-intro p{margin-top:8px;color:var(--ink-2);line-height:1.65}
+.exam-list{display:grid;gap:12px}
+.exam-question{min-width:0;padding:16px;border:1px solid var(--border);border-radius:14px;background:var(--surface-2)}
+.exam-question legend{padding:0 6px;font-weight:700;line-height:1.5;color:var(--ink)}
+.exam-options{display:grid;gap:8px;margin-top:10px}
+.exam-option{display:flex;align-items:flex-start;gap:9px;padding:9px 10px;border-radius:10px;color:var(--ink-2);line-height:1.45;cursor:pointer}
+.exam-option:hover{background:var(--lavender-soft)}
+.exam-option input{margin-top:3px;accent-color:var(--lavender-2);flex:0 0 auto}
+.exam-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:18px}
+.exam-status{min-height:1.5em;color:var(--ink-2);font-size:.9rem}
+.exam-status[data-result="pass"]{color:var(--mint);font-weight:700}
+.exam-status[data-result="fail"]{color:var(--rose);font-weight:700}
+.exam-status[data-result="notice"]{color:var(--amber);font-weight:700}
+
+/* ───── LOCKED EXAM STATE ───── */
+.exam-card.locked{text-align:center;border-style:dashed;opacity:.95}
+.exam-card.locked .exam-lock-icon{width:64px;height:64px;border-radius:18px;background:var(--surface-2);color:var(--ink-3);display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 18px}
+.exam-card.locked .exam-intro{margin:0 auto;max-width:480px;text-align:center}
+.exam-lock-progress{display:flex;align-items:center;justify-content:center;gap:10px;margin:20px auto 22px}
+.exam-lock-bar{width:160px;height:6px;border-radius:100px;background:color-mix(in srgb,var(--ink-3) 15%,transparent);overflow:hidden}
+.exam-lock-fill{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--lavender-2),var(--mint));transition:width .4s var(--ease)}
+.exam-lock-text{font-family:'JetBrains Mono',monospace;font-size:.7rem;font-weight:700;color:var(--ink-3)}
+
+.certificate-card[hidden]{display:none!important}
+.certificate{position:relative;overflow:hidden;padding:36px;border:2px solid var(--lavender-2);border-radius:18px;text-align:center;background:var(--surface)}
+.certificate::before{content:'';position:absolute;inset:8px;border:1px dashed var(--border-strong);border-radius:11px;pointer-events:none}
+.cert-seal{margin-bottom:8px;font-size:2.5rem}
+.cert-brand{margin-bottom:7px;font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--lavender-2)}
+.cert-title{margin:0 0 6px;font-size:clamp(1.5rem,4vw,2.15rem);font-weight:900;letter-spacing:-.04em;color:var(--ink)}
+.cert-subtitle{margin:12px 0 8px;color:var(--ink-3);font-size:.92rem}
+.cert-name-input{display:block;width:100%;max-width:420px;margin:0 auto 14px;padding:8px 10px;border:0;border-bottom:2px solid var(--border-strong);border-radius:0;background:transparent;color:var(--ink);font:700 1.25rem 'Inter',sans-serif;text-align:center}
+.cert-name-input:focus-visible{outline:3px solid var(--lavender-2);outline-offset:3px}
+.cert-print-name{display:none}
+.cert-text{max-width:600px;margin:0 auto 22px;color:var(--ink-2);font-size:.9rem;line-height:1.65}
+.cert-footer{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;padding-top:16px;border-top:1px solid var(--border);color:var(--ink-3);font-size:.82rem}
+.cert-footer strong{color:var(--ink)}
+.cert-signature{display:inline-block;width:min(260px,80%);margin-top:22px;padding-top:10px;border-top:1px solid var(--border);font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.print-certificate{width:100%;margin-top:16px}
+@media(max-width:600px){
+  .exam-card,.certificate-card{padding:18px}
+  .exam-question{padding:13px}
+  .certificate{padding:28px 18px}
+  .cert-footer{gap:10px 20px}
 }
-.phone{
-  width:100%;border-radius:22px;
-  background:var(--surface);border:1px solid var(--border);
-  box-shadow:0 20px 50px rgba(20,20,43,.08),inset 0 1px 0 rgba(255,255,255,.9);
-  padding:22px 24px 20px;text-align:left;position:relative;overflow:hidden;
-}
-[data-theme="dark"] .phone{
-  box-shadow:0 20px 50px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.06);
-}
-.phone-head{
-  display:flex;align-items:center;justify-content:space-between;
-  margin-bottom:16px;padding-bottom:16px;
-  border-bottom:1px solid var(--border);
-}
-.phone-app{display:flex;align-items:center;gap:10px}
-.phone-app-icon{
-  width:32px;height:32px;border-radius:9px;overflow:hidden;flex-shrink:0;
-  display:block;
-  box-shadow:0 1px 3px rgba(0,0,0,.18),inset 0 0 0 .5px rgba(255,255,255,.06);
-}
-.phone-app-icon svg{width:100%;height:100%;display:block}
-.phone-app-name{font-size:.88rem;font-weight:600;color:var(--ink);letter-spacing:-.005em}
-.phone-time{
-  font-size:.72rem;font-weight:500;color:var(--ink-3);
-  font-family:'JetBrains Mono',monospace;
-}
-.phone-sender{
-  display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;
-}
-.phone-sender-name{font-size:.9rem;font-weight:600;color:var(--ink);letter-spacing:-.005em}
-.phone-sender-tag{
-  font-size:.62rem;font-weight:700;letter-spacing:.06em;
-  text-transform:uppercase;padding:4px 9px;border-radius:100px;
-  color:var(--amber);background:var(--amber-soft);
-}
-.phone-msg{
-  font-size:1rem;line-height:1.65;color:var(--ink-2);
-  letter-spacing:-.003em;margin-bottom:8px;
-}
-.phone-msg strong{color:var(--ink);font-weight:600}
-.phone-msg em{
-  font-style:normal;color:var(--lavender-2);
-  font-weight:600;word-break:break-all;
-}
-.phone-foot{
-  display:flex;align-items:center;gap:9px;
-  padding-top:14px;margin-top:8px;
-  border-top:1px solid var(--border);
-  font-size:.74rem;color:var(--ink-3);
-  font-family:'JetBrains Mono',monospace;
-}
-.phone-foot-dot{
-  width:6px;height:6px;border-radius:50%;background:var(--amber);
-  box-shadow:0 0 0 3px var(--amber-soft);flex-shrink:0;
-  animation:livePulse 2.4s ease-in-out infinite;
-}
-@keyframes livePulse{
-  0%,100%{box-shadow:0 0 0 3px var(--amber-soft)}
-  50%{box-shadow:0 0 0 5px rgba(245,158,11,.15)}
+@media print{
+  @page{size:landscape;margin:12mm}
+  html,body{width:100%;min-height:0!important;background:#fff!important}
+  body *{visibility:hidden!important}
+  #certificateWrapper,#certificateWrapper *{visibility:visible!important}
+  #certificateWrapper{position:fixed!important;inset:0!important;display:grid!important;place-items:center!important;margin:0!important;padding:0!important;background:#fff!important;}
+  #certificateWrapper .certificate{width:100%;max-width:none;padding:26px 34px;border:3px solid #333;border-radius:0;box-shadow:none;background:#fff;color:#111;break-inside:avoid;}
+  #certificateWrapper .certificate::before{border-color:#aaa}
+  #certificateWrapper .cert-brand{color:#49327a}
+  #certificateWrapper .cert-title,#certificateWrapper .cert-footer strong{color:#111}
+  #certificateWrapper .cert-subtitle,#certificateWrapper .cert-text,#certificateWrapper .cert-footer,#certificateWrapper .cert-signature{color:#333}
+  #certificateWrapper .cert-name-input,#printCertBtn{display:none!important}
+  #certificateWrapper .cert-print-name{display:block!important;min-height:1.6em;margin:0 auto 14px;font-size:1.25rem;font-weight:700;color:#111}
 }
 
-/* ───── CHOICES ───── */
-.choices{display:flex;flex-direction:column;gap:10px;margin-top:24px}
-.choice{
-  position:relative;text-align:left;
-  padding:16px 20px;background:var(--surface);
-  border:1px solid var(--border);border-radius:14px;color:var(--ink);
-  font-family:inherit;font-size:.94rem;font-weight:500;
-  line-height:1.45;cursor:pointer;
-  transition:all .25s var(--ease);
-  display:flex;align-items:center;gap:14px;width:100%;
-}
-.choice::before{
-  content:attr(data-key);
-  flex-shrink:0;width:24px;height:24px;border-radius:7px;
-  background:color-mix(in srgb,var(--ink-3) 12%,transparent);
-  display:flex;align-items:center;justify-content:center;
-  font-family:'JetBrains Mono',monospace;
-  font-size:.7rem;font-weight:700;color:var(--ink-3);
-  transition:all .25s var(--ease);
-}
-.choice:hover{
-  border-color:var(--border-strong);
-  background:var(--surface-2);
-  transform:translateY(-1px);
-  box-shadow:0 6px 18px rgba(20,20,43,.06);
-}
-.choice:hover::before{
-  background:linear-gradient(135deg,var(--lavender-2),var(--sky));
-  color:#fff;
-}
-
-/* ───── REVEAL ───── */
-.reveal{animation:revealIn .5s var(--ease)}
-@keyframes revealIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-.reveal-verdict-row{
-  display:flex;align-items:center;gap:10px;
-  flex-wrap:wrap;margin-bottom:18px;
-}
-.reveal-verdict{
-  display:inline-flex;align-items:center;gap:10px;
-  font-family:'JetBrains Mono',monospace;
-  font-size:.7rem;font-weight:700;letter-spacing:.14em;
-  text-transform:uppercase;padding:8px 14px;border-radius:100px;
-}
-.reveal-verdict.safe{color:var(--mint);background:var(--mint-soft)}
-.reveal-verdict.unsafe{color:var(--rose);background:var(--rose-soft)}
-.reveal-verdict .rd{width:8px;height:8px;border-radius:50%;background:currentColor}
-.points-badge{
-  display:inline-flex;align-items:center;gap:6px;
-  font-family:'JetBrains Mono',monospace;
-  font-size:.68rem;font-weight:700;letter-spacing:.08em;
-  padding:8px 14px;border-radius:100px;
-  background:var(--lavender-soft);color:var(--lavender-2);
-  border:1px solid rgba(139,92,246,.25);
-}
-.points-badge.zero{
-  background:color-mix(in srgb,var(--ink-3) 8%,transparent);
-  color:var(--ink-3);border-color:var(--border);
-}
-.reveal-title{
-  font-size:1.4rem;font-weight:800;letter-spacing:-.025em;
-  line-height:1.2;color:var(--ink);margin-bottom:14px;
-}
-.reveal-body{
-  font-size:.98rem;line-height:1.7;color:var(--ink-2);margin-bottom:28px;
-}
-.reveal-body strong{color:var(--ink);font-weight:600}
-.block{
-  margin-bottom:20px;padding:22px 24px;border-radius:16px;
-  background:var(--surface);border:1px solid var(--border);
-}
-.block-head{display:flex;align-items:center;gap:10px;margin-bottom:16px}
-.block-icon{
-  width:32px;height:32px;border-radius:10px;
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;
-}
-.block-icon svg{width:16px;height:16px}
-.block-label{
-  font-family:'JetBrains Mono',monospace;
-  font-size:.66rem;font-weight:700;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--ink-2);
-}
-.block.signals .block-icon{background:var(--amber-soft);color:var(--amber)}
-.signal-list{display:flex;flex-direction:column;gap:14px}
-.signal{display:flex;align-items:flex-start;gap:12px}
-.signal-num{
-  font-family:'JetBrains Mono',monospace;
-  font-size:.72rem;font-weight:700;color:var(--amber);
-  flex-shrink:0;width:20px;margin-top:2px;
-}
-.signal-text{flex:1;min-width:0}
-.signal-name{
-  font-size:.92rem;font-weight:700;color:var(--ink);
-  margin-bottom:4px;letter-spacing:-.005em;
-}
-.signal-detail{font-size:.88rem;line-height:1.6;color:var(--ink-2)}
-.block.stakes .block-icon{background:var(--rose-soft);color:var(--rose)}
-.block.stakes p{font-size:.94rem;line-height:1.7;color:var(--ink-2)}
-.block.stakes strong{color:var(--ink);font-weight:600}
-.block.verify .block-icon{background:var(--mint-soft);color:var(--mint)}
-.block.verify p{font-size:.94rem;line-height:1.7;color:var(--ink-2)}
-.block.verify strong{color:var(--ink);font-weight:600}
-.block.lever-block .block-icon{background:var(--lavender-soft);color:var(--lavender-2)}
-.lever-name{
-  display:inline-flex;align-items:center;gap:8px;
-  font-family:'JetBrains Mono',monospace;
-  font-size:.68rem;font-weight:700;letter-spacing:.14em;
-  text-transform:uppercase;padding:6px 12px;border-radius:100px;
-  background:var(--lavender-soft);color:var(--lavender-2);
-  margin-bottom:12px;
-}
-.lever-name .ld{width:6px;height:6px;border-radius:50%;background:currentColor}
-.lever-explain{font-size:.92rem;line-height:1.7;color:var(--ink-2)}
-
-/* ───── CROSS-LINK ───── */
-.crosslink{
-  display:flex;align-items:center;gap:14px;
-  padding:16px 18px;border-radius:14px;
-  background:var(--surface);
-  border:1px solid var(--border);
-  text-decoration:none;color:inherit;
-  transition:all .25s var(--ease);
-  margin-bottom:20px;
-}
-.crosslink:hover{
-  border-color:var(--lavender-2);
-  transform:translateX(2px);
-  box-shadow:0 8px 22px rgba(139,92,246,.1);
-}
-.crosslink-icon{
-  width:38px;height:38px;border-radius:11px;
-  background:var(--lavender-soft);color:var(--lavender-2);
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;
-}
-.crosslink-icon svg{width:18px;height:18px}
-.crosslink-text{flex:1;min-width:0}
-.crosslink-label{
-  font-family:'JetBrains Mono',monospace;
-  font-size:.6rem;font-weight:700;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--ink-3);
-  margin-bottom:3px;
-}
-.crosslink-title{
-  font-size:.92rem;font-weight:700;
-  letter-spacing:-.01em;color:var(--ink);
-  line-height:1.3;
-}
-.crosslink-arrow{
-  color:var(--ink-4);flex-shrink:0;
-  transition:all .25s var(--ease);
-}
-.crosslink-arrow svg{width:15px;height:15px}
-.crosslink:hover .crosslink-arrow{
-  color:var(--lavender-2);
-  transform:translateX(3px);
-}
-
-/* ───── ACTIONS ───── */
-.reveal-actions{
-  display:flex;gap:12px;flex-wrap:wrap;
-  margin-top:28px;padding-top:26px;
-  border-top:1px solid var(--border);
-}
-.btn{
-  display:inline-flex;align-items:center;gap:9px;
-  padding:14px 24px;border-radius:100px;
-  font-family:inherit;font-size:.94rem;font-weight:600;
-  border:none;cursor:pointer;text-decoration:none;
-  transition:all .25s var(--ease);justify-content:center;
-}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border-radius:100px;font-family:inherit;font-size:.92rem;font-weight:600;border:none;cursor:pointer;text-decoration:none;transition:all .25s var(--ease);justify-content:center;}
 .btn svg{width:15px;height:15px;transition:transform .3s var(--ease)}
-.btn-primary{
-  background:var(--lime);color:var(--ink);
-  box-shadow:0 6px 20px var(--lime-glow);font-weight:700;
-  flex:1;min-width:200px;
-}
-.btn-primary:hover{
-  background:var(--lime-hover);transform:translateY(-2px);
-  box-shadow:0 12px 30px var(--lime-glow);
-}
+.btn-primary{background:var(--lime);color:var(--ink);box-shadow:0 6px 20px var(--lime-glow);font-weight:700;}
+.btn-primary:hover{background:var(--lime-hover);transform:translateY(-2px);box-shadow:0 12px 30px var(--lime-glow);}
 .btn-primary:hover svg{transform:translateX(4px)}
-[data-theme="dark"] .btn-primary{
-  background:#87965F;color:#121217;
-  box-shadow:0 4px 12px rgba(135,150,95,.16);
-}
-[data-theme="dark"] .btn-primary:hover{
-  background:#96A66B;
-  box-shadow:0 8px 18px rgba(135,150,95,.2);
-}
-.btn-secondary{
-  background:var(--surface);color:var(--ink);
-  border:1px solid var(--border);
-}
-.btn-secondary:hover{border-color:var(--border-strong);transform:translateY(-2px)}
-
-/* ───── COMEBACK ───── */
-.comeback{
-  text-align:center;padding:32px 28px;border-radius:20px;
-  background:linear-gradient(135deg,rgba(199,245,72,.08),rgba(52,211,153,.06));
-  border:1px solid rgba(199,245,72,.3);margin-top:24px;
-  animation:revealIn .5s var(--ease);
-}
-.comeback-icon{
-  width:56px;height:56px;border-radius:16px;
-  background:linear-gradient(135deg,var(--lime),#34D399);
-  display:flex;align-items:center;justify-content:center;
-  margin:0 auto 18px;
-  box-shadow:0 8px 24px var(--lime-glow);
-}
-.comeback-icon svg{width:26px;height:26px;color:var(--ink)}
-.comeback-title{
-  font-size:1.25rem;font-weight:800;
-  letter-spacing:-.025em;color:var(--ink);
-  margin-bottom:10px;line-height:1.25;
-}
-.comeback-sub{
-  font-size:.94rem;color:var(--ink-2);
-  line-height:1.65;max-width:400px;margin:0 auto 22px;
-}
-.comeback-sub strong{color:var(--ink);font-weight:600}
-.comeback-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-
-/* ───── COMPLETE ───── */
-.complete{text-align:center;padding:20px 0;animation:revealIn .6s var(--ease)}
-.complete-icon{
-  width:80px;height:80px;margin:0 auto 24px;border-radius:50%;
-  background:linear-gradient(135deg,var(--mint-soft),var(--lavender-soft));
-  border:1px solid rgba(16,185,129,.3);
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 0 40px rgba(16,185,129,.2);
-}
-.complete-icon svg{width:36px;height:36px;color:var(--mint)}
-.complete-title{
-  font-size:1.6rem;font-weight:800;letter-spacing:-.03em;
-  margin-bottom:14px;color:var(--ink);
-}
-.complete-sub{
-  font-size:1rem;color:var(--ink-2);line-height:1.7;
-  max-width:440px;margin:0 auto 32px;
-}
-.complete-sub strong{color:var(--ink);font-weight:600}
-.complete-stats{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;
-  max-width:440px;margin:0 auto 32px;
-}
-.stat{
-  padding:18px 12px;background:var(--surface);
-  border:1px solid var(--border);border-radius:14px;text-align:center;
-}
-.stat-v{
-  font-size:1.5rem;font-weight:800;letter-spacing:-.03em;
-  background:linear-gradient(120deg,var(--lavender-2),var(--mint));
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-  line-height:1.1;margin-bottom:6px;
-}
-.stat-l{
-  font-family:'JetBrains Mono',monospace;
-  font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--ink-3);
-}
-
-/* ───── FOOTER ───── */
-.footer{
-  margin-top:56px;padding-top:28px;
-  border-top:1px solid var(--border);
-  text-align:center;font-size:.82rem;
-  color:var(--ink-3);line-height:1.7;
-}
-.footer-links{
-  display:flex;justify-content:center;gap:18px;
-  flex-wrap:wrap;margin-bottom:14px;
-}
-.footer a{color:var(--ink-3);text-decoration:none;transition:color .2s var(--ease)}
-.footer a:hover{color:var(--ink)}
-.footer-meta{
-  font-family:'JetBrains Mono',monospace;
-  font-size:.7rem;letter-spacing:.02em;color:var(--ink-4);
-}
+[data-theme="dark"] .btn-primary{background:#87965F;color:#121217;box-shadow:0 4px 12px rgba(135,150,95,.16);}
+[data-theme="dark"] .btn-primary:hover{background:#96A66B;box-shadow:0 8px 18px rgba(135,150,95,.2);}
+.btn-secondary{background:var(--surface-2);color:var(--ink);border:1px solid var(--border);}
+.btn-secondary:hover{border-color:var(--border-strong);transform:translateY(-2px);}
 
 @media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{
-    animation-duration:.01ms!important;
-    animation-iteration-count:1!important;
-    transition-duration:.01ms!important;
-  }
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}
 }
 </style>
 </head>
@@ -737,9 +348,9 @@ a.progress-chip:hover{
     </div>
     CyberWise
   </a>
-    <nav class="nav" id="navMenu">
+  <nav class="nav" id="navMenu">
     <a href="landing.html">Home</a>
-    <a href="guide.html">Guide</a>
+    <a href="guide.html" class="active">Guide</a>
     <a href="hub.html">Hub</a>
     <a href="dashboard.html">Dashboard</a>
     <a href="screen6.html">Practise</a>
@@ -748,6 +359,7 @@ a.progress-chip:hover{
     <a href="recovery.html">Recover</a>
   </nav>
   <div class="actions">
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
       <svg class="ti-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="12" cy="12" r="4"/>
@@ -767,1047 +379,1124 @@ a.progress-chip:hover{
   </div>
 </div>
 
-<main class="page" id="page"></main>
+<div class="layout">
+
+  <aside class="toc" id="toc">
+    <div class="toc-label">Contents</div>
+    <ul class="toc-list" id="tocList"></ul>
+    <div class="toc-progress">
+      <div class="toc-progress-top">
+        <span class="toc-progress-label">Your progress</span>
+        <span class="toc-progress-count" id="tocCount">0 / 13</span>
+      </div>
+      <div class="toc-progress-bar">
+        <div class="toc-progress-fill" id="tocFill"></div>
+      </div>
+      <button class="toc-reset" data-action="reset" type="button">Reset progress</button>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <header class="guide-head">
+      <div class="guide-eyebrow"><span class="dot"></span>Plain language · South African context · Free</div>
+      <h1 class="guide-title">The <em>CyberWise</em> guide to staying safe online.</h1>
+      <p class="guide-lede">
+        Passwords, phishing, public Wi-Fi, AI tools, POPIA, and what to do when it goes wrong.
+        <strong>Thirteen sections. Read one, practise it, mark it done.</strong>
+      </p>
+
+      <div class="search" id="searchWrap">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="7"/>
+            <line x1="16.5" y1="16.5" x2="21" y2="21"/>
+          </svg>
+        </span>
+        <input type="text" id="searchInput" placeholder="Search the guide — try 'MFA', 'Wi-Fi', 'POPIA'…" autocomplete="off"/>
+        <button type="button" class="search-clear" id="searchClear" aria-label="Clear search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="6" y1="6" x2="18" y2="18"/>
+            <line x1="18" y1="6" x2="6" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div id="sections"></div>
+
+    <section class="final-exam" id="finalExamSection" aria-labelledby="finalExamTitle">
+      <div class="exam-card" id="finalExamCard">
+        <div id="finalExamLockedContent"></div>
+        <div id="finalExamUnlockedContent" hidden>
+          <div class="sec-label"><span class="dot"></span>Check what you learned</div>
+          <div class="exam-intro">
+            <h2 class="sec-title" id="finalExamTitle">CyberWise final assessment</h2>
+            <p>Answer all 10 questions. Score 7 or more to earn your certificate. Your answers and result stay in this browser.</p>
+          </div>
+          <form id="finalExamForm">
+            <div class="exam-list" id="finalExamQuestions"></div>
+            <div class="exam-actions">
+              <button class="btn btn-primary" type="submit">Submit assessment</button>
+              <p class="exam-status" id="finalExamStatus" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="certificate-card" id="certificateWrapper" hidden>
+        <div class="certificate" id="certificate">
+          <div class="cert-seal" aria-hidden="true">🏆</div>
+          <div class="cert-brand">CyberWise</div>
+          <h2 class="cert-title">Certificate of Completion</h2>
+          <p class="cert-subtitle">This certifies that</p>
+          <label class="sr-only" for="certNameInput">Name to print on the certificate</label>
+          <input class="cert-name-input" id="certNameInput" type="text" maxlength="80" autocomplete="name" placeholder="Enter your name"/>
+          <span class="cert-print-name" id="certPrintName"></span>
+          <p class="cert-text">has successfully completed the CyberWise Guide to Cybersecurity Awareness, demonstrating knowledge across the guide’s 13 sections.</p>
+          <div class="cert-footer">
+            <span>Date: <strong id="certDate"></strong></span>
+            <span>Final score: <strong id="certScore"></strong></span>
+          </div>
+          <div class="cert-signature">CyberWise Education Team</div>
+        </div>
+        <button class="btn btn-primary print-certificate" id="printCertBtn" type="button">Print or save as PDF</button>
+      </div>
+    </section>
+
+    <div class="empty" id="empty" hidden>
+      <div class="empty-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7"/>
+          <line x1="16.5" y1="16.5" x2="21" y2="21"/>
+        </svg>
+      </div>
+      <div class="empty-title">Nothing matched that.</div>
+      <p class="empty-sub">Try a shorter word — like "password", "email", "backup", or "ransomware".</p>
+    </div>
+
+    <div class="closing">
+      <div class="closing-text">
+        Reading is the easy part. <strong>Practising is what makes it stick.</strong>
+      </div>
+      <div class="closing-actions">
+        <a class="btn btn-primary" href="screen6.html">
+          Try a scenario
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+        <a class="btn btn-secondary" href="recovery.html">I've been phished</a>
+      </div>
+    </div>
+
+  </main>
+</div>
 
 <script>
 (() => {
   'use strict';
 
-  // ═══════════════ SCENARIOS ═══════════════
-  const SCENARIOS = [
-    { id:'sars-refund', difficulty:'easy', category:'reward', catLabel:'Reward scam', guideSection:'3', channel:'SMS', sender:'+27 82 447 0199', senderLabel:'Unknown number', time:'14:22',
-      message:'<strong>SARS</strong>: You have a pending tax refund of R4,280. Verify your banking details to receive payment: <em>sars-refund-za.co.za</em>',
-      signals:[
-        {name:'Wrong domain',detail:'The real SARS site is sars.gov.za. This one has an extra word — "refund" — and ends in .co.za, not .gov.za.'},
-        {name:'Unknown sender',detail:'SARS contacts taxpayers through eFiling and official post. Not random mobile numbers.'},
-        {name:'Money you didn\'t expect',detail:'"Pending refund" is one of the oldest hooks. Money waiting for you feels like something to claim, not something to check.'},
-        {name:'Link to claim',detail:'Real refunds are claimed inside eFiling. If a message gives you a link to receive money, that link is the entire trap.'}
-      ],
-      choices:[{label:'Tap the link and verify my banking details.',safe:false},{label:'Open the SARS eFiling portal myself.',safe:true}],
-      safeResult:{title:'You bypassed the channel.',body:'You opened the real portal on your own terms, not through a link in a message. That two-second decision is the whole defence. There is no refund waiting — there never was.'},
-      unsafeResult:{title:'The page was built for one thing.',body:'It accepted your details and sent them to an attacker. A real SARS refund arrives in eFiling, not via a link — you never need to click anything to receive one.'},
-      stakes:'Your banking details, ID number, and login to your SARS eFiling account. From there, an attacker can file returns in your name and redirect any future refunds.',
-      verify:'Type sars.gov.za into your browser directly. Log in. Check for any pending refund. It will show up there if it\'s real.',
-      lever:'reward',
-      leverExplain:'The attacker is offering you something you want. A refund, a prize, a benefit — anything that pulls you toward a reward makes you skip the small doubt that would otherwise make you check the URL.'
-    },
-    { id:'vodacom-airtime', difficulty:'easy', category:'reward', catLabel:'Free reward', guideSection:'3', channel:'SMS', sender:'Vodacom', senderLabel:'Vodacom', time:'16:33',
-      message:'You have <strong>unclaimed airtime of R500</strong> from our 2026 promotion. Claim before it expires in 24 hours: <em>vodacom-rewards.co.za</em>',
-      signals:[
-        {name:'Spoofed sender name',detail:'Any sender name can be set in an SMS. "Vodacom" at the top of your screen proves nothing.'},
-        {name:'Wrong domain',detail:'Vodacom uses vodacom.co.za. vodacom-rewards.co.za is a lookalike.'},
-        {name:'24-hour deadline',detail:'A short deadline is designed to make you act before you check. Real promotions run for weeks.'},
-        {name:'Free money framing',detail:'Rewards trigger desire. Desire makes you click. Everything about this message is built around that.'}
-      ],
-      choices:[{label:'Claim it — it says Vodacom right there.',safe:false},{label:'Check the My Vodacom app for the promotion.',safe:true}],
-      safeResult:{title:'You checked the app.',body:'No promotion waiting. Vodacom would not deliver a reward through a lookalike domain. Rewards requiring action within 24 hours are designed to make you skip checking — which is what you just did.'},
-      unsafeResult:{title:'The page asked for your ID.',body:'A "reward claim" that asks for your ID number and card details is not a reward. It\'s a data collection page dressed as one. The R500 doesn\'t exist.'},
-      stakes:'Your ID number, phone number, and card details. Free rewards are one of the most effective baits for collecting personal data.',
-      verify:'Open the My Vodacom app. Real promotions are always visible there, never only in a text message.',
-      lever:'reward',
-      leverExplain:'Anything free creates an urge to act before thinking. Attackers exploit that gap by adding a deadline, so the urge becomes a decision before doubt can appear.'
-    },
-    { id:'lab-usb', difficulty:'easy', category:'reward', catLabel:'Physical trap', guideSection:'3', channel:'USB', sender:'Found in the computer lab', senderLabel:'Left on a desk', time:'—',
-      message:'A USB drive on a library desk. It has a label: <strong>EXAM RESULTS 2026</strong>.',
-      signals:[
-        {name:'The label was the bait',detail:'Labels like "Exam Results" are chosen for one reason: to make you curious enough to override caution.'},
-        {name:'Physical access, no digital check',detail:'There is no domain to inspect, no sender to check, no URL to read. The USB is opaque.'},
-        {name:'Nobody claims it',detail:'A drive that hasn\'t been claimed by its owner is almost certainly not from a legitimate source.'},
-        {name:'Your curiosity is the exploit',detail:'Every part of the message — the label, the location, the timing before exam season — is engineered for curiosity.'}
-      ],
-      choices:[{label:'Plug it in — maybe the results are out early.',safe:false},{label:'Hand it to lab staff. Do not plug it in.',safe:true}],
-      safeResult:{title:'You handed it in.',body:'That was the right move. A USB drive found in a public place is one of the oldest attack vectors still working today. The curiosity is natural — that\'s why it works.'},
-      unsafeResult:{title:'The drive executed something.',body:'Some drives launch malware the moment they\'re inserted. Others contain a fake PDF that asks you to "enable macros." Either way, the results aren\'t there — but the attacker is now on the machine.'},
-      stakes:'Whatever computer you plug it into — and every account logged into on that computer.',
-      verify:'Hand it to lab staff. If it belongs to someone, they can collect it from lost property.',
-      lever:'reward',
-      leverExplain:'The label promises something you want — early results, salary info, confidential documents. Curiosity opens the door. The drive does the rest.'
-    },
-    { id:'lab-qr-code', difficulty:'easy', category:'reward', catLabel:'Physical scam', guideSection:'3', channel:'QR code', sender:'Posted on a lab notice board', senderLabel:'Printed notice', time:'—',
-      message:'FREE AIRTIME — scan to claim a R100 data bundle. Offer valid for UJ students only. Limited to first 100 scans.',
-      signals:[
-        {name:'QR codes hide their destination',detail:'Unlike a URL you can read, a QR code is opaque. You cannot see where it goes until after you\'ve scanned.'},
-        {name:'Off-campus distribution',detail:'A printed notice on a lab board bypasses every email filter and every spam warning. It relies on physical trust.'},
-        {name:'"UJ students only"',detail:'Naming your institution makes it feel targeted and official. It also makes it feel like something you\'re supposed to do.'},
-        {name:'First 100 scans',detail:'Scarcity forces a decision before thought. Real promotions don\'t depend on you racing.'}
-      ],
-      choices:[{label:'Scan — free data is free data.',safe:false},{label:'Search for the offer and check with the university.',safe:true}],
-      safeResult:{title:'You checked.',body:'UJ\'s IT department has never posted a QR code for free data. The offer was invented. Whatever the QR code opened was designed to look like a university page and ask you to sign in.'},
-      unsafeResult:{title:'The QR opened a login page.',body:'It looked like a UJ page. It asked for your student number and password. You entered them. QR codes can point anywhere — you have no way of knowing the destination before you scan.'},
-      stakes:'Your UJ credentials, captured on a page that looked official and never existed.',
-      verify:'Search for the promotion by name. If it\'s real, it exists on an official page. If the only place it lives is the QR code, it isn\'t real.',
-      lever:'reward',
-      leverExplain:'A free offer plus a scarcity cue ("first 100 scans") turns curiosity into action. The physical poster format bypasses the digital scepticism you\'d apply to an email.'
-    },
-    { id:'ubereats-refund', difficulty:'easy', category:'reward', catLabel:'Refund scam', guideSection:'3', channel:'SMS', sender:'+27 78 440 2281', senderLabel:'Unknown number', time:'20:14',
-      message:'Your <strong>Uber Eats</strong> order has been cancelled. Refund of R340 pending. Enter your card details to receive: <em>ubereats-refunds.com</em>',
-      signals:[
-        {name:'Wrong domain',detail:'ubereats-refunds.com is not ubereats.com. The added "refunds" word is the giveaway.'},
-        {name:'Refunds don\'t need card details',detail:'A refund goes to the card you paid with. The service already has your details. Any request to re-enter them is a scam, 100% of the time.'},
-        {name:'Plausible amount',detail:'R340 is a specific, believable number — big enough to care about, small enough to seem routine.'},
-        {name:'You might have ordered recently',detail:'Most people have ordered food recently. The message relies on that "maybe" to work.'}
-      ],
-      choices:[{label:'Enter card details — I want the refund.',safe:false},{label:'Open the Uber Eats app and check the order.',safe:true}],
-      safeResult:{title:'You checked the app.',body:'No cancelled order. No refund. Uber Eats processes refunds automatically to the same payment method — you never need to enter card details to receive one.'},
-      unsafeResult:{title:'You entered the card.',body:'The refund page was a card-harvesting form. Your card details were captured and used within the hour. Refunds are never initiated through a link, ever.'},
-      stakes:'Your full card details, including the CVV. That\'s enough to make online purchases and, in some cases, to set up recurring charges.',
-      verify:'Open the Uber Eats app. Any cancelled order or refund will appear there. No link needed.',
-      lever:'reward',
-      leverExplain:'Free money you\'re owed feels like something to claim quickly. The refund narrative works because it seems legitimate — you did pay, so a refund isn\'t strange.'
-    },
-    { id:'microsoft-verify', difficulty:'easy', category:'fear', catLabel:'Fake security alert', guideSection:'3', channel:'Email', sender:'noreply@microsoft-account-verify.com', senderLabel:'Microsoft', time:'11:14',
-      message:'Unusual sign-in attempt detected. Someone tried to log into your Microsoft account from <strong>Lagos, Nigeria</strong>. If this wasn\'t you, secure your account immediately.',
-      signals:[
-        {name:'Domain not microsoft.com',detail:'microsoft-account-verify.com is not microsoft.com. Microsoft runs security notices from their own domain, never a lookalike.'},
-        {name:'Foreign location trigger',detail:'A specific distant city makes the threat feel real and specific. Attackers choose exotic locations because they work.'},
-        {name:'Urgency built in',detail:'"Secure your account immediately" is designed to skip the ten seconds it would take to check the sender.'},
-        {name:'Plausible scenario',detail:'Unusual sign-in alerts are real — Microsoft does send them. That\'s exactly why the fake one works.'}
-      ],
-      choices:[{label:'Secure my account — someone is trying to get in.',safe:false},{label:'Log into account.microsoft.com in a new tab.',safe:true}],
-      safeResult:{title:'You went to the source.',body:'Logging in through the real Microsoft portal shows the truth: no suspicious activity, because it never happened. The "unusual sign-in" was itself the bait.'},
-      unsafeResult:{title:'The page looked like Microsoft.',body:'Logo, fonts, layout — all copied. What it didn\'t have was the real domain. Your email and password were captured in the four seconds you were on that page.'},
-      stakes:'Your email account. From there, an attacker can reset every other account tied to that email — banking, social, work, everything.',
-      verify:'Go to account.microsoft.com by typing it. Look at your recent activity. Any real alert will show up there.',
-      lever:'fear',
-      leverExplain:'When you believe someone is already in your account, checking feels like a waste of time. Fear turns "verify" into "react" — and reacting is exactly what the attacker needs.'
-    },
-    { id:'standard-bank-blocked', difficulty:'easy', category:'fear', catLabel:'Account locked', guideSection:'3', channel:'SMS', sender:'+27 84 662 1177', senderLabel:'Unknown number', time:'07:02',
-      message:'Your Standard Bank card has been <strong>blocked</strong> for security reasons. Call 087 345 0199 to unblock.',
-      signals:[
-        {name:'Wrong number',detail:'Standard Bank\'s real number is on the back of your card. A number in an SMS can be anything.'},
-        {name:'Blocked card fear',detail:'Nobody wants a blocked card. The fear makes you want to call before you think.'},
-        {name:'Urgency without context',detail:'No mention of why, no reference number, no way to check in the app. Real banks always give you context first.'},
-        {name:'Callback trap',detail:'The number leads to a call centre built to walk you through "verification" — which means your PIN and passwords.'}
-      ],
-      choices:[{label:'Call the number — my card might really be blocked.',safe:false},{label:'Open the banking app and check the card status.',safe:true}],
-      safeResult:{title:'You opened the app.',body:'Your card is fine. The number in the message would have reached a call centre set up to walk you through verification — which means your PIN and your banking passwords.'},
-      unsafeResult:{title:'The call was calm and professional.',body:'The person knew your name, your branch, and your card type. They asked for your PIN "to verify you\'re the account holder." No bank asks for your PIN. Not ever.'},
-      stakes:'Your card PIN, your online banking password, and full access to your account.',
-      verify:'Open the Standard Bank app. Check the card status there. If the card is fine, the message was fake.',
-      lever:'fear',
-      leverExplain:'A blocked card means you can\'t pay for anything. That\'s a real problem, and real problems make people act fast. The attacker relies on that reaction — the fast call is the trap.'
-    },
-    { id:'sextortion', difficulty:'easy', category:'fear', catLabel:'Sextortion', guideSection:'9', channel:'Email', sender:'noreply@security-alert-secure.com', senderLabel:'Security Alert', time:'03:14',
-      message:'We have a video of you from your webcam. We also have your contacts. Send <strong>0.05 Bitcoin</strong> within 48 hours or we send the video to everyone you know.',
-      signals:[
-        {name:'The webcam claim is almost always false',detail:'These emails are sent to hundreds of thousands of people at once. None of them are targeted.'},
-        {name:'No proof provided',detail:'If they really had a video, they\'d show a frame, a partial name, or a contact. They didn\'t.'},
-        {name:'The "do not reply" rule',detail:'Designed to make the threat feel more serious. Real scams almost always want a response.'},
-        {name:'Crypto payment, 48 hours',detail:'Bitcoin plus a short deadline makes the payment feel untraceable and urgent. That\'s the shape of the scam, not the shape of a real threat.'}
-      ],
-      choices:[{label:'I need to handle this. Send the payment.',safe:false},{label:'Delete it. This is a mass scam.',safe:true}],
-      safeResult:{title:'You didn\'t engage.',body:'These emails go out in the millions. Your details weren\'t in it. The webcam claim wasn\'t real. You just deleted a piece of spam.'},
-      unsafeResult:{title:'You paid.',body:'Within a day, another email arrived asking for more. Blackmail is a business — paying tells them you\'re a customer who responds.'},
-      stakes:'Money, and — worse — an endless cycle of escalating demands once you\'ve shown you\'ll pay.',
-      verify:'If you want to be certain, cover your webcam and check your accounts. But the email itself is mass-produced spam.',
-      lever:'fear',
-      leverExplain:'The threat is designed to feel personal and specific. It isn\'t. But fear stops you from thinking clearly enough to notice that.'
-    },
-    { id:'crypto-dm', difficulty:'easy', category:'reward', catLabel:'Investment scam', guideSection:'6', channel:'Instagram DM', sender:'@crypto_sa_invest', senderLabel:'Investment Coach', time:'21:02',
-      message:'Hey 👋 I saw your profile — you look like someone who wants to <strong>change your life</strong>. I turned R5,000 into R87,000 in 3 months. DM me to join my group.',
-      signals:[
-        {name:'Cold outreach',detail:'Legitimate investors don\'t DM strangers. Real returns come from real businesses, not unknown Instagram accounts.'},
-        {name:'Too good to be true returns',detail:'A 1,640% return in 3 months is impossible. Anyone promising it is lying or running a Ponzi scheme.'},
-        {name:'Emotional language',detail:'"Change your life" targets the part of you that wants a way out. That\'s the hook.'},
-        {name:'The closed group promise',detail:'"DM me to join my group" creates exclusivity. Exclusivity makes people act without thinking.'}
-      ],
-      choices:[{label:'Ask for more info. Maybe it\'s real.',safe:false},{label:'Block and report. This is a scam.',safe:true}],
-      safeResult:{title:'You blocked it.',body:'Legitimate ways to make money exist. Instagram DMs from strangers promising 16x returns are not one of them. You just avoided a Ponzi scheme.'},
-      unsafeResult:{title:'You DM\'d back.',body:'They sent screenshots of other "students" who made money. They showed you the payment platform. You sent R5,000. The platform showed fake profits. When you tried to withdraw, you needed to pay a "release fee." You paid again. The account disappeared.'},
-      stakes:'Every rand you put in. Investment scams almost never return anything — the first deposit is the entire business model.',
-      verify:'Search the handle or the platform name with the word "scam." If you can\'t find a real FSCA registration number, it isn\'t real.',
-      lever:'reward',
-      leverExplain:'Everyone wants a way out. Attackers offer the fantasy of quick money, and the offer itself makes you skip the check you\'d normally do.'
-    },
-    { id:'parcel-customs', difficulty:'easy', category:'urgency', catLabel:'Delivery fee scam', guideSection:'3', channel:'SMS', sender:'+27 66 402 9188', senderLabel:'Unknown number', time:'11:38',
-      message:'Your parcel is <strong>held at customs</strong>. A handling fee of R35 is required before delivery. Pay within 48 hours or the parcel is returned: <em>sapost-clearance.co.za</em>',
-      signals:[
-        {name:'Wrong domain',detail:'SAPO uses sapo.co.za. sapost-clearance.co.za is a lookalike — the extra word "clearance" is the only thing between you and the real site.'},
-        {name:'Small fee, big goal',detail:'R35 is small enough to feel worth paying. The trap is your card details, not the fee.'},
-        {name:'48-hour deadline',detail:'Real customs holds give you more time and come through proper channels, not texts from unknown numbers.'},
-        {name:'"Your parcel"',detail:'No tracking number, no description, no sender. If you\'re expecting something, it feels targeted; if you\'re not, curiosity fills the gap.'}
-      ],
-      choices:[{label:'Pay the R35 to release the parcel.',safe:false},{label:'Check the tracking through the real courier or SAPO.',safe:true}],
-      safeResult:{title:'You checked.',body:'No parcel waiting. Nothing held. Real customs issues go through the courier\'s official tracking page, never a payment link in an SMS.'},
-      unsafeResult:{title:'R35 was the bait.',body:'The payment page captured your full card details. The R35 was a real charge — the attackers sold your card on within hours.'},
-      stakes:'Your full card details. A small fee that feels worth paying is one of the most reliable ways to get them.',
-      verify:'Look up your tracking number on the courier\'s official site. If there\'s no tracking number, there\'s no parcel.',
-      lever:'urgency',
-      leverExplain:'A small fee plus a deadline feels like something to just pay. The amount is small enough that questioning it feels like overkill — which is exactly why it works.'
-    },
-    { id:'capitec-careers', difficulty:'medium', category:'authority', catLabel:'Authority', guideSection:'4', channel:'Email', sender:'hr@capitec-careers.co.za', senderLabel:'Careers Team', time:'09:47',
-      message:'Congratulations! Your application for the <strong>2026 Graduate Programme</strong> has been shortlisted. To confirm your placement, complete the onboarding form.',
-      signals:[
-        {name:'Fake sender domain',detail:'Capitec writes from @capitec.co.za. The extra "careers" word and the dash before it are the giveaway.'},
-        {name:'Urgency by flattery',detail:'"Congratulations, you\'ve been shortlisted" makes you want to say yes before you check anything.'},
-        {name:'Early bank details request',detail:'Real graduate programmes never ask for banking details before you have signed a contract and started working.'},
-        {name:'Generic greeting',detail:'No name, no reference number. A real shortlisting email addresses you directly.'}
-      ],
-      choices:[{label:'Complete the form — I did apply.',safe:false},{label:'Check the domain, then go to the real careers page.',safe:true}],
-      safeResult:{title:'You checked the domain.',body:'capitec-careers.co.za is not Capitec. The bank uses capitec.co.za. Real recruiters write from company domains, not lookalikes.'},
-      unsafeResult:{title:'You gave them everything.',body:'The form asked for ID number, address, and banking details "to process" the placement. Real graduate programmes never ask for bank details before a signed contract.'},
-      stakes:'Your ID number, home address, and banking details. That\'s enough to open fraudulent accounts or take out a loan in your name.',
-      verify:'Go to capitec.co.za directly (typing it yourself) and look for their careers section. If you applied through them, the confirmation will be there.',
-      lever:'authority',
-      leverExplain:'A big brand name makes you assume legitimacy. Attackers borrow that authority — using the logo, the tone, even the domain — so the actual request slides past unexamined.'
-    },
-    { id:'fnb-whatsapp', difficulty:'medium', category:'fear', catLabel:'Fear tactic', guideSection:'4', channel:'WhatsApp', sender:'+27 73 219 8840', senderLabel:'Unknown number', time:'19:08',
-      message:'Hi, this is your <strong>FNB fraud team</strong>. We detected suspicious activity on your card ending 4821. Reply <strong>1</strong> to confirm the transaction, or <strong>2</strong> to freeze the card.',
-      signals:[
-        {name:'The channel itself',detail:'No South African bank runs fraud alerts over WhatsApp. Not FNB, not Capitec, not ABSA, not Standard Bank, not Nedbank.'},
-        {name:'Unknown sender',detail:'A real fraud alert appears inside your banking app. It never comes from a random number.'},
-        {name:'Fake choice',detail:'"Reply 1 or 2" makes it feel like you\'re in control. Either reply puts you on a list of active numbers for the next stage of the attack.'},
-        {name:'Fear trigger',detail:'"Suspicious activity on your card" makes you want to respond immediately. That urgency is the point.'}
-      ],
-      choices:[{label:'Reply 2 to freeze the card just in case.',safe:false},{label:'Ignore it and call FNB on the number on my card.',safe:true}],
-      safeResult:{title:'You used the number on your card.',body:'The only safe number is the one printed on your card or inside the app. Anything a message hands you — even a plausible one — is a red flag, not a resource.'},
-      unsafeResult:{title:'You replied.',body:'The next message asked you to "confirm your identity" with your card PIN. Real banks never ask for a PIN over WhatsApp. The message was not from FNB.'},
-      stakes:'Your card number, PIN, and eventually access to your banking app. By the time it ends, your account can be emptied in minutes.',
-      verify:'Open your FNB app. If there is a real fraud alert, it will appear there. If there isn\'t, the message was fake.',
-      lever:'fear',
-      leverExplain:'Fear short-circuits verification. When you believe something urgent is happening, you act first and check later — which is the opposite of what would keep you safe.'
-    },
-    { id:'friend-macbook', difficulty:'medium', category:'trust', catLabel:'Trust hijack', guideSection:'3', channel:'Instagram DM', sender:'@thabo.j_', senderLabel:'Your friend Thabo', time:'21:15',
-      message:'Heyy, I\'m in this competition to win a MacBook and I need votes. Can you click this and vote for me? <em>vote-macbook-sa.com/tj</em>',
-      signals:[
-        {name:'Sender may not be the sender',detail:'Thabo\'s account could have been compromised weeks ago. The message comes from his account, but not from him.'},
-        {name:'Out-of-character ask',detail:'A friend who never asks for favours suddenly asking for votes is a flag. Real friends don\'t usually care this much about a MacBook.'},
-        {name:'External link',detail:'A competition vote would live on the competition\'s site. vote-macbook-sa.com is not a site you recognise.'},
-        {name:'Login required',detail:'Most "vote" pages ask you to log in with Instagram or Facebook. That login is the actual attack.'}
-      ],
-      choices:[{label:'Click and vote — it\'s Thabo, I know him.',safe:false},{label:'Message Thabo on WhatsApp and ask him.',safe:true}],
-      safeResult:{title:'You checked.',body:'Thabo\'s account had been compromised. The message was sent by whoever took it over. A message from a friend is not a message from a friend when the account might not be theirs.'},
-      unsafeResult:{title:'The site asked you to log in with Instagram.',body:'That\'s how it spreads. You grant the fake site access to your account, the same message goes out from your account, and the chain continues. This is called lateral phishing.'},
-      stakes:'Access to your Instagram. That lets the attacker send the same message to everyone you know — turning you into the next carrier of the attack.',
-      verify:'Send Thabo a message on a different app — WhatsApp, SMS, anything. If he did send it, he\'ll confirm. If he didn\'t, you just saved both of you.',
-      lever:'trust',
-      leverExplain:'Trust from a friend bypasses every security instinct you have. Attackers exploit this by compromising an account first, then sending the malicious link through a channel you already believe in.'
-    },
-    { id:'uj-registration', difficulty:'medium', category:'urgency', catLabel:'Registration threat', guideSection:'4', channel:'Email', sender:'admin@uj-student-portal.co.za', senderLabel:'UJ Admin', time:'06:12',
-      message:'<strong>Final notice:</strong> your 2026 registration is incomplete. Your student number will be deregistered within 24 hours unless you confirm your details here: <em>uj-student-portal.co.za</em>',
-      signals:[
-        {name:'Wrong domain',detail:'UJ uses uj.ac.za. uj-student-portal.co.za is a lookalike — the words "student-portal" are there to sound official.'},
-        {name:'A deadline you can\'t verify',detail:'"24 hours" leaves no time to walk to the admin office or check the student portal. That is exactly the point.'},
-        {name:'Threat to something you need',detail:'Deregistration threatens your place at university. That threat is chosen because it is the thing you would least want to lose.'},
-        {name:'No student number, no name',detail:'A real notice from UJ would include your student number and full name. This has neither.'}
-      ],
-      choices:[{label:'Confirm my details before the deadline.',safe:false},{label:'Log into the real UJ student portal and check.',safe:true}],
-      safeResult:{title:'You checked the real portal.',body:'Your registration is complete. Nothing was pending. Real registration notices are posted on the student portal — they are never delivered as an urgent link in an email.'},
-      unsafeResult:{title:'You re-entered your credentials.',body:'The page copied the UJ login screen exactly. Your student number and password went straight to the attacker, who now has access to your email, your marks, and your registration record.'},
-      stakes:'Your UJ student account. From there, an attacker can read your email, change your registration, and use your identity to apply for funding or loans.',
-      verify:'Go to uj.ac.za and log into the student portal directly. Any real notice about your registration will be there.',
-      lever:'urgency',
-      leverExplain:'A deadline that threatens something important forces a fast decision. Attackers pick the thing you would least want to lose — your place, your money, your access — and put a countdown on it.'
-    },
-    { id:'marketplace-buyer', difficulty:'medium', category:'reward', catLabel:'Marketplace scam', guideSection:'8', channel:'WhatsApp', sender:'+27 71 336 2094', senderLabel:'Buyer', time:'13:26',
-      message:'Hi, I\'m interested in the phone you listed. I\'ve already paid — you just need to <strong>confirm your bank details to release the funds</strong>: <em>fnb-payfast-secure.co.za</em>',
-      signals:[
-        {name:'Money that already exists',detail:'"I\'ve already paid" makes you feel like the money is yours and only a formality stands between you and it.'},
-        {name:'A link instead of a transfer',detail:'Real payments arrive in your bank account. No marketplace requires you to click a link to receive money.'},
-        {name:'Lookalike domain',detail:'fnb-payfast-secure.co.za borrows two brand names at once. Neither of them owns that domain.'},
-        {name:'Pressure from politeness',detail:'You want to complete the sale. The buyer knows that, and uses it.'}
-      ],
-      choices:[{label:'Enter my bank details to receive the payment.',safe:false},{label:'Check my banking app for the payment.',safe:true}],
-      safeResult:{title:'You checked the app.',body:'No payment. Nothing incoming. If someone has genuinely paid you, the money appears in your account — there is no confirmation step and no link to click.'},
-      unsafeResult:{title:'You entered your details.',body:'The "payment portal" was a fake banking login. Your credentials were captured, and within an hour a new beneficiary had been added to your account.'},
-      stakes:'Your online banking credentials. Once an attacker can log in, they can add beneficiaries and move money out.',
-      verify:'Open your banking app. If the money is real, it is already there. If it isn\'t there, it was never sent.',
-      lever:'reward',
-      leverExplain:'The offer of money that is "almost yours" is one of the strongest pulls there is. It turns a cautious person into someone who just wants to complete the last step.'
-    },
-    { id:'lecturer-marks', difficulty:'medium', category:'authority', catLabel:'Fake authority', guideSection:'4', channel:'Email', sender:'prof.mokoena@uj-staff-mail.com', senderLabel:'Prof. Mokoena', time:'08:20',
-      message:'Good day. I am finalising marks for <strong>Information Systems 2B</strong>. Please confirm your student number and portal password so I can capture your mark correctly.',
-      signals:[
-        {name:'Wrong domain',detail:'UJ staff write from uj.ac.za. uj-staff-mail.com is not a university domain.'},
-        {name:'A request no lecturer would make',detail:'No lecturer needs your password. Marks are captured in the university system by staff who already have access.'},
-        {name:'Authority plus familiarity',detail:'The module name is real. Knowing your course makes the email feel like it came from inside the university.'},
-        {name:'A plausible reason',detail:'"So I can capture your mark correctly" gives the request a reason. A reason makes an unusual request feel routine.'}
-      ],
-      choices:[{label:'Send my student number and password.',safe:false},{label:'Email the lecturer on their official UJ address.',safe:true}],
-      safeResult:{title:'You used the official address.',body:'The real lecturer never sent it. Your marks are captured from the university system — no student ever needs to hand over a password to have a mark recorded.'},
-      unsafeResult:{title:'You sent your password.',body:'The attacker had everything needed to log into your student account. They read your email, changed your contact details, and used your identity to apply for a study loan.'},
-      stakes:'Your student account and everything attached to it — email, marks, funding applications, and personal records.',
-      verify:'Look up the lecturer\'s real address on the university website and email that address directly. Never reply to the suspicious email.',
-      lever:'authority',
-      leverExplain:'When a request comes from someone who grades you, questioning it feels risky. That discomfort is the lever — it makes you comply to avoid an awkward situation.'
-    },
-    { id:'ict-migration', difficulty:'hard', category:'authority', catLabel:'IT impersonation', guideSection:'3', channel:'Email', sender:'ict-migration@uj-ict.co.za', senderLabel:'ICT Department', time:'10:05',
-      message:'All student accounts are being migrated to the new Microsoft tenant this week. To avoid losing your mailbox and OneDrive files, reply to this email with your <strong>student number and current password</strong>.',
-      signals:[
-        {name:'No link to check',detail:'There is nothing to click, so every link-checking habit you have is useless here. The ask itself is the attack.'},
-        {name:'A password request by email',detail:'IT departments never ask for your password — not by email, not by phone, not in person. This single rule covers almost every version of this scam.'},
-        {name:'Domain close enough to pass',detail:'uj-ict.co.za reads like a university address. It is not. UJ systems live on uj.ac.za.'},
-        {name:'Loss framing',detail:'"To avoid losing your mailbox" threatens something you cannot easily replace, which makes replying feel like the safe option.'}
-      ],
-      choices:[{label:'Reply with my student number and password.',safe:false},{label:'Check with the ICT service desk in person or by phone.',safe:true}],
-      safeResult:{title:'You asked the source.',body:'There is no migration. The ICT service desk confirms it, and you have just avoided the one attack that no amount of link-checking can catch.'},
-      unsafeResult:{title:'You replied.',body:'No page, no warning, no link. The attacker had a mailbox waiting and your password arrived in it. Your account was accessed within minutes.'},
-      stakes:'Your student email and everything connected to it — including password resets for every other account that uses it.',
-      verify:'Call the ICT service desk on the number listed on the university website. Never use a number from the email.',
-      lever:'authority',
-      leverExplain:'The email borrows the authority of an internal department and asks for something only an insider would need. When there is no link, the request itself has to be questioned — and that is the hardest habit to build.'
-    },
-    { id:'otp-relay', difficulty:'hard', category:'fear', catLabel:'OTP interception', guideSection:'9', channel:'SMS', sender:'Standard Bank', senderLabel:'Standard Bank', time:'18:47',
-      message:'<strong>Standard Bank</strong>: a pending transaction of R6,400 to a new beneficiary has been detected on your account. A fraud agent will contact you shortly. Do not share your OTP with anyone.',
-      signals:[
-        {name:'The warning is part of the trick',detail:'Telling you not to share your OTP makes the following phone call feel like the exception. The warning is there to build trust.'},
-        {name:'Real sender ID, real thread',detail:'This text may genuinely arrive in the same thread as your real bank messages. Sender IDs are easy to spoof.'},
-        {name:'The caller will sound right',detail:'They will know your name, your bank, and the amount in this SMS — because they wrote the SMS.'},
-        {name:'The OTP is the whole point',detail:'In that moment the OTP is not protecting you. It is the last piece the attacker needs to authorise a real transaction.'}
-      ],
-      choices:[{label:'Give the agent the OTP so they can reverse it.',safe:false},{label:'Hang up and call the number on the back of my card.',safe:true}],
-      safeResult:{title:'You hung up and dialled your own number.',body:'The real bank confirms: no pending transaction, no agent, no call. The SMS and the call were both from the same attacker, working from a script.'},
-      unsafeResult:{title:'You read out the OTP.',body:'The transaction went through in real time while you were still on the call. An OTP only exists to authorise something — and you just authorised it for them.'},
-      stakes:'The full amount of the pending transaction, taken from your account in seconds. OTP fraud is instant and very hard to reverse.',
-      verify:'Hang up. Dial the number printed on the back of your card. Ask the bank whether any transaction is pending. Never use a number the caller gives you.',
-      lever:'fear',
-      leverExplain:'A fraud alert plus a helpful agent is a story engineered to make you cooperate. The OTP warning at the end is the cleverest part — it makes the following request feel like the safe exception.'
-    },
-    { id:'docs-share', difficulty:'hard', category:'trust', catLabel:'Cloud document scam', guideSection:'3', channel:'Email', sender:'noreply@docs-google.com', senderLabel:'Google Docs', time:'09:12',
-      message:'<strong>Naledi Mokoena</strong> has shared "Group Assignment Final Draft" with you. Click to open: <em>docs-google.com/document/d/1Kx…</em>',
-      signals:[
-        {name:'docs-google.com is not google.com',detail:'Google\'s real domain is google.com. Anything inserted before or after it — "docs-", "-secure", "-login" — belongs to whoever registered it.'},
-        {name:'A name you recognise',detail:'The sender uses a classmate\'s name. That name is on the class list, and the class list is public.'},
-        {name:'The login is the attack',detail:'The page that opens is a pixel-perfect Google sign-in. Entering your details hands over your entire Google account.'},
-        {name:'Nothing suspicious on the surface',detail:'The filename, the sender name, and the layout are all correct. Only the domain is wrong.'}
-      ],
-      choices:[{label:'Open the document and sign in.',safe:false},{label:'Open Google Drive directly and look for the share.',safe:true}],
-      safeResult:{title:'You went straight to Drive.',body:'Nothing there. The share never existed inside Google — because it was never a Google share. Opening Drive directly removes the attacker\'s ability to choose the page you land on.'},
-      unsafeResult:{title:'You signed in.',body:'The page captured your Google credentials and your session. Every file in your Drive, every email in your Gmail, and every account that uses "Sign in with Google" was exposed.'},
-      stakes:'Your entire Google account — files, email, photos, and the dozens of services that use Google as their login.',
-      verify:'Open drive.google.com directly and check Shared with me. A genuine share always appears there.',
-      lever:'trust',
-      leverExplain:'The message borrows the trust of a familiar name and a familiar product. Nothing feels unusual, which is exactly why the domain — the only real clue — goes unread.'
-    },
-    { id:'recruiter-linkedin', difficulty:'hard', category:'trust', catLabel:'Job offer scam', guideSection:'4', channel:'Email', sender:'t.naidoo@talent-sourcing-za.com', senderLabel:'Talent Sourcing', time:'12:30', foot:'1 attachment · RoleSpec.html',
-      message:'Hi, I came across your profile and think you would be a strong fit for a <strong>junior data analyst</strong> role we are filling. I have attached the role specification — please open it and confirm your interest so I can put you forward.',
-      signals:[
-        {name:'A real company name',detail:'The client is real. The recruiter is not. Borrowing a name you recognise gives the message instant credibility.'},
-        {name:'The attachment is the payload',detail:'The file is not a PDF. It is a web page saved as a file, and it opens a login screen that copies Microsoft\'s.'},
-        {name:'You were not looking for a job',detail:'Unprompted approaches still work, because being wanted feels good — and that feeling replaces caution.'},
-        {name:'Move-fast framing',detail:'"Confirm your interest so I can put you forward" creates the sense that a real chance is slipping away.'}
-      ],
-      choices:[{label:'Open the attachment and sign in to view the role.',safe:false},{label:'Check the recruiter and the company\'s own careers site.',safe:true}],
-      safeResult:{title:'You checked the recruiter.',body:'The LinkedIn profile was three weeks old, had no connections in common, and the company has never heard of them. The role does not exist.'},
-      unsafeResult:{title:'The attachment opened a Microsoft login.',body:'It was not a document — it was a saved web page imitating the Microsoft sign-in screen. Your university credentials went straight to the attacker.'},
-      stakes:'Your Microsoft account and everything behind it — email, files, and any service that uses the same password.',
-      verify:'Search the recruiter\'s name and the company\'s official careers page. Real vacancies are advertised by the company itself, not only by a stranger with an attachment.',
-      lever:'trust',
-      leverExplain:'A job offer taps into hope and ambition. When something you want arrives unexpectedly, the instinct is to move quickly — and speed is the attacker\'s best friend.'
-    },
-    { id:'supplier-invoice', difficulty:'hard', category:'authority', catLabel:'Invoice redirection', guideSection:'7', channel:'Email', sender:'accounts@brightline-solutions.co.za', senderLabel:'Brightline Solutions', time:'08:44',
-      message:'Good day. Please note our banking details have changed with effect from this month. Kindly update your records and settle the attached invoice to the new account: <strong>FNB 6274 118 0392</strong>.',
-      signals:[
-        {name:'The domain is correct',detail:'This is genuinely the supplier\'s address — because the supplier\'s mailbox was compromised. Checking the sender proves nothing here.'},
-        {name:'A routine request',detail:'Bank detail changes happen. That is exactly what makes this work.'},
-        {name:'No phone call to confirm',detail:'Any change of banking details should be confirmed by calling a number you already had — never one supplied in the email.'},
-        {name:'Pressure of an unpaid invoice',detail:'An unpaid invoice threatens the relationship and the service. That pressure pushes you to just pay it.'}
-      ],
-      choices:[{label:'Update the details and pay the invoice.',safe:false},{label:'Call the supplier on the number I already have.',safe:true}],
-      safeResult:{title:'You picked up the phone.',body:'The supplier had no idea. Their mailbox had been compromised for eleven days, and you were the first person to call and ask. The invoice was real; the bank details were not.'},
-      unsafeResult:{title:'The payment went through.',body:'It left your account and landed in an account belonging to a money mule. By the time anyone noticed, it had been withdrawn and moved on. The supplier never received it, and the invoice is still unpaid.'},
-      stakes:'The full invoice amount, plus the relationship with a real supplier who will still expect to be paid.',
-      verify:'Call the supplier on a number you already have on file. Confirm the change verbally with a person you know. Never confirm by replying to the email.',
-      lever:'authority',
-      leverExplain:'This attack does not impersonate authority — it hijacks it. The message genuinely comes from the supplier, which means the only defence is a process: any change of banking details is confirmed by phone, every time, without exception.'
-    }
-  ];
-
-  // ═══════════════ CONFIG ═══════════════
-  const POINTS      = { easy:10, medium:20, hard:30 };
-  const DAILY_LIMIT = 5;
-  const UNLOCK      = { medium:3, hard:8 };
-  const STORE_KEY   = 'cyberwise.spot.v1';
-
-  const CATEGORIES = [
-    { id:'reward',    label:'Reward' },
-    { id:'fear',      label:'Fear' },
-    { id:'authority', label:'Authority' },
-    { id:'trust',     label:'Trust' },
-    { id:'urgency',   label:'Urgency' }
-  ];
-
-  const LEVERS = { reward:'Reward', fear:'Fear', authority:'Authority', trust:'Trust', urgency:'Urgency' };
-
-  const CHANNELS = {
-    'SMS':          { foot:'Delivered' },
-    'Email':        { foot:'Not from your contacts' },
-    'WhatsApp':     { foot:'Online' },
-    'Instagram DM': { foot:'Message request' },
-    'USB':          { foot:'Removable drive' },
-    'QR code':      { foot:'Scanned link' }
-  };
-
-  const GUIDE_TITLES = {
-    '1':'What cybersecurity awareness means',
-    '2':'Threats everyone should recognise',
-    '3':'Essential protection practices',
-    '4':'Cybersecurity for students',
-    '5':'Safe practices for children and teens',
-    '6':'Safe use of AI tools',
-    '7':'For organisations, schools, and businesses',
-    '8':'Being a good digital citizen',
-    '9':'If something goes wrong',
-    '10':'Test yourself',
-    '11':'Daily checklist and golden rules',
-    '12':'Glossary',
-    '13':'Additional resources'
-  };
-
+  // ═══════════════ ICONS ═══════════════
   const ICONS = {
-    flame:'<path d="M12 22a7 7 0 0 0 7-7c0-5-7-13-7-13S5 10 5 15a7 7 0 0 0 7 7Z"/>',
-    star:'<path d="m12 3.5 2.5 5.4 5.9.8-4.3 4.1 1 5.9-5.1-2.8-5.1 2.8 1-5.9-4.3-4.1 5.9-.8Z"/>',
-    bars:'<line x1="5" y1="20" x2="5" y2="13"/><line x1="12" y1="20" x2="12" y2="5"/><line x1="19" y1="20" x2="19" y2="15"/>',
-    chat:'<path d="M21 12a8 8 0 0 1-11.6 7.2L4 21l1.8-5.4A8 8 0 1 1 21 12Z"/>',
-    mail:'<rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7.5 8.5 6 8.5-6"/>',
-    insta:'<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/>',
-    drive:'<rect x="6" y="3" width="12" height="18" rx="2.5"/><line x1="12" y1="15" x2="12" y2="17.5"/>',
-    qr:'<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 14h3v3h-3z"/><path d="M20.5 14v6.5H17"/>',
-    alert:'<path d="M12 3.5 2.5 20h19L12 3.5Z"/><line x1="12" y1="9.5" x2="12" y2="14"/><line x1="12" y1="17" x2="12" y2="17.1"/>',
-    shieldAlert:'<path d="M12 3 20 6v6c0 5-3.6 8.2-8 9.4C7.6 20.2 4 17 4 12V6Z"/><line x1="12" y1="9" x2="12" y2="13.5"/><line x1="12" y1="16.5" x2="12" y2="16.6"/>',
-    checkCircle:'<circle cx="12" cy="12" r="9"/><path d="m8 12.4 2.8 2.8 5.2-6"/>',
-    target:'<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.5"/>',
-    info:'<circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16.5"/><line x1="12" y1="7.5" x2="12" y2="7.6"/>',
-    arrow:'<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>',
     clock:'<circle cx="12" cy="12" r="9"/><path d="M12 6.5V12l3.5 2.2"/>',
     check:'<path d="m5 12.8 4.6 4.6L19 6.6"/>',
-    book:'<path d="M4 4h7a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H4Z"/><path d="M20 4h-3a4 4 0 0 0-4 4v12a2.5 2.5 0 0 1 2.5-2.5H20Z"/>',
-    shield:'<path d="M12 2 20 6v6c0 5-3.6 8.2-8 9.4C7.6 20.2 4 17 4 12V6Z"/>'
+    chev:'<polyline points="6 9 12 15 18 9"/>',
+    arrow:'<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>',
+    shield:'<path d="M12 2 20 6v6c0 5-3.6 8.2-8 9.4C7.6 20.2 4 17 4 12V6Z"/>',
+    alert:'<path d="M12 2 22 20H2Z"/><line x1="12" y1="9" x2="12" y2="14"/><line x1="12" y1="17" x2="12" y2="17.1"/>',
+    info:'<circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16.5"/><line x1="12" y1="7.5" x2="12" y2="7.6"/>',
+    tip:'<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.4.4.5.9.5 1.4V17h6v-1.7c0-.5.1-1 .5-1.4A6 6 0 0 0 12 3Z"/>',
+    target:'<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.5"/>'
   };
-
   function ic(name, w){
-    return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="' + (w || 2) +
+    return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="' + (w || 2.2) +
       '" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (ICONS[name] || '') + '</svg>';
   }
 
-  const APP_ICONS = {
-    'SMS':{id:'app-messages',name:'Messages'},'Messages':{id:'app-messages',name:'Messages'},
-    'Email':{id:'app-mail',name:'Mail'},'Mail':{id:'app-mail',name:'Mail'},
-    'WhatsApp':{id:'app-whatsapp',name:'WhatsApp'},
-    'Instagram':{id:'app-instagram',name:'Instagram'},'Instagram DM':{id:'app-instagram',name:'Instagram'},
-    'USB':{id:'app-files',name:'Files'},'Files':{id:'app-files',name:'Files'},
-    'QR code':{id:'app-qr',name:'Camera'},'Camera':{id:'app-qr',name:'Camera'},
-    'Phone call':{id:'app-phone',name:'Phone'},'Browser':{id:'app-browser',name:'Browser'},
-    'Gaming platform':{id:'app-game',name:'Gaming'},'Bank':{id:'app-bank',name:'Banking'}
-  };
-
-  function appIconHTML(channel){
-    const meta = APP_ICONS[channel] || APP_ICONS.SMS;
-    return '<svg viewBox="0 0 40 40" aria-hidden="true"><use href="#' + meta.id + '"/></svg>';
-  }
-
-  function appName(channel){
-    const meta = APP_ICONS[channel] || APP_ICONS.SMS;
-    return meta.name;
-  }
-
-  // ═══════════════ HELPERS ═══════════════
-  const pad = n => String(n).padStart(2, '0');
-
-  function todayStr(d){
-    const x = d ? new Date(d) : new Date();
-    return x.getFullYear() + '-' + pad(x.getMonth() + 1) + '-' + pad(x.getDate());
-  }
-  function yesterdayStr(){
-    const d = new Date();
-    d.setDate(d.getDate() - 1);
-    return todayStr(d);
-  }
-
   // ═══════════════ STATE ═══════════════
+  const STORE_KEY = 'cyberwise.guide.v1';
   let state = loadState();
 
   function loadState(){
     let raw = null;
     try { raw = JSON.parse(localStorage.getItem(STORE_KEY) || 'null'); } catch (e) { raw = null; }
-    const s = Object.assign({
-      score:0, correct:0, wrong:0, streak:0, bestStreak:0,
-      dayStreak:0, day:null, todayIds:[], answered:{},
-      current:null, phase:'question', lastPick:null, bonus:false
-    }, raw && typeof raw === 'object' ? raw : {});
-    if (!s.answered || typeof s.answered !== 'object') s.answered = {};
-    if (!Array.isArray(s.todayIds)) s.todayIds = [];
-    if (typeof s.bonus !== 'boolean') s.bonus = false;
-    if (s.phase !== 'reveal') s.phase = 'question';
-    if (s.day && s.day !== todayStr() && s.day !== yesterdayStr()) s.dayStreak = 0;
+    const s = Object.assign({ read:{}, open:{ '1': true }, certificate:null }, raw && typeof raw === 'object' ? raw : {});
+    if (!s.read || typeof s.read !== 'object') s.read = {};
+    if (!s.open || typeof s.open !== 'object') s.open = { '1': true };
+    if (!s.certificate || typeof s.certificate !== 'object' ||
+        !Number.isInteger(s.certificate.score) || !Number.isInteger(s.certificate.total) ||
+        typeof s.certificate.earnedAt !== 'string') s.certificate = null;
     return s;
   }
-
   function save(){
     try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch (e) {}
   }
 
-  function doneCount(){ return SCENARIOS.filter(s => state.answered[s.id]).length; }
-  function allDone(){ return SCENARIOS.every(s => state.answered[s.id]); }
-  function todaysCount(){ return state.day === todayStr() ? state.todayIds.length : 0; }
-
-  function unlockedTiers(){
-    const done = doneCount();
-    const t = ['easy'];
-    if (done >= UNLOCK.medium) t.push('medium');
-    if (done >= UNLOCK.hard)   t.push('hard');
-    return t;
+  function gl(term, def){
+    return '<span class="gl" data-def="' + def.replace(/"/g, '&quot;') + '">' + term + '</span>';
   }
 
-  function pickNext(){
-    const tiers = unlockedTiers();
-    for (let i = 0; i < SCENARIOS.length; i++){
-      const sc = SCENARIOS[i];
-      if (state.answered[sc.id]) continue;
-      if (tiers.indexOf(sc.difficulty) === -1) continue;
-      return sc;
+  // ═══════════════ SECTIONS ═══════════════
+  const SECTIONS = [
+    {
+      id:'1', num:'01', title:'What cybersecurity awareness means', mins:2,
+      html:`
+        <p>Cybersecurity awareness is the knowledge, mindset, and everyday habits that help people recognise digital threats and respond safely. It's about how you use technology and handle data — at home, at school, and at work.</p>
+        <h3>Why it matters</h3>
+        <ul>
+          <li>Security experts now plan around <em>when</em> a breach will happen, not <em>if</em>. Being prepared is part of the job for everyone.</li>
+          <li>Human error plays a part in a large share of breaches. People are as important to security as software.</li>
+          <li>Attackers increasingly ${gl('log in with stolen credentials','Using passwords leaked from other breaches to log into your accounts — instead of trying to break in.')} rather than breaking in. Protecting your accounts is protecting your data.</li>
+          <li>Good habits protect you from scams, identity theft, and financial loss.</li>
+          <li>Organisations rely on aware staff to stop phishing and social engineering before it reaches the IT team.</li>
+          <li>Security is a shared responsibility — your habits affect your family, your workplace, and the wider digital community.</li>
+        </ul>
+        <div class="callout note">
+          <div class="callout-icon">${ic('info', 2)}</div>
+          <div class="callout-body">
+            <div class="callout-title">The one idea to take away</div>
+            <p>Attackers rarely break in. They <strong>log in</strong> — with a password you reused, or one you handed to a page that looked real. That's why unique passwords and two-factor authentication matter more than almost anything else.</p>
+          </div>
+        </div>
+      `,
+      practise:[{ num:1, label:'Password expires' },{ num:22, label:'MFA fatigue' }]
+    },
+    {
+      id:'2', num:'02', title:'Threats everyone should recognise', mins:4,
+      html:`
+        <p>You don't need to memorise every attack. You need to recognise the <em>shape</em> of one — the same handful of hooks, wearing different costumes.</p>
+        <div class="table-wrap"><div class="table-scroll">
+        <table>
+          <thead><tr><th>Threat</th><th>What it is</th><th>Warning signs</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Phishing</strong></td><td>Fake messages that trick you into clicking, logging in, or paying</td><td>Urgency, threats, generic greeting, mismatched sender address, unexpected attachment</td></tr>
+            <tr><td><strong>Spear-phishing</strong></td><td>Phishing tailored to you, using your name, job, or contacts</td><td>Message references real details, but the request is unusual</td></tr>
+            <tr><td><strong>Smishing</strong></td><td>Phishing by SMS or messaging apps</td><td>Short links, "delivery failed", "account locked", prize claims</td></tr>
+            <tr><td><strong>Vishing</strong></td><td>Scam phone calls</td><td>Caller pressures you to act now; asks for OTPs, PINs, or remote access</td></tr>
+            <tr><td><strong>BEC</strong></td><td>Attacker impersonates a boss or supplier to redirect a payment</td><td>Changed banking details, "urgent and confidential" payment requests</td></tr>
+            <tr><td><strong>Deepfakes</strong></td><td>AI-generated voice, video, or images impersonating someone</td><td>Unusual requests, odd audio, pressure to skip normal verification</td></tr>
+            <tr><td><strong>Ransomware</strong></td><td>Malware that locks your files and demands payment</td><td>Files suddenly inaccessible, ransom note on screen</td></tr>
+            <tr><td><strong>Malware</strong></td><td>Viruses, spyware, trojans, keyloggers</td><td>Slow device, unknown apps, pop-ups, unexpected battery drain</td></tr>
+            <tr><td><strong>Fake websites</strong></td><td>Look-alike sites that steal logins or card details</td><td>Slightly wrong domain, odd design, unexpected login prompts</td></tr>
+            <tr><td><strong>Malicious apps</strong></td><td>Apps that trick you into granting access to your email, files, or cloud</td><td>"Full access" asked for a simple task, unknown publisher</td></tr>
+            <tr><td><strong>Rogue Wi-Fi</strong></td><td>Fake free hotspots that capture what you type</td><td>Network name copies a real venue; splash page asks for logins</td></tr>
+            <tr><td><strong>Malicious media</strong></td><td>Infected USB drives, cracked software, rogue QR codes</td><td>Found or unsolicited drives, "free" paid software, stickers over QR codes</td></tr>
+            <tr><td><strong>Cyberbullying</strong></td><td>Abusive or threatening messages, exclusion, or humiliation online</td><td>Anonymous accounts, pile-ons, threats, shared private images</td></tr>
+            <tr><td><strong>Unsafe AI use</strong></td><td>Pasting sensitive data into AI tools, or trusting AI output blindly</td><td>Sharing passwords, personal data, or confidential documents with unvetted tools</td></tr>
+          </tbody>
+        </table>
+        </div></div>
+        <div class="callout tip">
+          <div class="callout-icon">${ic('tip', 2)}</div>
+          <div class="callout-body">
+            <div class="callout-title">The universal tells</div>
+            <p>Whatever the threat, the hooks are almost always the same: <strong>urgency</strong>, <strong>authority</strong>, <strong>reward</strong>, <strong>fear</strong>, <strong>secrecy</strong>, and an <strong>unusual payment method</strong>. Spot the hook, not the costume.</p>
+          </div>
+        </div>
+      `,
+      practise:[{ num:1, label:'Password expires' },{ num:7, label:'Parcel held' },{ num:16, label:'Funding update' },{ num:22, label:'MFA fatigue' }]
+    },
+    {
+      id:'3', num:'03', title:'Essential protection practices', mins:8,
+      html:`
+        <p>This is the core of the guide. If you do nothing else on this page, do these.</p>
+        <h3>3.1 Passwords and MFA</h3>
+        <ul>
+          <li>Use a <strong>long, unique password for every account</strong>. Length beats complexity. A passphrase of four or more random words works well.</li>
+          <li>Use a ${gl('password manager','Software that generates and stores strong passwords for every site, behind one master password. Bitwarden is free and reputable.')} so you only need to remember one strong master password.</li>
+          <li>Turn on ${gl('multi-factor authentication','MFA — also called 2-step verification. A second proof of identity on top of your password, such as a code from an app.')} for email, banking, social, cloud, and school accounts. An authenticator app or hardware key is stronger than SMS.</li>
+          <li><strong>Never share passwords or one-time PINs</strong> with anyone — including someone claiming to be from your bank or IT.</li>
+          <li>Turn on <strong>login alerts</strong> for unknown devices or locations wherever the service offers them.</li>
+          <li>Secure your <strong>email account above all</strong> — it's the key to resetting every other account.</li>
+          <li>If a service reports a breach, change that password immediately and anywhere it was reused.</li>
+        </ul>
+        <div class="callout danger">
+          <div class="callout-icon">${ic('alert', 2)}</div>
+          <div class="callout-body">
+            <div class="callout-title">The one rule that never changes</div>
+            <p>No legitimate organisation will ever ask for your password, your PIN, or an OTP over the phone, by email, or by SMS. If someone does, they are not who they claim to be. Full stop.</p>
+          </div>
+        </div>
+        <h3>3.2 Recognising phishing</h3>
+        <p>Before you click or reply, check five things:</p>
+        <ol>
+          <li><strong>Sender:</strong> Does the address really match the organisation?</li>
+          <li><strong>Tone:</strong> Is it urgent, threatening, or too good to be true?</li>
+          <li><strong>Links:</strong> Hover (or long-press on mobile) to preview the real destination.</li>
+          <li><strong>Attachments:</strong> Were you expecting it? Unexpected invoices and ZIP files are common traps.</li>
+          <li><strong>Request:</strong> Is it asking for logins, money, OTPs, or personal details?</li>
+        </ol>
+        <p>If in doubt, <strong>do not use the links or numbers in the message</strong>. Go to the official website or app yourself, or call the organisation on a number you already trust.</p>
+        <p><strong>Do not engage.</strong> Even a simple reply confirms your address is active. Never share information or pay anything until you've verified the contact through a separate, trusted route.</p>
+        <h3>3.3 Devices and updates</h3>
+        <ul>
+          <li>Keep your <strong>OS, browser, apps, and antivirus</strong> up to date. Turn on automatic updates.</li>
+          <li><strong>Don't put off restart prompts.</strong> Updates patch security holes attackers are actively looking for.</li>
+          <li>Use a <strong>screen lock</strong> on every device — PIN, pattern, fingerprint, or face.</li>
+          <li>Install apps only from <strong>official stores</strong>, and review permissions. A torch app doesn't need your contacts.</li>
+          <li>Enable <strong>remote locate and wipe</strong>.</li>
+          <li><strong>Back up</strong> using the 3-2-1 rule: 3 copies, on 2 different types of storage, with 1 kept offline or off-site.</li>
+          <li>When disposing of a device, <strong>wipe it fully</strong> or physically destroy the storage.</li>
+        </ul>
+        <h3>3.4 Antivirus and anti-malware</h3>
+        <ul>
+          <li>Choose from a <strong>reputable, well-reviewed vendor</strong>. Free tools are often fine for basic protection.</li>
+          <li>Keep virus definitions <strong>updated</strong>.</li>
+          <li>Remember antivirus is <strong>not foolproof</strong> — especially against brand-new malware.</li>
+          <li>Avoid pirated software, cracked games, and unknown browser extensions.</li>
+        </ul>
+        <div class="callout warn">
+          <div class="callout-icon">${ic('alert', 2)}</div>
+          <div class="callout-body">
+            <div class="callout-title">If you suspect an infection</div>
+            <p>1. Disconnect from the internet. <br>2. Run a full scan with up-to-date software. <br>3. Change important passwords <strong>from a different, clean device</strong>. <br>4. Check bank and email accounts for suspicious activity. <br>5. If the problem persists, take the device to a trusted technician.</p>
+          </div>
+        </div>
+        <h3>3.5 Safe email habits</h3>
+        <ul>
+          <li>Don't open links or attachments in suspicious emails, and don't reply to them.</li>
+          <li><strong>Don't follow links in spam.</strong> "Unsubscribe" links from unknown senders confirm live addresses.</li>
+          <li><strong>Report spam</strong> using your email app's built-in option.</li>
+          <li>Use a <strong>separate, disposable email</strong> for public sign-ups and competitions.</li>
+          <li>For parcel or delivery notices, <strong>never click the tracking link</strong>. Go to the courier's official site.</li>
+        </ul>
+        <h3>3.6 Safe browsing and shopping</h3>
+        <ul>
+          <li>Look for <strong>HTTPS and the padlock</strong> — but remember a padlock only means the connection is encrypted.</li>
+          <li><strong>Check the address carefully</strong> for misspellings or extra words (e.g. <code>paypa1-secure-login.com</code>).</li>
+          <li>Use a credit card, virtual card, or secure payment service where possible.</li>
+          <li>Be sceptical of offers that seem too good to be true.</li>
+          <li><strong>Monitor your accounts</strong> regularly and report unauthorised transactions immediately.</li>
+        </ul>
+        <h3>3.7 Public Wi-Fi</h3>
+        <ul>
+          <li><strong>Confirm the network name</strong> with staff before connecting. Fake hotspots copy real names.</li>
+          <li><strong>Avoid banking, shopping, and sensitive logins</strong> on public Wi-Fi. Use mobile data instead.</li>
+          <li>Use a ${gl('VPN','A service that encrypts traffic between your device and the VPN provider. It shifts trust to the provider — so choose a reputable one.')} if you must use public Wi-Fi for anything sensitive.</li>
+          <li>Turn off <strong>auto-connect</strong> and file sharing.</li>
+          <li><strong>"Forget" the network</strong> when you're done.</li>
+        </ul>
+        <h3>3.8 Third-party apps and "Sign in with…"</h3>
+        <ul>
+          <li><strong>Read the permission screen.</strong> Be suspicious of apps that ask to read all your email for a simple task.</li>
+          <li>Prefer creating a separate account over connecting your main email.</li>
+          <li><strong>Review connected apps</strong> in your Google, Microsoft, Apple, and Facebook settings every few months.</li>
+          <li>Rank what you find: <strong>low risk</strong>, <strong>medium</strong>, <strong>high</strong>.</li>
+          <li><strong>Remove access</strong> for anything you no longer use.</li>
+        </ul>
+        <h3>3.9 Social media and personal information</h3>
+        <ul>
+          <li>Treat friend requests from strangers with caution.</li>
+          <li>Don't post your address, schedule, routine, ID details, or travel plans in real time.</li>
+          <li>Review <strong>privacy settings</strong> on every platform and re-check periodically.</li>
+          <li>Only post what you'd be comfortable with the public seeing.</li>
+          <li>Verify before you share.</li>
+        </ul>
+      `,
+      practise:[{ num:1, label:'Password expires' },{ num:10, label:'New payee SMS' },{ num:21, label:'App permissions' },{ num:23, label:'Wi-Fi login' }]
+    },
+    {
+      id:'4', num:'04', title:'Cybersecurity for students', mins:7,
+      html:`
+        <p>Students use learning platforms, group chats, social media, and collaboration tools every day. That makes them connected — and a target. Common risks: identity theft, phishing, weak passwords, cyberbullying, oversharing, and unsafe public Wi-Fi.</p>
+        <h3>Six habits every student should build</h3>
+        <ol>
+          <li><strong>Strong passwords and 2-step verification.</strong> Unique password for every account. Turn on MFA for school email, learning platform, and social.</li>
+          <li><strong>Spot phishing and scams.</strong> Watch for fake bursary, scholarship, internship, and job offers.</li>
+          <li><strong>Use public Wi-Fi safely.</strong> Avoid logging into sensitive accounts on campus, library, or café networks.</li>
+          <li><strong>Manage your privacy and digital footprint.</strong> Tighten privacy settings.</li>
+          <li><strong>Secure your devices.</strong> Keep laptops and phones updated. Never leave a logged-in device unattended.</li>
+          <li><strong>Behave responsibly online.</strong> Don't bully, respect privacy, report harmful activity.</li>
+        </ol>
+        <h3>Extra tips for student life</h3>
+        <ul>
+          <li><strong>Back up your schoolwork</strong> to cloud storage <em>and</em> an external drive.</li>
+          <li><strong>Protect your student and ID numbers.</strong> Share only through official channels.</li>
+          <li><strong>Be careful with shared documents.</strong> Share links with specific people, not "anyone with the link".</li>
+          <li><strong>Don't use cracked software</strong> or pirated textbooks and games.</li>
+          <li><strong>Watch for sextortion.</strong> Stop replying, don't pay, keep the evidence, tell a trusted adult.</li>
+        </ul>
+        <h3>The 5 C's — a memory aid</h3>
+        <ol>
+          <li><strong>Change:</strong> Threats evolve. Keep software updated.</li>
+          <li><strong>Compliance:</strong> Follow your institution's rules and the law — including POPIA.</li>
+          <li><strong>Cost:</strong> Good security doesn't have to be expensive.</li>
+          <li><strong>Continuity:</strong> Backups mean a hack or a dead laptop doesn't cost you your coursework.</li>
+          <li><strong>Coverage:</strong> Protect everything — phone, email, cloud, gaming, social, networks.</li>
+        </ol>
+        <h3>Dealing with cyberbullying</h3>
+        <ul>
+          <li><strong>Don't retaliate.</strong> Responding often escalates it.</li>
+          <li><strong>Save evidence:</strong> screenshots, usernames, dates, links.</li>
+          <li><strong>Block and report</strong> the account on the platform.</li>
+          <li><strong>Tell someone you trust.</strong> It is never your fault.</li>
+          <li>In South Africa, the <strong>Protection from Harassment Act (2011)</strong> lets a person apply to a court for a protection order.</li>
+        </ul>
+        <div class="callout tip">
+          <div class="callout-icon">${ic('tip', 2)}</div>
+          <div class="callout-body">
+            <div class="callout-title">Why students are a favourite target</div>
+            <p>Valuable personal data, limited security training, heavy public Wi-Fi use, money in motion (bursaries, financial aid, tuition), and shared devices with poor logout habits.</p>
+          </div>
+        </div>
+      `,
+      practise:[{ num:4, label:'Grade review' },{ num:16, label:'Funding update' },{ num:17, label:'Internship fee' },{ num:20, label:'Tuition bank change' }]
+    },
+    {
+      id:'5', num:'05', title:'Safe practices for children and teens', mins:2,
+      html:`
+        <p>Short rules you can share directly with young people, parents, and teachers.</p>
+        <h3>Rules for kids</h3>
+        <ul>
+          <li>Don't give out personal information without a parent's permission.</li>
+          <li>Tell a parent or trusted adult straight away if something online makes you uncomfortable.</li>
+          <li>Not everyone online is who they say they are. Don't befriend strangers.</li>
+          <li>Never arrange to meet someone you met online without a parent's approval.</li>
+          <li>Don't reply to mean or upsetting messages. <strong>It is not your fault.</strong></li>
+          <li>Don't share passwords with anyone except your parents.</li>
+          <li>Ask before downloading, installing, or buying anything online.</li>
+          <li>Be a good online citizen. Don't bully, spread rumours, or break the law.</li>
+          <li>Ads offering free stuff are often tricks to collect your information.</li>
+        </ul>
+        <h3>Tips for parents and guardians</h3>
+        <ul>
+          <li>Agree on family rules for screen time, allowed websites, and apps.</li>
+          <li>Keep devices in shared spaces where appropriate, and use parental controls.</li>
+          <li><strong>Encourage open conversation.</strong> Children who fear punishment often hide problems.</li>
+          <li>Ask your children to teach you about the apps and games they use.</li>
+          <li>Know how to report abuse or harmful content on each platform.</li>
+        </ul>
+      `,
+      practise:[{ num:8, label:'Hi Mum' },{ num:11, label:'Free data' },{ num:13, label:'Trading mentor' }]
+    },
+    {
+      id:'6', num:'06', title:'Safe use of AI tools', mins:3,
+      html:`
+        <p>AI tools are useful. They're also a new way for data to leave your control — sometimes without you noticing.</p>
+        <ul>
+          <li><strong>Know where your data goes.</strong> Some AI tools use conversations to improve their systems.</li>
+          <li><strong>Never paste</strong> passwords, ID numbers, bank details, or other people's personal information into AI tools.</li>
+          <li><strong>AI assistants inside work tools</strong> can see everything <em>you</em> can see. Tidy up file permissions first.</li>
+          <li>Check your organisation's or school's policy on approved AI tools.</li>
+          <li><strong>Verify AI output.</strong> It can be wrong, outdated, or invented.</li>
+          <li>Be alert to <strong>deepfake voice and video.</strong> Verify through a second channel.</li>
+          <li>Consider agreeing on a <strong>family or team code word</strong> for verifying urgent requests.</li>
+        </ul>
+        <div class="callout note">
+          <div class="callout-icon">${ic('info', 2)}</div>
+          <div class="callout-body">
+            <div class="callout-title">For organisations</div>
+            <p>Set an AI-use policy, approve specific tools, clean up over-shared data <em>first</em>, train staff, and keep monitoring after rollout.</p>
+          </div>
+        </div>
+      `,
+      practise:[{ num:13, label:'Trading mentor' },{ num:15, label:'Is this you?' },{ num:43, label:'AI checker' }]
+    },
+    {
+      id:'7', num:'07', title:'For organisations, schools, and businesses', mins:3,
+      html:`
+        <p>If you run a team, a society, a school club, or a small business, this section is for you.</p>
+        <h3>Building an awareness programme</h3>
+        <ol>
+          <li><strong>Baseline assessment:</strong> measure current behaviour.</li>
+          <li><strong>Role-based training:</strong> finance, HR, IT, executives, and general staff face different risks.</li>
+          <li><strong>Continuous microlearning:</strong> short, frequent lessons work better than one annual session.</li>
+          <li><strong>Phishing simulations:</strong> across email, SMS, QR codes, calls, and AI-related scams.</li>
+          <li><strong>Just-in-time reinforcement:</strong> tips at the moment of risky behaviour.</li>
+          <li><strong>Positive reinforcement:</strong> reward reporting and good habits.</li>
+          <li><strong>Measure and adapt:</strong> track reporting rates and behaviour change.</li>
+        </ol>
+        <h3>Technical and policy controls</h3>
+        <ul>
+          <li><strong>Require MFA</strong> on all accounts — especially email, VPN, cloud, and admin access.</li>
+          <li>Apply <strong>least privilege</strong>: only the access each role actually needs.</li>
+          <li>Keep systems <strong>patched</strong>, and maintain tested, offline backups.</li>
+          <li>Filter email and web traffic, and use endpoint protection.</li>
+          <li>Require <strong>payment verification</strong> by a second person for any change to banking details.</li>
+          <li>Maintain clear <strong>acceptable-use, remote-work, and AI-use policies</strong>.</li>
+          <li>Keep an asset inventory, and remove access promptly when people leave.</li>
+        </ul>
+        <h3>Cloud and SaaS data security</h3>
+        <ul>
+          <li><strong>Avoid organisation-wide and public sharing links.</strong></li>
+          <li><strong>Limit admin access.</strong> Set an expiry on temporary admin rights.</li>
+          <li><strong>Understand the shared responsibility model.</strong> The provider secures the platform. <em>You</em> secure your data.</li>
+          <li><strong>Control third-party app access.</strong> Revoke apps that have been unused for six months or more.</li>
+        </ul>
+        <h3>Reporting and incident response</h3>
+        <ul>
+          <li>Set up <strong>clear, easy, blame-free reporting channels.</strong></li>
+          <li>Have a written <strong>incident response plan</strong>.</li>
+          <li>Practise the plan with tabletop exercises.</li>
+          <li>Map <strong>legal and compliance duties</strong> — POPIA, breach-notification obligations.</li>
+        </ul>
+      `,
+      practise:[]
+    },
+    {
+      id:'8', num:'08', title:'Being a good digital citizen', mins:6,
+      html:`
+        <p>Good security is also about how we treat other people and the shared online space.</p>
+        <h3>Your digital footprint</h3>
+        <p>Every time you go online you leave a trail: social profiles, photos, comments, search history, messages.</p>
+        <ul>
+          <li><strong>Assume it's permanent.</strong> Deleting a post doesn't guarantee it's gone.</li>
+          <li><strong>Build a footprint you're proud of.</strong> Future universities and employers do look.</li>
+          <li><strong>Audit yourself.</strong> Search your own name.</li>
+          <li><strong>Check what your photos reveal.</strong> Turn off location tagging.</li>
+        </ul>
+        <h3>Who's on the other side?</h3>
+        <div class="table-wrap"><div class="table-scroll">
+        <table>
+          <thead><tr><th>Threat agent</th><th>What they want</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Cyber criminals</strong></td><td>To plant malware, damage your device, or blackmail you</td></tr>
+            <tr><td><strong>Scammers</strong></td><td>To steal money or information they can use or sell</td></tr>
+            <tr><td><strong>Online predators</strong></td><td>To groom and harm young people</td></tr>
+            <tr><td><strong>Cyberbullies</strong></td><td>To humiliate, threaten, or isolate someone</td></tr>
+            <tr><td><strong>Hackers</strong></td><td>Unauthorised access to systems</td></tr>
+            <tr><td><strong>Unaware individuals</strong></td><td>They don't intend harm, but their careless click spreads it</td></tr>
+          </tbody>
+        </table>
+        </div></div>
+        <div class="callout warn">
+          <div class="callout-icon">${ic('alert', 2)}</div>
+          <div class="callout-body">
+            <div class="callout-title">The unaware individual matters most</div>
+            <p>You can be the weak link without knowing it. Verify before you forward.</p>
+          </div>
+        </div>
+        <h3>THINK before you post</h3>
+        <ul>
+          <li><strong>T</strong>rue? Have I checked it?</li>
+          <li><strong>H</strong>elpful? Does it help anyone?</li>
+          <li><strong>I</strong>nspiring? Does it add something positive?</li>
+          <li><strong>N</strong>ecessary or newsworthy?</li>
+          <li><strong>K</strong>ind? Would I say it to their face?</li>
+        </ul>
+        <h3>Lock it, Zip it, Block it, Report it</h3>
+        <ol>
+          <li><strong>Lock it.</strong> Screen locks, strong passwords, MFA, private profiles.</li>
+          <li><strong>Zip it.</strong> Keep personal information to yourself.</li>
+          <li><strong>Block it.</strong> Block anyone who makes you uncomfortable.</li>
+          <li><strong>Report it.</strong> Tell a trusted person, report to the platform, report crime to the Cybersecurity Hub.</li>
+        </ol>
+        <h3>The CIA triad — the three goals of security</h3>
+        <ul>
+          <li><strong>Confidentiality:</strong> only the right people can see the information.</li>
+          <li><strong>Integrity:</strong> the information is accurate and hasn't been tampered with.</li>
+          <li><strong>Availability:</strong> systems and data are there when you need them.</li>
+        </ul>
+        <p><strong>Try it:</strong> when you read about a breach, ask which of the three was harmed.</p>
+        <h3>The CyberWise Pledge</h3>
+        <p><strong>I recognise that</strong> I have the right to use technology for my development, the right to protect myself from online risks, and a digital footprint that deserves protection.</p>
+        <p><strong>I understand that</strong> it is risky to share personal information with strangers, that strong and unique passwords protect me, and that I have a duty to report harmful content.</p>
+        <p><strong>Therefore, I will</strong> think before I post, show respect to others online, follow safety rules, help my friends and family stay safe, and report cybercrime when I see it.</p>
+      `,
+      practise:[{ num:12, label:'Copyright warning' },{ num:15, label:'Is this you?' },{ num:19, label:'Room deposit' }]
+    },
+    {
+      id:'9', num:'09', title:'If something goes wrong', mins:3,
+      html:`
+        <p>Quick-reference table. If any of these happen, the recovery page walks you through it step by step.</p>
+        <div class="table-wrap"><div class="table-scroll">
+        <table>
+          <thead><tr><th>Situation</th><th>Immediate steps</th></tr></thead>
+          <tbody>
+            <tr><td>Clicked a phishing link</td><td>Disconnect if you entered anything. Change the affected password from a clean device. Enable MFA.</td></tr>
+            <tr><td>Shared a password or OTP</td><td>Change the password immediately. Contact the service provider. Check recent activity.</td></tr>
+            <tr><td>Money sent to a scammer</td><td>Call your bank at once. Then report to the police.</td></tr>
+            <tr><td>Account hacked</td><td>Reset the password, log out all sessions, enable MFA, check forwarding rules.</td></tr>
+            <tr><td>Granted a suspicious app access</td><td>Remove the app in your connected-apps settings. Change your password.</td></tr>
+            <tr><td>Suspected malware</td><td>Disconnect, scan, change passwords from another device.</td></tr>
+            <tr><td>Connected to suspicious Wi-Fi</td><td>Disconnect and forget the network. Change passwords from a safe network.</td></tr>
+            <tr><td>Identity theft suspected</td><td>Alert your bank and credit bureaus. Report to the police and the Cybersecurity Hub.</td></tr>
+            <tr><td>Child facing harassment, grooming, or sextortion</td><td>Save evidence. Do not pay or reply. Block and report. Tell a trusted adult.</td></tr>
+          </tbody>
+        </table>
+        </div></div>
+        <div class="callout danger">
+          <div class="callout-icon">${ic('alert', 2)}</div>
+          <div class="callout-body">
+            <div class="callout-title">If it just happened</div>
+            <p>Don't read this section yet. Go to the recovery tool — it will walk you through the first ten minutes in order.</p>
+            <p style="margin-top:12px"><a href="recovery.html" style="color:var(--rose);font-weight:700;border-bottom-color:rgba(239,68,68,.4)">Open the recovery tool →</a></p>
+          </div>
+        </div>
+      `,
+      practise:[{ num:10, label:'New payee SMS' },{ num:22, label:'MFA fatigue' }]
+    },
+    {
+      id:'10', num:'10', title:'Test yourself', mins:4,
+      html:`
+        <p>Nine quick questions. If you get one wrong, the guide section that covers it is linked underneath.</p>
+        <h4>1. You get a text saying your parcel is held and you must pay a small fee via a link. What should you do?</h4>
+        <p>Don't click. Go to the courier's official site and enter your tracking number there. <em>See section 3.5.</em></p>
+        <h4>2. Why is a padlock in the browser not proof that a website is safe?</h4>
+        <p>It only shows the connection is encrypted. Scam sites can have padlocks too. <em>See section 3.6.</em></p>
+        <h4>3. A group project needs a shared file. What's the safest way to share it?</h4>
+        <p>Share it directly with specific people, not with "anyone with the link". <em>See section 4.</em></p>
+        <h4>4. A new app offers "Sign in with Google" and asks to read all your email. What should you do?</h4>
+        <p>Question whether it really needs that. If not, decline. <em>See section 3.8.</em></p>
+        <h4>5. Which is safer on café Wi-Fi: online banking or reading the news?</h4>
+        <p>Reading the news. Do sensitive tasks on mobile data or a trusted network. <em>See section 3.7.</em></p>
+        <h4>6. Someone claiming to be from IT asks for your OTP "to fix your account." What do you do?</h4>
+        <p>Refuse. Nobody legitimate needs your OTP. Report it. <em>See section 3.1.</em></p>
+        <h4>7. What does the shared responsibility model mean for cloud tools?</h4>
+        <p>The provider secures the platform. You secure your data, accounts, and permissions. <em>See section 7.</em></p>
+        <h4>8. Why should you install updates promptly?</h4>
+        <p>They patch security holes attackers are already looking for. <em>See section 3.3.</em></p>
+        <h4>9. What is the fastest way to protect your email if you only have ten minutes?</h4>
+        <p>Turn on MFA. Then change any reused password. <em>See section 3.1.</em></p>
+        <div class="callout tip">
+          <div class="callout-icon">${ic('tip', 2)}</div>
+          <div class="callout-body">
+            <div class="callout-title">Want something harder?</div>
+            <p>The Spot the Phish library has 21 interactive scenarios — real messages, fake messages, and a few genuine ones. Five a day, harder ones unlock as you go.</p>
+          </div>
+        </div>
+      `,
+      practise:[{ num:5, label:'Timetable change' },{ num:24, label:'Security alert' }]
+    },
+    {
+      id:'11', num:'11', title:'Daily checklist and golden rules', mins:3,
+      html:`
+        <h3>Daily</h3>
+        <ul>
+          <li>Devices and apps are updated</li>
+          <li>MFA is on for key accounts</li>
+          <li>Passwords are unique and stored in a password manager</li>
+          <li>I paused before clicking any link or attachment</li>
+          <li>I verified unusual requests through a second channel</li>
+          <li>I didn't overshare personal information online</li>
+          <li>I avoided sensitive logins on public Wi-Fi</li>
+          <li>I kept sensitive information out of AI chats</li>
+          <li>My important data is backed up</li>
+        </ul>
+        <h3>Monthly and quarterly</h3>
+        <ul>
+          <li>Review connected third-party apps and remove unused ones</li>
+          <li>Review social media privacy settings</li>
+          <li>Review shared files and links, and remove old ones</li>
+          <li>Check your accounts and statements for suspicious activity</li>
+          <li>Test that you can restore a backup</li>
+        </ul>
+        <div class="callout note">
+          <div class="callout-icon">${ic('shield', 2)}</div>
+          <div class="callout-body">
+            <div class="callout-title">Golden rules — if you remember nothing else</div>
+            <p><strong>1.</strong> Pause before you click. Urgency is a red flag. <br><strong>2.</strong> Verify through a second channel. <br><strong>3.</strong> Never share passwords or OTPs. <br><strong>4.</strong> Use unique passwords plus MFA. <br><strong>5.</strong> Keep everything updated. <br><strong>6.</strong> Share less, and share with care. <br><strong>7.</strong> Give apps and people the minimum access needed. <br><strong>8.</strong> Be kind online. <br><strong>9.</strong> Report early. Speed limits damage.</p>
+          </div>
+        </div>
+      `,
+      practise:[]
+    },
+    {
+      id:'12', num:'12', title:'Glossary', mins:3,
+      html:`
+        <div class="table-wrap"><div class="table-scroll">
+        <table>
+          <thead><tr><th>Term</th><th>What it means</th></tr></thead>
+          <tbody>
+            <tr><td><strong>2SV / MFA</strong></td><td>Extra proof of identity on top of your password</td></tr>
+            <tr><td><strong>Blast radius</strong></td><td>How much data or how many systems are affected if one account is compromised</td></tr>
+            <tr><td><strong>BEC</strong></td><td>Business email compromise — fraudsters impersonate a trusted person to redirect payments</td></tr>
+            <tr><td><strong>CIA triad</strong></td><td>Confidentiality, integrity, availability — the three goals of cybersecurity</td></tr>
+            <tr><td><strong>Credential stuffing</strong></td><td>Trying passwords leaked from one site on many other sites</td></tr>
+            <tr><td><strong>Deepfake</strong></td><td>AI-generated or altered audio, video, or images imitating a real person</td></tr>
+            <tr><td><strong>Digital footprint</strong></td><td>The trail of information about you that exists online</td></tr>
+            <tr><td><strong>Dwell time</strong></td><td>How long an attacker is inside a system before being noticed</td></tr>
+            <tr><td><strong>Least privilege</strong></td><td>Giving people only the access they need to do their job</td></tr>
+            <tr><td><strong>MFA fatigue</strong></td><td>Spamming someone with approval prompts until they tap "Approve" by mistake</td></tr>
+            <tr><td><strong>Money mule</strong></td><td>Someone whose bank account is used to move stolen money</td></tr>
+            <tr><td><strong>OTP</strong></td><td>One-time PIN or password, usually sent by SMS or an app</td></tr>
+            <tr><td><strong>Patch</strong></td><td>A software update that fixes a security flaw</td></tr>
+            <tr><td><strong>Phishing</strong></td><td>A message designed to trick you into revealing information</td></tr>
+            <tr><td><strong>Ransomware</strong></td><td>Malware that locks your files until you pay</td></tr>
+            <tr><td><strong>Shared responsibility model</strong></td><td>The split of security duties between a cloud provider and its customers</td></tr>
+            <tr><td><strong>Social engineering</strong></td><td>Manipulating people, rather than hacking systems, to gain access</td></tr>
+            <tr><td><strong>VPN</strong></td><td>A service that encrypts your internet traffic between your device and the provider</td></tr>
+          </tbody>
+        </table>
+        </div></div>
+      `,
+      practise:[]
+    },
+    {
+      id:'13', num:'13', title:'Additional resources', mins:1,
+      html:`
+        <ul>
+          <li><strong>South African Cybersecurity Hub</strong> — <a href="https://www.cybersecurityhub.gov.za" target="_blank" rel="noopener">cybersecurityhub.gov.za</a> · national cyber awareness tips and a place to report cybercrime</li>
+          <li><strong>Cyber Safety Awareness toolkit</strong> — <a href="https://www.cybersecurityhub.gov.za/cyberawareness/" target="_blank" rel="noopener">cybersecurityhub.gov.za/cyberawareness</a> and <a href="http://cyberaware.co.za" target="_blank" rel="noopener">cyberaware.co.za</a> · free guides, workbooks, videos, posters, and games</li>
+          <li><strong>SABRIC</strong> — <a href="https://www.sabric.co.za" target="_blank" rel="noopener">sabric.co.za</a> · guidance on banking and card fraud</li>
+          <li><strong>Information Regulator</strong> — <a href="https://inforegulator.org.za" target="_blank" rel="noopener">inforegulator.org.za</a> · POPIA guidance and how to complain if your data was mishandled</li>
+          <li><strong>NCSC (UK)</strong> — <a href="https://www.ncsc.gov.uk" target="_blank" rel="noopener">ncsc.gov.uk</a> · individual, family, and organisational guidance</li>
+          <li><strong>Have I Been Pwned</strong> — <a href="https://haveibeenpwned.com" target="_blank" rel="noopener">haveibeenpwned.com</a> · check whether your email appears in a known breach</li>
+        </ul>
+        <p style="margin-top:20px;font-size:.88rem;color:var(--ink-3)">Laws and reporting channels differ by country. If you are outside South Africa, check your national CERT or data protection authority.</p>
+      `,
+      practise:[]
     }
-    return null;
+  ];
+
+  // ═══════════════ FINAL ASSESSMENT QUESTIONS ═══════════════
+  const EXAM_QUESTIONS = [
+    { section:'3', question:'Which password habit best protects your accounts?',
+      options:['Reuse one complex password everywhere','Use long, unique passwords and a password manager','Change one character each month','Use personal details that are easy to remember'], correct:1 },
+    { section:'2', question:'An unexpected message says your bank account will be blocked unless you verify through its link. What is safest?',
+      options:['Open the link, but do not download anything','Reply and ask whether the message is real','Open the bank’s official app or use a trusted contact route','Forward it to friends to see if they received it'], correct:2 },
+    { section:'3', question:'What does the padlock or HTTPS indicator prove?',
+      options:['The website belongs to the organisation it claims to','The connection is encrypted, but the site may still be fraudulent','The website has no malware','The website is approved by your bank'], correct:1 },
+    { section:'4', question:'You need to access sensitive banking details while on public Wi-Fi. What should you do?',
+      options:['Use mobile data instead, if possible','Use the hotspot with the strongest signal','Disable your screen lock first','Proceed if the network name looks familiar'], correct:0 },
+    { section:'9', question:'You entered your password on a page you now suspect was fake. What is the best next step?',
+      options:['Wait to see if anything happens','Change the password using the official site or app, and change it anywhere reused','Reply to the message and ask for help','Delete your browser history only'], correct:1 },
+    { section:'6', question:'What should you avoid when using a public AI tool?',
+      options:['Asking it to explain a general concept','Sharing passwords, private records, or confidential information','Checking its answer against trusted sources','Asking it to help brainstorm a study schedule'], correct:1 },
+    { section:'8', question:'A friend’s social media account sends an unusual urgent request for money. What is safest?',
+      options:['Send a small amount to confirm the account works','Reply with your bank details','Verify with your friend through a separate trusted channel','Share the request publicly'], correct:2 },
+    { section:'3', question:'What does the 3-2-1 backup rule recommend?',
+      options:['Three passwords, two devices, one account','Three copies, two types of storage, one kept offline or off-site','Three cloud accounts, two-factor authentication, one email','Three updates each year'], correct:1 },
+    { section:'3', question:'An unexpected attachment arrives from someone you do not recognise. What is the safest response?',
+      options:['Open it in a preview first','Download it, then scan it','Do not open it; verify through a trusted channel and report it if suspicious','Reply asking the sender to resend it'], correct:2 },
+    { section:'1', question:'Why are unique passwords important?',
+      options:['They prevent every kind of scam','They limit the damage if a password is exposed in one service','They make two-factor authentication unnecessary','They make websites load faster'], correct:1 }
+  ];
+
+  // ═══════════════ FINAL EXAM LOCK LOGIC ═══════════════
+  function isGuideComplete(){
+    const total = SECTIONS.length;
+    const done = SECTIONS.filter(function(s){ return state.read[s.id]; }).length;
+    return { done: done, total: total, complete: done === total };
   }
 
-  function currentScenario(){
-    if (state.current){
-      const sc = SCENARIOS.find(s => s.id === state.current);
-      if (sc){
-        if (state.phase === 'reveal') return sc;
-        if (!state.answered[sc.id]) return sc;
+  function renderFinalExamLock(){
+    const lockContainer = document.getElementById('finalExamLockedContent');
+    const unlockedContainer = document.getElementById('finalExamUnlockedContent');
+    const card = document.getElementById('finalExamCard');
+    if (!lockContainer || !unlockedContainer || !card) return;
+
+    const status = isGuideComplete();
+
+    if (!status.complete){
+      card.classList.add('locked');
+      unlockedContainer.hidden = true;
+      const pct = Math.round((status.done / status.total) * 100);
+      lockContainer.innerHTML =
+        '<div class="exam-lock-icon" aria-hidden="true">🔒</div>' +
+        '<h2 class="sec-title" id="finalExamTitle">Final Assessment Locked</h2>' +
+        '<p class="exam-intro">Read all ' + status.total + ' sections of the guide to unlock the final assessment. This test will check your understanding across the whole guide.</p>' +
+        '<div class="exam-lock-progress">' +
+          '<div class="exam-lock-bar"><div class="exam-lock-fill" style="width:' + pct + '%"></div></div>' +
+          '<span class="exam-lock-text">' + status.done + '/' + status.total + ' sections read</span>' +
+        '</div>' +
+        '<a class="btn btn-secondary" href="#sections">Go back to the guide</a>';
+    } else {
+      card.classList.remove('locked');
+      lockContainer.innerHTML = '';
+      unlockedContainer.hidden = false;
+    }
+  }
+
+  function renderFinalExam(){
+    const container = document.getElementById('finalExamQuestions');
+    if (!container) return;
+    container.innerHTML = EXAM_QUESTIONS.map(function(q, index){
+      const options = q.options.map(function(option, optionIndex){
+        return '<label class="exam-option">' +
+          '<input type="radio" name="exam-' + index + '" value="' + optionIndex + '">' +
+          '<span>' + option + '</span>' +
+        '</label>';
+      }).join('');
+      return '<fieldset class="exam-question">' +
+        '<legend>' + (index + 1) + '. ' + q.question + '</legend>' +
+        '<div class="exam-options">' + options + '</div>' +
+      '</fieldset>';
+    }).join('');
+    renderFinalExamLock();
+  }
+
+  function renderCertificate(){
+    const wrapper = document.getElementById('certificateWrapper');
+    if (!wrapper) return;
+    if (!state.certificate){
+      wrapper.hidden = true;
+      return;
+    }
+    const date = new Date(state.certificate.earnedAt);
+    if (Number.isNaN(date.getTime())) return;
+    wrapper.hidden = false;
+    document.getElementById('certDate').textContent = new Intl.DateTimeFormat('en-ZA', {
+      day:'numeric', month:'short', year:'numeric'
+    }).format(date);
+    document.getElementById('certScore').textContent =
+      state.certificate.score + ' / ' + state.certificate.total;
+  }
+
+  function finishExam(){
+    const lockStatus = isGuideComplete();
+    const status = document.getElementById('finalExamStatus');
+    if (!lockStatus.complete){
+      if (status){
+        status.dataset.result = 'notice';
+        status.textContent = 'Please read all ' + lockStatus.total + ' sections before submitting.';
       }
+      return;
     }
-    const next = pickNext();
-    if (next){
-      state.current  = next.id;
-      state.phase    = 'question';
-      state.lastPick = null;
+    const form = document.getElementById('finalExamForm');
+    const answers = EXAM_QUESTIONS.map(function(question, index){
+      const selected = form.querySelector('input[name="exam-' + index + '"]:checked');
+      return selected ? Number(selected.value) : null;
+    });
+    if (answers.some(function(answer){ return answer === null; })){
+      status.dataset.result = 'notice';
+      status.textContent = 'Please answer all 10 questions before submitting.';
+      return;
+    }
+    const score = answers.reduce(function(total, answer, index){
+      return total + (answer === EXAM_QUESTIONS[index].correct ? 1 : 0);
+    }, 0);
+    const passed = score / EXAM_QUESTIONS.length >= .7;
+    status.dataset.result = passed ? 'pass' : 'fail';
+    status.textContent = 'You scored ' + score + ' out of ' + EXAM_QUESTIONS.length + '. ' +
+      (passed ? 'You passed and earned your certificate.' : 'You need at least 7 correct answers to pass.');
+    if (passed && (!state.certificate || score > state.certificate.score)){
+      state.certificate = { score:score, total:EXAM_QUESTIONS.length, earnedAt:new Date().toISOString() };
+      save();
+    } else if (passed && state.certificate){
+      state.certificate.score = Math.max(state.certificate.score, score);
       save();
     }
-    return next;
+    renderCertificate();
   }
 
-  function touchDay(){
-    const t = todayStr();
-    if (state.day === t) return;
-    state.dayStreak = (state.day === yesterdayStr()) ? (state.dayStreak || 0) + 1 : 1;
-    state.day       = t;
-    state.todayIds  = [];
-    state.bonus     = false;
-  }
-
-  // ═══════════════ STATE READERS FOR HERO ═══════════════
-  function readDaily(){
-    let raw = {};
-    try { raw = JSON.parse(localStorage.getItem('cyberwise.daily.v1') || '{}') || {}; } catch (e) {}
-    const history = raw.history && typeof raw.history === 'object' ? raw.history : {};
-    const playedCount = Object.keys(history).length;
-    const correctCount = Object.keys(history).filter(k => history[k] && history[k].correct).length;
-    return {
-      streak: typeof raw.streak === 'number' ? raw.streak : 0,
-      playedCount: playedCount,
-      correctCount: correctCount,
-      hasProgress: playedCount > 0
-    };
-  }
-
-  function readGuide(){
-    let raw = {};
-    try { raw = JSON.parse(localStorage.getItem('cyberwise.guide.v1') || '{}') || {}; } catch (e) {}
-    const read = raw.read && typeof raw.read === 'object' ? raw.read : {};
-    const ids = Object.keys(read).filter(k => read[k]);
-    return { readCount: ids.length, hasProgress: ids.length > 0 };
-  }
-
-  function readRecovery(){
-    let raw = {};
-    try { raw = JSON.parse(localStorage.getItem('cyberwise.recovery.v1') || '{}') || {}; } catch (e) {}
-    const done = raw.done && typeof raw.done === 'object' ? raw.done : {};
-    const count = Object.keys(done).filter(k => done[k]).length;
-    return { doneCount: count, hasProgress: !!raw.triage || count > 0 };
-  }
-
-  // ═══════════════ RENDER — HERO ═══════════════
-  function heroHTML(){
-    const done  = doneCount();
-    const total = SCENARIOS.length;
-    const left  = Math.max(0, DAILY_LIMIT - todaysCount());
-    const daily = readDaily();
-    const guide = readGuide();
-    const rec   = readRecovery();
-
-    // Lede adapts to progress
-    let lede;
-    if (done === 0){
-      lede = 'Read each message the way you would on your phone — <strong>then decide</strong>. Five a day, real tactics, and a reveal that shows you exactly what to look for.';
-    } else if (allDone()){
-      lede = "You've seen every scenario. Come back to <strong>review the ones that caught you out</strong>, or help a friend spot their first one.";
-    } else if (left === 0){
-      lede = "That's your five for today. <strong>Come back tomorrow</strong> for more — harder tiers unlock as you go.";
-    } else {
-      lede = '<strong>' + left + ' scenario' + (left === 1 ? '' : 's') + ' left today.</strong> Every one is a real tactic used against South African students right now.';
+  function initCertificate(){
+    const form = document.getElementById('finalExamForm');
+    const printButton = document.getElementById('printCertBtn');
+    const nameInput = document.getElementById('certNameInput');
+    const printName = document.getElementById('certPrintName');
+    if (form) form.addEventListener('submit', function(event){
+      event.preventDefault();
+      finishExam();
+    });
+    if (nameInput && printName){
+      nameInput.addEventListener('input', function(){
+        printName.textContent = nameInput.value.trim() || 'CyberWise Scholar';
+      });
+      printName.textContent = 'CyberWise Scholar';
     }
-
-    // Progress chips
-    const chips = [];
-
-    if (daily.streak > 0){
-      chips.push(
-        '<a class="progress-chip" data-tone="daily" href="daily.html">' + ic('flame', 2.4) +
-        '<span>Daily: <strong>' + daily.streak + '</strong>-day streak</span></a>'
-      );
-    }
-
-    if (guide.hasProgress){
-      chips.push(
-        '<a class="progress-chip" data-tone="guide" href="guide.html">' + ic('book', 2.4) +
-        '<span>Guide: <strong>' + guide.readCount + '</strong> of 13</span></a>'
-      );
-    }
-
-    if (done > 0){
-      chips.push(
-        '<span class="progress-chip" data-tone="spot">' + ic('check', 2.4) +
-        '<span><strong>' + done + '</strong> of ' + total + ' seen</span></span>'
-      );
-    }
-
-    if (state.score > 0){
-      chips.push(
-        '<span class="progress-chip" data-tone="score">' + ic('star', 2.4) +
-        '<span><strong>' + state.score + '</strong> pts</span></span>'
-      );
-    }
-
-    if (rec.hasProgress){
-      chips.push(
-        '<a class="progress-chip" data-tone="recover" href="recovery.html">' + ic('shield', 2.4) +
-        '<span>Recovery: <strong>' + rec.doneCount + '</strong> steps</span></a>'
-      );
-    }
-
-    const progressHTML = chips.length
-      ? '<div class="hero-progress">' + chips.join('') + '</div>'
-      : '';
-
-    return '' +
-    '<section class="hero">' +
-      '<div class="hero-eyebrow"><span class="dot"></span>Practise · 21 scenarios · 5 a day</div>' +
-      '<h1 class="hero-title">Read it like it just <em>landed on your phone</em>.</h1>' +
-      '<p class="hero-lede">' + lede + '</p>' +
-      progressHTML +
-    '</section>';
+    if (printButton) printButton.addEventListener('click', function(){
+      if (printName && nameInput) printName.textContent = nameInput.value.trim() || 'CyberWise Scholar';
+      window.print();
+    });
+    renderCertificate();
   }
 
-  // ═══════════════ RENDER — DIFFICULTY TILES ═══════════════
-  function difficultyHTML(){
-    const tiers = unlockedTiers();
-    return '' +
-    '<div class="difficulty-bar">' +
-      ['easy','medium','hard'].map(function(lvl){
-        const inTier   = SCENARIOS.filter(s => s.difficulty === lvl);
-        const doneTier = inTier.filter(s => state.answered[s.id]).length;
-        const p = inTier.length ? Math.round(doneTier / inTier.length * 100) : 0;
-        const locked = tiers.indexOf(lvl) === -1;
-        return '' +
-          '<div class="diff-tile' + (locked ? ' locked' : '') + '" data-level="' + lvl + '">' +
-            '<div class="diff-tile-top">' +
-              '<span class="diff-tile-name">' + lvl + '</span>' +
-              '<span class="diff-tile-count">' + doneTier + '/' + inTier.length + '</span>' +
-            '</div>' +
-            '<div class="diff-tile-bar"><div class="diff-tile-fill" style="width:' + p + '%"></div></div>' +
-          '</div>';
-      }).join('') +
-    '</div>';
-  }
-
-  // ═══════════════ RENDER — PHONE ═══════════════
-  function phoneHTML(sc){
-    const ch = CHANNELS[sc.channel] || CHANNELS['SMS'];
-    return '' +
-    '<div class="phone">' +
-      '<div class="phone-head">' +
-        '<div class="phone-app">' +
-          '<div class="phone-app-icon">' + appIconHTML(sc.channel) + '</div>' +
-          '<div class="phone-app-name">' + appName(sc.channel) + '</div>' +
-        '</div>' +
-        '<div class="phone-time">' + (sc.time || '') + '</div>' +
-      '</div>' +
-      '<div class="phone-sender">' +
-        '<div class="phone-sender-name">' + sc.sender + '</div>' +
-        (sc.senderLabel ? '<span class="phone-sender-tag">' + sc.senderLabel + '</span>' : '') +
-      '</div>' +
-      '<p class="phone-msg">' + sc.message + '</p>' +
-      '<div class="phone-foot"><span class="phone-foot-dot"></span>' + (sc.foot || ch.foot) + '</div>' +
-    '</div>';
-  }
-
-  function metaHTML(sc){
-    const n = SCENARIOS.indexOf(sc) + 1;
-    return '' +
-    '<div class="msg-meta">' +
-      '<div class="msg-cat-row">' +
-        '<span class="msg-cat" data-cat="' + sc.category + '"><span class="dot"></span>' + sc.catLabel + '</span>' +
-        '<span class="diff-badge" data-level="' + sc.difficulty + '"><span class="dot"></span>' + sc.difficulty + '</span>' +
-      '</div>' +
-      '<span class="msg-num">SCENARIO ' + pad(n) + ' / ' + SCENARIOS.length + '</span>' +
-    '</div>';
-  }
-
-  // ═══════════════ RENDER — QUESTION ═══════════════
-  function questionHTML(sc){
-    const choices = sc.choices.map(function(c, i){
-      return '<button type="button" class="choice" data-choice="' + i + '" data-key="' + (i + 1) + '">' + c.label + '</button>';
+  // ═══════════════ RENDER TOC ═══════════════
+  function renderTOC(){
+    const el = document.getElementById('tocList');
+    if (!el) return;
+    el.innerHTML = SECTIONS.map(function(s){
+      return '<li>' +
+        '<a href="#sec-' + s.id + '" data-toc="' + s.id + '">' +
+          '<span class="toc-num">' + s.num + '</span>' +
+          '<span>' + s.title + '</span>' +
+        '</a>' +
+      '</li>';
     }).join('');
-
-    return '' +
-    '<section class="msg-wrap">' +
-      metaHTML(sc) +
-      phoneHTML(sc) +
-      '<div class="choices">' + choices + '</div>' +
-    '</section>';
   }
 
-  // ═══════════════ RENDER — REVEAL ═══════════════
-  function revealHTML(sc){
-    const rec     = state.answered[sc.id] || { correct:false };
-    const correct = !!rec.correct;
-    const res     = correct ? sc.safeResult : sc.unsafeResult;
-    const pts     = correct ? POINTS[sc.difficulty] : 0;
-
-    const signals = sc.signals.map(function(s, i){
+  // ═══════════════ RENDER SECTIONS ═══════════════
+  function renderSections(){
+    const el = document.getElementById('sections');
+    if (!el) return;
+    el.innerHTML = SECTIONS.map(function(s){
+      const isOpen = !!state.open[s.id];
+      const isRead = !!state.read[s.id];
+      let practiseHTML = '';
+      if (s.practise && s.practise.length){
+        const chips = s.practise.map(function(p){
+          return '<a class="chip" href="screen6.html"><span class="chip-num">' + p.num + '</span><span>' + p.label + '</span></a>';
+        }).join('');
+        practiseHTML =
+          '<div class="practise">' +
+            '<div class="practise-label">' + ic('target', 2.2) + ' Practise this</div>' +
+            '<div class="practise-scenarios">' + chips + '</div>' +
+            '<a class="practise-cta" href="screen6.html">Open Spot the Phish ' + ic('arrow', 2.4) + '</a>' +
+          '</div>';
+      }
       return '' +
-      '<div class="signal">' +
-        '<div class="signal-num">' + pad(i + 1) + '</div>' +
-        '<div class="signal-text">' +
-          '<div class="signal-name">' + s.name + '</div>' +
-          '<div class="signal-detail">' + s.detail + '</div>' +
+      '<div class="section' + (isOpen ? ' open' : '') + (isRead ? ' read' : '') + '" id="sec-' + s.id + '" data-section="' + s.id + '">' +
+        '<div class="section-head" data-toggle="' + s.id + '" role="button" tabindex="0" aria-expanded="' + (isOpen ? 'true' : 'false') + '">' +
+          '<div class="section-num">' + s.num + '</div>' +
+          '<div class="section-info">' +
+            '<div class="section-title">' + s.title + '</div>' +
+            '<div class="section-meta">' + ic('clock', 2.2) + '<span>' + s.mins + ' min read</span></div>' +
+          '</div>' +
+          '<button type="button" class="section-read" data-read="' + s.id + '" aria-label="Mark as read" aria-pressed="' + (isRead ? 'true' : 'false') + '">' + ic('check', 3) + '</button>' +
+          '<svg class="section-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">' + ICONS.chev + '</svg>' +
+        '</div>' +
+        '<div class="section-panel">' +
+          '<div class="section-body">' + s.html + practiseHTML + '</div>' +
         '</div>' +
       '</div>';
     }).join('');
+  }
 
-    // Cross-link to the guide
-    let crosslinkHTML = '';
-    if (sc.guideSection){
-      crosslinkHTML =
-        '<a class="crosslink" href="guide.html#sec-' + sc.guideSection + '">' +
-          '<div class="crosslink-icon">' + ic('book', 2.2) + '</div>' +
-          '<div class="crosslink-text">' +
-            '<div class="crosslink-label">Read more · Section ' + sc.guideSection + '</div>' +
-            '<div class="crosslink-title">' + (GUIDE_TITLES[sc.guideSection] || '') + '</div>' +
-          '</div>' +
-          '<span class="crosslink-arrow">' + ic('arrow', 2.4) + '</span>' +
-        '</a>';
+  // ═══════════════ PROGRESS ═══════════════
+  function updateProgress(){
+    const total = SECTIONS.length;
+    const done = SECTIONS.filter(function(s){ return state.read[s.id]; }).length;
+    const pct = Math.round(done / total * 100);
+    const fill = document.getElementById('tocFill');
+    const count = document.getElementById('tocCount');
+    if (fill) fill.style.width = pct + '%';
+    if (count) count.textContent = done + ' / ' + total;
+  }
+
+  // ═══════════════ SCROLL SPY ═══════════════
+  function initScrollSpy(){
+    const links = document.querySelectorAll('[data-toc]');
+    const sections = SECTIONS.map(function(s){
+      return document.getElementById('sec-' + s.id);
+    }).filter(Boolean);
+    if (!sections.length) return;
+    const observer = new IntersectionObserver(function(entries){
+      let activeId = null;
+      entries.forEach(function(e){
+        if (e.isIntersecting){ activeId = e.target.getAttribute('data-section'); }
+      });
+      if (!activeId){
+        let bestTop = -Infinity;
+        sections.forEach(function(el){
+          const r = el.getBoundingClientRect();
+          if (r.top < 200 && r.top > bestTop){ bestTop = r.top; activeId = el.getAttribute('data-section'); }
+        });
+      }
+      if (activeId){
+        links.forEach(function(a){
+          a.classList.toggle('active', a.getAttribute('data-toc') === activeId);
+        });
+      }
+    }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
+    sections.forEach(function(el){ observer.observe(el); });
+  }
+
+  // ═══════════════ SEARCH ═══════════════
+  function initSearch(){
+    const wrap = document.getElementById('searchWrap');
+    const input = document.getElementById('searchInput');
+    const clear = document.getElementById('searchClear');
+    const empty = document.getElementById('empty');
+    if (!input || !wrap) return;
+    function applyFilter(){
+      const q = input.value.trim().toLowerCase();
+      wrap.classList.toggle('has-value', q.length > 0);
+      if (!q){
+        document.querySelectorAll('.section').forEach(function(el){ el.classList.remove('hidden'); });
+        if (empty) empty.hidden = true;
+        return;
+      }
+      let anyVisible = false;
+      SECTIONS.forEach(function(s){
+        const el = document.getElementById('sec-' + s.id);
+        if (!el) return;
+        const haystack = (s.title + ' ' + s.html + ' ' + (s.practise || []).map(function(p){ return p.label; }).join(' ')).toLowerCase();
+        const hit = haystack.indexOf(q) !== -1;
+        el.classList.toggle('hidden', !hit);
+        if (hit){ anyVisible = true; if (!el.classList.contains('open')) el.classList.add('open'); }
+      });
+      if (empty) empty.hidden = anyVisible;
     }
-
-    return '' +
-    '<section class="reveal">' +
-      metaHTML(sc) +
-
-      '<div class="reveal-verdict-row">' +
-        '<span class="reveal-verdict ' + (correct ? 'safe' : 'unsafe') + '"><span class="rd"></span>' +
-          (correct ? 'Correct call' : 'Phished') +
-        '</span>' +
-        '<span class="points-badge' + (pts ? '' : ' zero') + '">' + (pts ? '+' + pts + ' pts' : '0 pts') + '</span>' +
-      '</div>' +
-
-      '<h2 class="reveal-title">' + res.title + '</h2>' +
-      '<p class="reveal-body">' + res.body + '</p>' +
-
-      crosslinkHTML +
-
-      '<div class="block signals">' +
-        '<div class="block-head">' +
-          '<div class="block-icon">' + ic('alert', 2) + '</div>' +
-          '<div class="block-label">Signals in this message</div>' +
-        '</div>' +
-        '<div class="signal-list">' + signals + '</div>' +
-      '</div>' +
-
-      '<div class="block stakes">' +
-        '<div class="block-head">' +
-          '<div class="block-icon">' + ic('shieldAlert', 2) + '</div>' +
-          '<div class="block-label">What was at stake</div>' +
-        '</div>' +
-        '<p>' + sc.stakes + '</p>' +
-      '</div>' +
-
-      '<div class="block verify">' +
-        '<div class="block-head">' +
-          '<div class="block-icon">' + ic('checkCircle', 2) + '</div>' +
-          '<div class="block-label">How to verify</div>' +
-        '</div>' +
-        '<p>' + sc.verify + '</p>' +
-      '</div>' +
-
-      '<div class="block lever-block">' +
-        '<div class="block-head">' +
-          '<div class="block-icon">' + ic('target', 2) + '</div>' +
-          '<div class="block-label">The lever used</div>' +
-        '</div>' +
-        '<span class="lever-name"><span class="ld"></span>' + (LEVERS[sc.lever] || sc.lever) + '</span>' +
-        '<p class="lever-explain">' + sc.leverExplain + '</p>' +
-      '</div>' +
-
-      '<div class="reveal-actions">' +
-        '<button type="button" class="btn btn-primary" data-action="next">Next scenario ' + ic('arrow', 2) + '</button>' +
-        (correct ? '' : '<a class="btn btn-secondary" href="recovery.html">Recovery steps</a>') +
-      '</div>' +
-    '</section>';
-  }
-
-  // ═══════════════ RENDER — COMEBACK ═══════════════
-  function comebackHTML(){
-    const todaySc = state.todayIds
-      .map(id => SCENARIOS.find(s => s.id === id))
-      .filter(Boolean);
-    const right = todaySc.filter(s => state.answered[s.id] && state.answered[s.id].correct).length;
-    const total = todaySc.length;
-    const days  = state.dayStreak || 1;
-    const remaining = SCENARIOS.filter(s => !state.answered[s.id]).length;
-
-    return '' +
-    '<div class="comeback">' +
-      '<div class="comeback-icon">' + ic('clock', 2) + '</div>' +
-      '<h2 class="comeback-title">That\'s your five for today.</h2>' +
-      '<p class="comeback-sub">You called <strong>' + right + ' of ' + total + '</strong> correctly. ' +
-        'Your streak is now <strong>' + days + ' ' + (days === 1 ? 'day' : 'days') + '</strong>. ' +
-        'Come back tomorrow for five new scenarios — Medium and Hard unlock as you go.</p>' +
-      '<div class="comeback-actions">' +
-        (remaining
-          ? '<button type="button" class="btn btn-primary" data-action="keep-practising">Keep practising · bonus mode ' + ic('arrow', 2) + '</button>'
-          : '<a class="btn btn-primary" href="daily.html">Try today\'s Daily Phish ' + ic('arrow', 2) + '</a>') +
-        '<a class="btn btn-secondary" href="guide.html">Read the guide</a>' +
-      '</div>' +
-    '</div>';
-  }
-
-  // ═══════════════ RENDER — COMPLETE ═══════════════
-  function completeHTML(){
-    const total     = SCENARIOS.length;
-    const attempted = state.correct + state.wrong;
-    const acc       = attempted ? Math.round(state.correct / attempted * 100) : 0;
-
-    return '' +
-    '<div class="complete">' +
-      '<div class="complete-icon">' + ic('check', 2) + '</div>' +
-      '<h2 class="complete-title">You have seen every scenario.</h2>' +
-      '<p class="complete-sub">You worked through all <strong>' + total + '</strong> messages — reward scams, fear tactics, ' +
-        'authority impersonation, trust hijacks and urgency plays. That is the full set of levers attackers use.</p>' +
-      '<div class="complete-stats">' +
-        '<div class="stat"><div class="stat-v">' + acc + '%</div><div class="stat-l">Accuracy</div></div>' +
-        '<div class="stat"><div class="stat-v">' + state.score + '</div><div class="stat-l">Points</div></div>' +
-        '<div class="stat"><div class="stat-v">' + (state.bestStreak || 0) + '</div><div class="stat-l">Best streak</div></div>' +
-      '</div>' +
-      '<div class="comeback-actions">' +
-        '<a class="btn btn-primary" href="data_breach.html">Visit the Breach Lab ' + ic('arrow', 2) + '</a>' +
-        '<button type="button" class="btn btn-secondary" data-action="reset">Start over</button>' +
-      '</div>' +
-    '</div>';
-  }
-
-  // ═══════════════ FOOTER ═══════════════
-  function footerHTML(){
-    return '' +
-    '<footer class="footer">' +
-      '<div class="footer-links">' +
-        '<a href="landing.html">Home</a>' +
-        '<a href="guide.html">Guide</a>' +
-        '<a href="daily.html">Daily</a>' +
-        '<a href="data_breach.html">Breach Lab</a>' +
-        '<a href="recovery.html">Recovery</a>' +
-      '</div>' +
-      '<div class="footer-meta">CyberWise · Spot the Phish · No accounts · No tracking</div>' +
-    '</footer>';
-  }
-
-  // ═══════════════ MAIN RENDER ═══════════════
-  function render(){
-    const page = document.getElementById('page');
-    let body;
-
-    if (state.phase === 'reveal' && state.current){
-      const sc = SCENARIOS.find(s => s.id === state.current);
-      body = sc ? revealHTML(sc) : comebackHTML();
-    } else if (allDone()){
-      body = completeHTML();
-    } else if (todaysCount() >= DAILY_LIMIT && !state.bonus){
-      body = comebackHTML();
-    } else {
-      const sc = currentScenario();
-      body = sc ? questionHTML(sc) : completeHTML();
+    input.addEventListener('input', applyFilter);
+    if (clear){
+      clear.addEventListener('click', function(){
+        input.value = '';
+        applyFilter();
+        input.focus();
+      });
     }
-
-    page.innerHTML = heroHTML() + difficultyHTML() + body + footerHTML();
   }
 
   // ═══════════════ ACTIONS ═══════════════
-  function answer(index){
-    if (state.phase !== 'question') return;
-
-    const sc = currentScenario();
-    if (!sc) return;
-
-    const choice = sc.choices[index];
-    if (!choice) return;
-
-    touchDay();
-
-    const inBonus = state.bonus === true;
-    const correct = !!choice.safe;
-    const pts     = correct && !inBonus ? POINTS[sc.difficulty] : 0;
-
-    state.answered[sc.id] = { correct: correct, pts: pts, at: Date.now(), bonus: inBonus };
-    if (!inBonus && state.todayIds.indexOf(sc.id) === -1) state.todayIds.push(sc.id);
-
-    if (!inBonus){
-      state.score += pts;
-      if (correct){
-        state.correct++;
-        state.streak++;
-        if (state.streak > (state.bestStreak || 0)) state.bestStreak = state.streak;
-      } else {
-        state.wrong++;
-        state.streak = 0;
-      }
-    }
-
-    state.phase    = 'reveal';
-    state.lastPick = index;
+  function openSectionFromTOC(id){
+    const section = document.getElementById('sec-' + id);
+    if (!section) return;
+    state.open[id] = true;
     save();
-    render();
-
-    const el = document.querySelector('.reveal');
-    if (el) el.scrollIntoView({ behavior:'smooth', block:'start' });
+    section.classList.add('open');
+    const head = section.querySelector('[data-toggle]');
+    if (head) head.setAttribute('aria-expanded', 'true');
+    document.querySelectorAll('[data-toc]').forEach(function(link){
+      link.classList.toggle('active', link.getAttribute('data-toc') === id);
+    });
+    try { history.replaceState(null, '', '#sec-' + id); } catch (e) {}
+    window.setTimeout(function(){
+      const top = section.getBoundingClientRect().top + window.scrollY - 96;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    }, 20);
   }
 
-  function goNext(){
-    state.phase    = 'question';
-    state.current  = null;
-    state.lastPick = null;
-    save();
-    render();
-
-    const el = document.querySelector('.msg-wrap') || document.querySelector('.comeback') || document.querySelector('.complete');
-    if (el) el.scrollIntoView({ behavior:'smooth', block:'start' });
-    else window.scrollTo({ top:0, behavior:'smooth' });
-  }
-
-  function resetAll(){
-    if (!window.confirm('Reset all progress? Your score, streak and answered scenarios will be cleared.')) return;
-    state = {
-      score:0, correct:0, wrong:0, streak:0, bestStreak:0,
-      dayStreak:0, day:null, todayIds:[], answered:{},
-      current:null, phase:'question', lastPick:null, bonus:false
-    };
-    save();
-    render();
-    window.scrollTo({ top:0, behavior:'smooth' });
-  }
-
-  // ═══════════════ EVENTS ═══════════════
   document.addEventListener('click', function(e){
-    const choice = e.target.closest('[data-choice]');
-    if (choice){
-      answer(parseInt(choice.getAttribute('data-choice'), 10));
+    const tocLink = e.target.closest('[data-toc]');
+    if (tocLink){
+      e.preventDefault();
+      openSectionFromTOC(tocLink.getAttribute('data-toc'));
       return;
     }
-    const keepBtn = e.target.closest('[data-action="keep-practising"]');
-    if (keepBtn){
-      if (allDone()) return;
-      state.bonus = true;
-      state.phase = 'question';
-      state.current = null;
-      state.lastPick = null;
+    const readBtn = e.target.closest('[data-read]');
+    if (readBtn){
+      e.stopPropagation();
+      const id = readBtn.getAttribute('data-read');
+      state.read[id] = !state.read[id];
+      if (!state.read[id]) delete state.read[id];
       save();
-      render();
-      const el = document.querySelector('.msg-wrap');
-      if (el) el.scrollIntoView({ behavior:'smooth', block:'start' });
+      const sec = document.getElementById('sec-' + id);
+      if (sec) sec.classList.toggle('read', !!state.read[id]);
+      readBtn.setAttribute('aria-pressed', state.read[id] ? 'true' : 'false');
+      updateProgress();
+      renderFinalExamLock(); // ← Update exam lock when a section is marked read
       return;
     }
-    const nextBtn = e.target.closest('[data-action="next"]');
-    if (nextBtn){ goNext(); return; }
-
-    const resetBtn = e.target.closest('[data-action="reset"]');
-    if (resetBtn){ resetAll(); return; }
+    const toggle = e.target.closest('[data-toggle]');
+    if (toggle){
+      const id = toggle.getAttribute('data-toggle');
+      state.open[id] = !state.open[id];
+      if (!state.open[id]) delete state.open[id];
+      save();
+      const sec = document.getElementById('sec-' + id);
+      if (sec){
+        sec.classList.toggle('open', !!state.open[id]);
+        toggle.setAttribute('aria-expanded', state.open[id] ? 'true' : 'false');
+      }
+      return;
+    }
+    const action = e.target.closest('[data-action]');
+    if (action && action.getAttribute('data-action') === 'reset'){
+      if (!window.confirm('Reset guide progress? Read sections will be cleared.')) return;
+      state = { read:{}, open:{ '1': true }, certificate:null };
+      save();
+      renderSections();
+      updateProgress();
+      initScrollSpy();
+      renderFinalExamLock(); // ← Reset the exam lock state too
+      renderCertificate();
+      const status = document.getElementById('finalExamStatus');
+      if (status){ status.textContent = ''; status.removeAttribute('data-result'); }
+      window.scrollTo({ top:0, behavior:'smooth' });
+      return;
+    }
   });
 
   document.addEventListener('keydown', function(e){
-    if (e.metaKey || e.ctrlKey || e.altKey) return;
-    const tag = (e.target && e.target.tagName) || '';
-    if (tag === 'INPUT' || tag === 'TEXTAREA') return;
-
-    if (state.phase === 'question'){
-      if (e.key === '1' || e.key === '2'){
-        e.preventDefault();
-        answer(parseInt(e.key, 10) - 1);
-      }
-    } else if (state.phase === 'reveal'){
-      if (e.key === 'Enter' || e.key === ' '){
-        e.preventDefault();
-        goNext();
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    const toggle = e.target.closest('[data-toggle]');
+    if (toggle && e.target === toggle){
+      e.preventDefault();
+      const id = toggle.getAttribute('data-toggle');
+      state.open[id] = !state.open[id];
+      if (!state.open[id]) delete state.open[id];
+      save();
+      const sec = document.getElementById('sec-' + id);
+      if (sec){
+        sec.classList.toggle('open', !!state.open[id]);
+        toggle.setAttribute('aria-expanded', state.open[id] ? 'true' : 'false');
       }
     }
   });
 
-  // ═══════════════ THEME ═══════════════
-  const themeToggle = document.getElementById('themeToggle');
-  if (themeToggle){
-    themeToggle.addEventListener('click', function(){
-      const cur  = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-      const next = cur === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
+  // ═══════════════ THEME TOGGLE ═══════════════
+  (function theme(){
+    const btn = document.getElementById('themeToggle');
+    if (!btn) return;
+    btn.addEventListener('click', function(){
+      const root = document.documentElement;
+      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
       try { localStorage.setItem('cyberwise.theme', next); } catch (e) {}
-      const meta = document.querySelector('meta[name="theme-color"]');
-      if (meta) meta.setAttribute('content', next === 'dark' ? '#0B0A17' : '#F5F4FB');
     });
-  }
+  })();
 
   // ═══════════════ TOPBAR SCROLL ═══════════════
-  const topbar = document.getElementById('topbar');
-  function onScroll(){
-    if (!topbar) return;
-    topbar.classList.toggle('scrolled', window.scrollY > 12);
-  }
-  window.addEventListener('scroll', onScroll, { passive:true });
-  onScroll();
+  (function topbar(){
+    const el = document.getElementById('topbar');
+    if (!el) return;
+    function update(){ el.classList.toggle('scrolled', window.scrollY > 12); }
+    window.addEventListener('scroll', update, { passive:true });
+    update();
+  })();
+
+  // ═══════════════ MOBILE MENU ═══════════════
+  (function menu(){
+    const btn = document.getElementById('menuToggle');
+    const nav = document.getElementById('navMenu');
+    if (!btn || !nav) return;
+    btn.addEventListener('click', function(){ nav.classList.toggle('show'); });
+  })();
 
   // ═══════════════ CUSTOM CURSOR ═══════════════
   (function cursor(){
     const canRun = window.matchMedia('(hover: hover) and (pointer: fine)').matches && window.innerWidth > 1024;
     if (!canRun) return;
-    const dot  = document.getElementById('cursorDot');
+    const dot = document.getElementById('cursorDot');
     const ring = document.getElementById('cursorRing');
     if (!dot || !ring) return;
-
     let mx = window.innerWidth / 2, my = window.innerHeight / 2;
     let rx = mx, ry = my;
     let scale = 1, targetScale = 1;
-
     window.addEventListener('mousemove', function(e){ mx = e.clientX; my = e.clientY; }, { passive:true });
-
     document.addEventListener('mouseover', function(e){
-      const t = e.target.closest('a, button, .choice, .crosslink');
+      const t = e.target.closest('a, button, .section-head, .gl, .chip');
       if (t){
         targetScale = 1.14;
         ring.classList.add('is-hover');
-        if (t.classList.contains('btn-primary') || t.classList.contains('choice') || t.classList.contains('crosslink')) {
-          ring.classList.add('is-cta');
-        }
+        if (t.classList.contains('btn-primary') || t.classList.contains('chip')) ring.classList.add('is-cta');
       }
     });
-
     document.addEventListener('mouseout', function(e){
-      const t = e.target.closest('a, button, .choice, .crosslink');
-      if (t){
-        targetScale = 1;
-        ring.classList.remove('is-hover', 'is-cta');
-      }
+      const t = e.target.closest('a, button, .section-head, .gl, .chip');
+      if (t){ targetScale = 1; ring.classList.remove('is-hover', 'is-cta'); }
     });
-
     (function tick(){
-      rx += (mx - rx) * 0.18;
-      ry += (my - ry) * 0.18;
+      rx += (mx - rx) * 0.18; ry += (my - ry) * 0.18;
       scale += (targetScale - scale) * 0.22;
-      dot.style.transform  = 'translate3d(' + (mx - 3) + 'px,' + (my - 3) + 'px,0)';
+      dot.style.transform = 'translate3d(' + (mx - 3) + 'px,' + (my - 3) + 'px,0)';
       ring.style.transform = 'translate3d(' + (rx - 13) + 'px,' + (ry - 13) + 'px,0) scale(' + scale + ')';
       requestAnimationFrame(tick);
     })();
   })();
 
   // ═══════════════ BOOT ═══════════════
-  render();
+  renderTOC();
+  renderSections();
+  updateProgress();
+  initScrollSpy();
+  renderFinalExam();
+  initCertificate();
+  renderFinalExamLock(); // ← Initialize the lock state on load
+  (function openFromHash(){
+    const hash = window.location.hash;
+    if (!hash || hash.indexOf('#sec-') !== 0) return;
+    const id = hash.slice(5);
+    const section = document.getElementById('sec-' + id);
+    if (!section) return;
+    state.open[id] = true;
+    save();
+    section.classList.add('open');
+    const head = section.querySelector('[data-toggle]');
+    if (head) head.setAttribute('aria-expanded', 'true');
+    document.querySelectorAll('[data-toc]').forEach(function(link){
+      link.classList.toggle('active', link.getAttribute('data-toc') === id);
+    });
+    window.setTimeout(function(){
+      const top = section.getBoundingClientRect().top + window.scrollY - 96;
+      window.scrollTo({ top: top, behavior: 'auto' });
+    }, 60);
+  })();
+  initSearch();
+
 })();
 </script>
 <script src="register-sw.js"></script>
