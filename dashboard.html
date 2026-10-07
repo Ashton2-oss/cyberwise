@@ -19,7 +19,6 @@
 <link rel="manifest" href="manifest.json"/>
 <meta name="theme-color" content="#0F141B"/>
 <style>
-/* Same variables as hub.html */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 svg{display:block;max-width:32px;max-height:32px;flex-shrink:0}
 :root{
@@ -166,11 +165,11 @@ html,body{background:var(--bg);color:var(--ink);font-family:'Inter',-apple-syste
     CyberWise
   </a>
   <nav class="nav" id="navMenu">
-   <a href="landing.html" class="active">Home</a>
-   <a href="guide.html">Learn</a>
-   <a href="screen6.html">Practise</a>
-   <a href="hub.html">Hub</a>
-   <a href="recovery.html">Recover</a>
+    <a href="landing.html">Home</a>
+    <a href="guide.html">Learn</a>
+    <a href="screen6.html">Practise</a>
+    <a href="hub.html">Hub</a>
+    <a href="recovery.html">Recover</a>
   </nav>
   <div class="actions">
     <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
@@ -191,7 +190,7 @@ html,body{background:var(--bg);color:var(--ink);font-family:'Inter',-apple-syste
   <div class="stats">
     <div class="stat-tile">
       <div class="stat-label">Modules completed</div>
-      <div class="stat-value" id="stat-modules">0/6</div>
+      <div class="stat-value" id="stat-modules">0/8</div>
     </div>
     <div class="stat-tile">
       <div class="stat-label">Day streak</div>
@@ -223,7 +222,7 @@ html,body{background:var(--bg);color:var(--ink);font-family:'Inter',-apple-syste
   <footer class="footer">
     <div class="footer-links">
       <a href="landing.html">Home</a>
-      <a href="guide.html">Guide</a>
+      <a href="guide.html">Learn</a>
       <a href="hub.html">Hub</a>
       <a href="screen6.html">Practise</a>
       <a href="data_breach.html">Breach Lab</a>
@@ -238,17 +237,21 @@ html,body{background:var(--bg);color:var(--ink);font-family:'Inter',-apple-syste
 function readStored(key){ try { return JSON.parse(localStorage.getItem(key) || 'null'); } catch(e){ return null; } }
 
 const TOPICS = [
-  { id:'guide',     name:'Guide',          icon:'📖', link:'guide.html',        desc:'13 sections of plain-language cybersecurity', max:13,
+  { id:'guide',        name:'Guide',          icon:'📖', link:'guide.html',        desc:'13 sections of plain-language cybersecurity', max:13,
     reader:() => { const s = readStored('cyberwise.guide.v1'); return s && s.read ? Object.keys(s.read).filter(k => s.read[k]).length : 0; } },
-  { id:'screen6',   name:'Spot the Phish', icon:'🎯', link:'screen6.html',      desc:'21 scenarios to test your instincts', max:21,
+  { id:'screen6',      name:'Spot the Phish', icon:'🎯', link:'screen6.html',      desc:'31 scenarios with flashcard teaching', max:31,
     reader:() => { const s = readStored('cyberwise.spot.v1'); return s && s.answered ? Object.keys(s.answered).length : 0; } },
-  { id:'daily',     name:'Daily Phish',    icon:'📅', link:'daily.html',        desc:'One scenario a day, same for everyone', max:7,
+  { id:'daily',        name:'Daily Phish',    icon:'📅', link:'daily.html',        desc:'One scenario a day, same for everyone', max:7,
     reader:() => { const s = readStored('cyberwise.daily.v1'); return s && s.history ? Object.keys(s.history).length : 0; } },
-  { id:'breach',    name:'Breach Lab',     icon:'🔍', link:'data_breach.html',  desc:'Real South African breaches, in plain language', max:9,
+  { id:'breach',       name:'Breach Lab',     icon:'🔍', link:'data_breach.html',  desc:'Real South African breaches, in plain language', max:9,
     reader:() => { const s = readStored('cyberwise.breach.v1'); return s && s.gameAnswers ? Object.keys(s.gameAnswers).length : 0; } },
-  { id:'recover',   name:'Recovery',       icon:'🛡️', link:'recovery.html',     desc:'Steps after a phishing attempt', max:8,
+  { id:'social',       name:'Social Media',   icon:'📱', link:'social_safety.html', desc:'Common social media safety scenarios', max:6,
+    reader:() => { const s = readStored('cyberwise.social.v1'); return s && s.answered ? Object.keys(s.answered).length : 0; } },
+  { id:'wordhunt',     name:'Word Hunt',      icon:'🔤', link:'word-hunt.html',    desc:'Find hidden security terms in themed grids', max:3,
+    reader:() => { const s = readStored('cyberwise.wordhunt.best'); return s && typeof s === 'object' ? Object.keys(s).length : 0; } },
+  { id:'recover',      name:'Recovery',       icon:'🛡️', link:'recovery.html',     desc:'Steps after a phishing attempt', max:8,
     reader:() => { const s = readStored('cyberwise.recovery.v1'); return s && s.done ? Object.keys(s.done).filter(k => s.done[k]).length : 0; } },
-  { id:'hub',       name:'Hub toolkit',    icon:'🔧', link:'hub.html',          desc:'Password, link, and phish analyzers', max:3,
+  { id:'hub',          name:'Hub toolkit',    icon:'🔧', link:'hub.html',          desc:'Password, link, and phish analyzers', max:3,
     reader:() => 0 }
 ];
 
@@ -283,17 +286,14 @@ function renderDashboard(){
   grid.innerHTML = html;
   document.getElementById('stat-modules').textContent = completed + '/' + TOPICS.length;
 
-  // Streak from daily
   const daily = readStored('cyberwise.daily.v1');
   const streak = daily && Number.isFinite(daily.streak) ? daily.streak : 0;
   document.getElementById('stat-streak').innerHTML = streak + '<span class="unit">days</span>';
 
-  // Points from spot
   const spot = readStored('cyberwise.spot.v1');
   const points = spot && Number.isFinite(spot.score) ? spot.score : 0;
   document.getElementById('stat-points').textContent = String(points);
 
-  // Scenarios seen
   const seen = spot && spot.answered ? Object.keys(spot.answered).length : 0;
   document.getElementById('stat-seen').textContent = String(seen);
 }
@@ -302,7 +302,8 @@ function resetAll(){
   if (!confirm('Reset all saved progress? This clears every module.')) return;
   const keys = [
     'cyberwise.guide.v1','cyberwise.spot.v1','cyberwise.daily.v1',
-    'cyberwise.recovery.v1','cyberwise.breach.v1',
+    'cyberwise.recovery.v1','cyberwise.breach.v1','cyberwise.social.v1',
+    'cyberwise.wordhunt.best',
     'cyberwise_quiz_guide','cyberwise_quiz_data_breach',
     'cyberwise_quiz_recovery','cyberwise_quiz_screen6'
   ];
