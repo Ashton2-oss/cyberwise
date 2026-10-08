@@ -951,19 +951,41 @@ html,body{background:var(--bg);color:var(--ink);font-family:'Inter',-apple-syste
   };
 
   /* ═══════════════════════════════════════════════════════════════════
-     6b. LIGHT-BLUE MATRIX RAIN
+     6b. LIGHT-BLUE MATRIX RAIN — CYBER BLEND
      ─────────────────────────────────────────────────────────────────
-     Canvas-based falling glyph streams. Faint enough to sit behind
-     content, alive enough to give the page a "cyber" atmosphere.
+     Canvas-based falling glyph streams. Mostly single Latin / digit /
+     symbol glyphs for the classic "code rain" texture, with ~8% of
+     new glyphs being a full cybersecurity term instead. Faint enough
+     to sit behind content, alive enough to give the page a cyber feel.
      ═══════════════════════════════════════════════════════════════════ */
   const rain = (function(){
     const canvas = document.getElementById('rainCanvas');
     if (!canvas) return { start(){}, stop(){}, setTheme(){} };
     const c2d = canvas.getContext('2d', { alpha: true });
 
-    // Character pool — katakana + Latin + digits, gives that classic matrix feel.
-    const CHARS = 'アカサタナハマヤラワイクスツヌフムユルエケセテネヘメレオコソトノホモヨロン0123456789ABCDEF';
-    const CELL_W = 16;          // column width in px
+    // Single glyph pool — Latin + digits + cyber symbols.
+    const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#$%&@*+=<>/\\|{}[]()!?';
+
+    // Occasional full cyber terms that drop through as a "head" glyph.
+    // Kept short so they fit inside a column without wrapping.
+    const TERMS = [
+      'FIREWALL','MALWARE','PHISH','BREACH','ENCRYPT','SPOOF',
+      'TROJAN','ROOT','PATCH','HASH','TOKEN','PROXY','VPN','SSL',
+      'TLS','DDoS','XSS','SQL','CVE','RAT','APT','BOT','KEY','LOG',
+      'OTP','MFA','2FA','DNS','IP','MAC','SSH','FTP','API','HTTP',
+      'HTTPS','TCP','UDP','NMAP','SUDO','ROOTKIT','PHISHING','RANSOM',
+      'SPYWARE','ADWARE','BOTNET','ZERO','DAY','EXPLOIT','PAYLOAD'
+    ];
+
+    // ~8% of new glyphs are a full cyber term instead of a single char.
+    function nextGlyph() {
+      if (Math.random() < 0.08) {
+        return TERMS[(Math.random() * TERMS.length) | 0];
+      }
+      return CHARS[(Math.random() * CHARS.length) | 0];
+    }
+
+    const CELL_W = 18;          // column width in px
     const CELL_H = 16;          // row height in px
     const TRAIL  = 14;          // how many glyphs follow each head
     const TARGET_FPS = 30;
@@ -995,11 +1017,11 @@ html,body{background:var(--bg);color:var(--ink);font-family:'Inter',-apple-syste
       c2d.setTransform(dpr, 0, 0, dpr, 0, 0);
       c2d.textAlign = 'center';
       c2d.textBaseline = 'middle';
-      c2d.font = '500 14px "JetBrains Mono", monospace';
+      c2d.font = '500 12px "JetBrains Mono", monospace';
 
       // On very small screens, increase column width slightly so we don't
       // overload the CPU with hundreds of columns.
-      const w = cssW < 480 ? 20 : CELL_W;
+      const w = cssW < 480 ? 22 : CELL_W;
       cols = Math.ceil(cssW / w) + 1;
 
       columns = new Array(cols).fill(null).map((_, i) => spawnColumn(i, w, true));
@@ -1036,7 +1058,7 @@ html,body{background:var(--bg);color:var(--ink);font-family:'Inter',-apple-syste
         // Push a new glyph whenever the head crosses a cell boundary.
         let guard = 0;
         while (s.y >= s.nextCellY && guard++ < 20) {
-          s.cells.unshift(CHARS[(Math.random() * CHARS.length) | 0]);
+          s.cells.unshift(nextGlyph());
           if (s.cells.length > TRAIL) s.cells.pop();
           s.nextCellY += CELL_H;
         }
